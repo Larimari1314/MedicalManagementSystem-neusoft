@@ -1,0 +1,368 @@
+2022-07-03 08:20:55.701 [restartedMain] INFO  com.max.back.BackApplication -
+				Starting BackApplication on LAPTOP-1GNNC3O9 with PID 7748 (C:\eclipse-workspace\springbootapi\target\classes started by chenh in C:\eclipse-workspace\springbootapi)
+2022-07-03 08:20:55.718 [restartedMain] INFO  com.max.back.BackApplication -
+				The following profiles are active: test
+2022-07-03 08:20:55.862 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-03 08:20:55.863 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-03 08:21:00.121 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 08:21:00.124 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 08:21:00.287 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 150ms. Found 0 repository interfaces.
+2022-07-03 08:21:00.327 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 08:21:00.330 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 08:21:00.445 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 91ms. Found 0 repository interfaces.
+2022-07-03 08:21:01.361 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$aba810b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 08:21:01.435 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.max.back.common.config.RedisConfig$$EnhancerBySpringCGLIB$$68fc885e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 08:21:02.237 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8000 (http)
+2022-07-03 08:21:02.276 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8000"]
+2022-07-03 08:21:02.296 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2022-07-03 08:21:02.297 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.24]
+2022-07-03 08:21:02.807 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring embedded WebApplicationContext
+2022-07-03 08:21:02.809 [restartedMain] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 6946 ms
+2022-07-03 08:21:05.119 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-07-03 08:21:05.532 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-03 08:21:05.639 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2022-07-03 08:21:06.415 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2022-07-03 08:21:06.462 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2022-07-03 08:21:06.532 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2022-07-03 08:21:07.083 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8000"]
+2022-07-03 08:21:07.161 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8000 (http) with context path '/mystu'
+2022-07-03 08:21:07.168 [restartedMain] INFO  com.max.back.BackApplication -
+				Started BackApplication in 12.79 seconds (JVM running for 15.1)
+2022-07-03 08:26:32.507 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-03 08:26:44.328 [restartedMain] INFO  com.max.back.BackApplication -
+				Starting BackApplication on LAPTOP-1GNNC3O9 with PID 16780 (C:\eclipse-workspace\springbootapi\target\classes started by chenh in C:\eclipse-workspace\springbootapi)
+2022-07-03 08:26:44.335 [restartedMain] INFO  com.max.back.BackApplication -
+				The following profiles are active: test
+2022-07-03 08:26:44.475 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-03 08:26:44.475 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-03 08:26:49.196 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 08:26:49.198 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 08:26:49.401 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 187ms. Found 0 repository interfaces.
+2022-07-03 08:26:49.456 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 08:26:49.459 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 08:26:49.587 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 107ms. Found 0 repository interfaces.
+2022-07-03 08:26:50.663 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f89c5c2b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 08:26:50.754 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.max.back.common.config.RedisConfig$$EnhancerBySpringCGLIB$$b5f0d3d4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 08:26:51.680 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8443 (http)
+2022-07-03 08:26:51.725 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8443"]
+2022-07-03 08:26:51.756 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2022-07-03 08:26:51.757 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.24]
+2022-07-03 08:26:52.356 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring embedded WebApplicationContext
+2022-07-03 08:26:52.356 [restartedMain] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 7880 ms
+2022-07-03 08:26:54.663 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-07-03 08:26:55.063 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-03 08:26:55.166 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2022-07-03 08:26:55.963 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2022-07-03 08:26:56.014 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2022-07-03 08:26:56.087 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2022-07-03 08:26:56.620 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8443"]
+2022-07-03 08:26:56.711 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8443 (http) with context path '/mystu'
+2022-07-03 08:26:56.718 [restartedMain] INFO  com.max.back.BackApplication -
+				Started BackApplication in 13.815 seconds (JVM running for 16.567)
+2022-07-03 08:28:27.755 [http-nio-8443-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-03 08:28:27.756 [http-nio-8443-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2022-07-03 08:28:27.773 [http-nio-8443-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 17 ms
+2022-07-03 08:28:27.808 [http-nio-8443-exec-1] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-03 08:28:27.846 [http-nio-8443-exec-1] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-03 08:28:28.278 [http-nio-8443-exec-1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2022-07-03 08:28:56.197 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-03 08:46:16.406 [restartedMain] INFO  com.max.back.BackApplication -
+				Starting BackApplication on LAPTOP-1GNNC3O9 with PID 16340 (C:\eclipse-workspace\springbootapi\target\classes started by chenh in C:\eclipse-workspace\springbootapi)
+2022-07-03 08:46:16.411 [restartedMain] INFO  com.max.back.BackApplication -
+				The following profiles are active: test
+2022-07-03 08:46:16.504 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-03 08:46:16.505 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-03 08:46:19.495 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 08:46:19.498 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 08:46:19.636 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 129ms. Found 0 repository interfaces.
+2022-07-03 08:46:19.669 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 08:46:19.672 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 08:46:19.774 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 84ms. Found 0 repository interfaces.
+2022-07-03 08:46:20.480 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$877b64da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 08:46:20.532 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.max.back.common.config.RedisConfig$$EnhancerBySpringCGLIB$$44cfdc83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 08:46:21.196 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8443 (http)
+2022-07-03 08:46:21.225 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8443"]
+2022-07-03 08:46:21.242 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2022-07-03 08:46:21.243 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.24]
+2022-07-03 08:46:21.669 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring embedded WebApplicationContext
+2022-07-03 08:46:21.670 [restartedMain] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 5165 ms
+2022-07-03 08:46:23.588 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-07-03 08:46:23.875 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-03 08:46:23.959 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2022-07-03 08:46:24.615 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2022-07-03 08:46:24.652 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2022-07-03 08:46:24.706 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2022-07-03 08:46:25.160 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8443"]
+2022-07-03 08:46:25.242 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8443 (http) with context path '/mystu'
+2022-07-03 08:46:25.248 [restartedMain] INFO  com.max.back.BackApplication -
+				Started BackApplication in 9.807 seconds (JVM running for 12.054)
+2022-07-03 08:46:41.647 [http-nio-8443-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-03 08:46:41.648 [http-nio-8443-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2022-07-03 08:46:41.667 [http-nio-8443-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 18 ms
+2022-07-03 08:46:41.697 [http-nio-8443-exec-1] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-03 08:46:42.064 [http-nio-8443-exec-1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2022-07-03 08:46:42.691 [http-nio-8443-exec-1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Start completed.
+2022-07-03 08:48:00.893 [http-nio-8443-exec-3] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-03 08:48:01.257 [http-nio-8443-exec-3] INFO  io.lettuce.core.EpollProvider -
+				Starting without optional epoll library
+2022-07-03 08:48:01.260 [http-nio-8443-exec-3] INFO  io.lettuce.core.KqueueProvider -
+				Starting without optional kqueue library
+2022-07-03 08:50:45.758 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-03 08:50:45.762 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2022-07-03 08:50:45.774 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.
+2022-07-03 13:05:29.803 [restartedMain] INFO  com.max.back.BackApplication -
+				Starting BackApplication on LAPTOP-1GNNC3O9 with PID 2980 (C:\eclipse-workspace\springbootapi\target\classes started by chenh in C:\eclipse-workspace\springbootapi)
+2022-07-03 13:05:29.814 [restartedMain] INFO  com.max.back.BackApplication -
+				The following profiles are active: test
+2022-07-03 13:05:29.994 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-03 13:05:29.994 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-03 13:05:33.902 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 13:05:33.904 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 13:05:34.182 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 265ms. Found 0 repository interfaces.
+2022-07-03 13:05:34.248 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 13:05:34.258 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 13:05:34.450 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 162ms. Found 0 repository interfaces.
+2022-07-03 13:05:35.825 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0f04ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 13:05:35.973 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.max.back.common.config.RedisConfig$$EnhancerBySpringCGLIB$$cb637c54] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 13:05:37.223 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8443 (http)
+2022-07-03 13:05:37.274 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8443"]
+2022-07-03 13:05:37.305 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2022-07-03 13:05:37.306 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.24]
+2022-07-03 13:05:38.041 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring embedded WebApplicationContext
+2022-07-03 13:05:38.041 [restartedMain] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 8046 ms
+2022-07-03 13:05:41.656 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-07-03 13:05:42.347 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-03 13:05:42.630 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2022-07-03 13:05:44.360 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2022-07-03 13:05:44.458 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2022-07-03 13:05:44.603 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2022-07-03 13:05:45.747 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8443"]
+2022-07-03 13:05:45.865 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8443 (http) with context path '/mystu'
+2022-07-03 13:05:45.886 [restartedMain] INFO  com.max.back.BackApplication -
+				Started BackApplication in 18.23 seconds (JVM running for 21.787)
+2022-07-03 13:07:41.373 [http-nio-8443-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-03 13:07:41.374 [http-nio-8443-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2022-07-03 13:07:41.387 [http-nio-8443-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 13 ms
+2022-07-03 13:07:41.413 [http-nio-8443-exec-3] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-03 13:07:41.445 [http-nio-8443-exec-4] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-03 13:07:41.781 [http-nio-8443-exec-4] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2022-07-03 13:07:42.495 [http-nio-8443-exec-4] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Start completed.
+2022-07-03 13:07:43.209 [http-nio-8443-exec-4] INFO  io.lettuce.core.EpollProvider -
+				Starting without optional epoll library
+2022-07-03 13:07:43.213 [http-nio-8443-exec-4] INFO  io.lettuce.core.KqueueProvider -
+				Starting without optional kqueue library
+2022-07-03 13:38:52.622 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-03 13:38:52.626 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2022-07-03 13:38:52.636 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.
+2022-07-03 15:02:46.272 [restartedMain] INFO  com.max.back.BackApplication -
+				Starting BackApplication on LAPTOP-1GNNC3O9 with PID 4180 (C:\eclipse-workspace\springbootapi\target\classes started by chenh in C:\eclipse-workspace\springbootapi)
+2022-07-03 15:02:46.277 [restartedMain] INFO  com.max.back.BackApplication -
+				The following profiles are active: test
+2022-07-03 15:02:46.390 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-03 15:02:46.391 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-03 15:02:50.063 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 15:02:50.065 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 15:02:50.201 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 128ms. Found 0 repository interfaces.
+2022-07-03 15:02:50.232 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-03 15:02:50.234 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-03 15:02:50.354 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 102ms. Found 0 repository interfaces.
+2022-07-03 15:02:51.179 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a57f2d8a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 15:02:51.233 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.max.back.common.config.RedisConfig$$EnhancerBySpringCGLIB$$62d3a533] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-03 15:02:51.936 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8443 (http)
+2022-07-03 15:02:51.968 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8443"]
+2022-07-03 15:02:51.992 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2022-07-03 15:02:51.992 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.24]
+2022-07-03 15:02:52.551 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring embedded WebApplicationContext
+2022-07-03 15:02:52.552 [restartedMain] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 6160 ms
+2022-07-03 15:02:54.654 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-07-03 15:02:54.954 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-03 15:02:55.044 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2022-07-03 15:02:56.026 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2022-07-03 15:02:56.071 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2022-07-03 15:02:56.126 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2022-07-03 15:02:56.680 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8443"]
+2022-07-03 15:02:56.764 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8443 (http) with context path '/mystu'
+2022-07-03 15:02:56.772 [restartedMain] INFO  com.max.back.BackApplication -
+				Started BackApplication in 12.003 seconds (JVM running for 14.892)
+2022-07-03 15:03:11.139 [http-nio-8443-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-03 15:03:11.140 [http-nio-8443-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2022-07-03 15:03:11.156 [http-nio-8443-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 16 ms
+2022-07-03 15:03:11.186 [http-nio-8443-exec-1] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-03 15:03:11.219 [http-nio-8443-exec-2] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-03 15:03:11.547 [http-nio-8443-exec-2] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2022-07-03 15:03:12.171 [http-nio-8443-exec-2] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Start completed.
+2022-07-03 15:03:12.678 [http-nio-8443-exec-2] INFO  io.lettuce.core.EpollProvider -
+				Starting without optional epoll library
+2022-07-03 15:03:12.682 [http-nio-8443-exec-2] INFO  io.lettuce.core.KqueueProvider -
+				Starting without optional kqueue library
+2022-07-03 15:03:13.452 [http-nio-8443-exec-3] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bcodename/getcodelistis start
+2022-07-03 15:03:13.455 [http-nio-8443-exec-4] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bschool/getallscllistis start
+2022-07-03 15:03:13.460 [http-nio-8443-exec-5] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bcodename/getcodelistis start
+2022-07-03 15:03:21.838 [http-nio-8443-exec-6] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bstudent/getstudentpagerlistis start
+2022-07-03 15:03:21.845 [http-nio-8443-exec-7] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bstudent/getstudentpagerlistis start
+2022-07-03 15:05:19.656 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-03 15:05:19.661 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2022-07-03 15:05:19.671 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.

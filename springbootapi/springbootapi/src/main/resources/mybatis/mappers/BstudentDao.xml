@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.max.back.demo.dao.BstudentDao">
+    <!--<select id="getmstu" resultType="Bschool">
+        SELECT * FROM bschool
+    </select>-->
+    <select id="getmstu" resultType="com.max.back.demo.entity.Bstudent">
+
+    </select>
+    <select id="selectByCond" resultType="java.util.Map">
+        SELECT
+        bstudent.id,
+        bstudent.stucode,
+        bstudent.stuname,
+        bstudent.stuschid,
+        bschool.schoolname,
+        bstudent.stuage,
+        bstudent.stubrithday,
+        bstudent.codenameid,
+        bcodename.name
+        FROM bstudent
+        INNER JOIN bschool ON bstudent.stuschid = bschool.id
+        INNER JOIN bcodename ON bstudent.codenameid = bcodename.id
+        WHERE 1=1
+        <if test='stuName != null and stuName != "" '>
+            AND stuname LIKE CONCAT('%',#{stuName},'%')
+        </if>
+        <if test='schId != null and schId != "" '>
+            AND stuschid = #{schId}
+        </if>
+        <if test='sexCode != null and sexCode != "" '>
+            AND codenameid = #{sexCode}
+        </if>
+        AND is_delete!=1
+        ORDER BY bstudent.stucode
+    </select>
+    <select id="selectMaxStuCode" resultType="java.util.Map">
+        SELECT MAX(stucode) AS maxstucode
+        FROM bstudent WHERE is_delete!=1
+    </select>
+</mapper>
