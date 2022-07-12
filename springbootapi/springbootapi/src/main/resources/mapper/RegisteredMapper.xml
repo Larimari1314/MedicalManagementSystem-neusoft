@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.max.back.neusoft.mapper.RegisteredMapper">
+
+    <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.Registered">
+            <id property="id" column="r_id" jdbcType="VARCHAR"/>
+            <result property="name" column="r_name" jdbcType="CHAR"/>
+            <result property="price" column="r_price" jdbcType="INTEGER"/>
+            <result property="version" column="r_version" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        r_id,r_name,r_price,
+        r_version
+    </sql>
+</mapper>

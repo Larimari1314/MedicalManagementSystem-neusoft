@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.max.back.neusoft.mapper.DoctorMapper">
+
+    <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.Doctor">
+            <id property="id" column="d_id" jdbcType="VARCHAR"/>
+            <result property="name" column="d_name" jdbcType="VARCHAR"/>
+            <result property="age" column="d_age" jdbcType="INTEGER"/>
+            <result property="sex" column="d_sex" jdbcType="CHAR"/>
+            <result property="schedule" column="d_schedule" jdbcType="CHAR"/>
+            <result property="department" column="d_department" jdbcType="VARCHAR"/>
+            <result property="regis" column="d_regis" jdbcType="VARCHAR"/>
+            <result property="delete" column="d_delete" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        d_id,d_name,d_age,
+        d_sex,d_schedule,d_department,
+        d_regis,d_delete
+    </sql>
+</mapper>
