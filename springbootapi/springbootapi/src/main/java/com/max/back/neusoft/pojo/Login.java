@@ -17,27 +17,31 @@ public class Login implements Serializable {
     /**
      * 登录id
      */
-    @TableId
+    @TableId("l_id")
     private String id;
 
     /**
      * 头像
      */
+    @TableField("l_avatar")
     private String avatar;
 
     /**
      * 用户名
      */
+    @TableField("l_userName")
     private String username;
 
     /**
      * 登陆密码
      */
+    @TableField("l_password")
     private String password;
 
     /**
      * 权限id
      */
+    @TableField("l_permission")
     private Integer permission;
 
     @TableField(exist = false)

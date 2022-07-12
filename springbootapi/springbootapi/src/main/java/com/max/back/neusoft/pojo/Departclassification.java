@@ -17,12 +17,13 @@ public class Departclassification implements Serializable {
     /**
      * 科室id
      */
-    @TableId
+    @TableId(value = "c_id")
     private String id;
 
     /**
      * 科室类别名称
      */
+    @TableField("c_name")
     private String name;
 
     @TableField(exist = false)

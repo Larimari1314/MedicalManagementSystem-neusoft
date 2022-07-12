@@ -17,27 +17,31 @@ public class Department implements Serializable {
     /**
      * 科室编码
      */
-    @TableId
+    @TableId(value = "d_id")
     private String id;
 
     /**
      * 科室图片
      */
+    @TableField("d_avatar")
     private String avatar;
 
     /**
      * 科室分类
      */
+    @TableField("d_classification")
     private String classification;
 
     /**
      * 科室名称
      */
+    @TableField("d_name")
     private String name;
 
     /**
      * 科室介绍
      */
+    @TableField("d_introduce")
     private String introduce;
 
     @TableField(exist = false)

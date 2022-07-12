@@ -3,7 +3,7 @@ package com.max.back.neusoft.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.max.back.neusoft.pojo.Department;
 import com.max.back.neusoft.service.DepartmentService;
-import com.max.back.neusoft.mapper.DepartmentMapper;
+import com.max.back.neusoft.dao.DepartmentMapper;
 import org.springframework.stereotype.Service;
 
 /**

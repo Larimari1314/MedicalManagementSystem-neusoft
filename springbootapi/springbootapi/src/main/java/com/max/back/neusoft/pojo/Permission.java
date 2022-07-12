@@ -17,17 +17,19 @@ public class Permission implements Serializable {
     /**
      * 权限id
      */
-    @TableId
+    @TableId(value = "p_id")
     private Integer id;
 
     /**
      * 访问url
      */
+    @TableField("p_url")
     private String url;
 
     /**
      * 访问boolean
      */
+    @TableField("p_permission")
     private Integer permission;
 
     @TableField(exist = false)

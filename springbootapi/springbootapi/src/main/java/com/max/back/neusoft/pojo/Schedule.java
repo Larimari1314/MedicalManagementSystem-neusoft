@@ -18,22 +18,25 @@ public class Schedule implements Serializable {
     /**
      * 排班表id
      */
-    @TableId
+    @TableId(value = "s_id")
     private String id;
 
     /**
      * 排班名称
      */
+    @TableField("s_name")
     private String name;
 
     /**
      * 起始时间
      */
+    @TableField("s_start")
     private Date start;
 
     /**
      * 结束时间
      */
+    @TableField("s_end")
     private Date end;
 
     @TableField(exist = false)

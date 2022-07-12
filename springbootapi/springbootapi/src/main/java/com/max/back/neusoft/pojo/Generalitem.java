@@ -17,11 +17,13 @@ public class Generalitem implements Serializable {
     /**
      * 编码
      */
+    @TableField("coding")
     private String coding;
 
     /**
      * 值
      */
+    @TableField("value")
     private String value;
 
     @TableField(exist = false)

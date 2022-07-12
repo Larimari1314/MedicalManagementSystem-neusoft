@@ -17,12 +17,13 @@ public class Drugspecification implements Serializable {
     /**
      * 药品规格id
      */
-    @TableId
+    @TableId(value = "s_id")
     private String id;
 
     /**
      * 规格名称
      */
+    @TableField("s_name")
     private String name;
 
     @TableField(exist = false)

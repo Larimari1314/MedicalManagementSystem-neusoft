@@ -17,22 +17,25 @@ public class Registered implements Serializable {
     /**
      * 挂号级别id
      */
-    @TableId
+    @TableId(value = "r_id")
     private String id;
 
     /**
      * 挂号级别
      */
+    @TableField("r_name")
     private String name;
 
     /**
      * 挂号金额
      */
+    @TableField("r_price")
     private Integer price;
 
     /**
      * 乐观锁
      */
+    @TableField("r_version")
     private Integer version;
 
     @TableField(exist = false)

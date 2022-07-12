@@ -14,7 +14,6 @@
     <option name="method" value="delete" />
     <option name="methodType" value="POST" />
     <option name="module" value="springbootapi" />
-    <option name="originUrl" value="/api/bstudent/delete" />
     <option name="url" value="/api/bstudent/delete" />
   </component>
 </project>
