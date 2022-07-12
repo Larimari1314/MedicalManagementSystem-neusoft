@@ -27,14 +27,12 @@ public class AuthInterceptor implements HandlerInterceptor {
 		if (!(handler instanceof HandlerMethod)) {
 			return true;
 		}
-		
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         Annotation authIgrone =  handlerMethod.getMethodAnnotation(AuthIgrone.class);
        //不需要认证
         if(authIgrone != null) {
         	return true;
         }
-        
         boolean res = jwtHttpUtil.validate(request);
 		//权限不足
 		if(!res) {

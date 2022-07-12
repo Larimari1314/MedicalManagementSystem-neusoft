@@ -1934,3 +1934,103 @@
 				HikariPool-1 - Shutdown initiated...
 2022-07-11 14:15:33.966 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource -
 				HikariPool-1 - Shutdown completed.
+2022-07-11 15:18:18.938 [restartedMain] INFO  com.max.back.BackApplication -
+				Starting BackApplication on LAPTOP-IMQHF2DI with PID 21392 (started by 86155 in E:\我的桌面\donruan\neusoft-java\springbootapi\springbootapi)
+2022-07-11 15:18:18.940 [restartedMain] INFO  com.max.back.BackApplication -
+				The following profiles are active: test
+2022-07-11 15:18:18.974 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-11 15:18:18.974 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-11 15:18:19.822 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-11 15:18:19.823 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-11 15:18:19.846 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2022-07-11 15:18:19.857 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-11 15:18:19.858 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-11 15:18:19.871 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 6ms. Found 0 repository interfaces.
+2022-07-11 15:18:20.178 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$75b82475] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-11 15:18:20.198 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.max.back.common.config.RedisConfig$$EnhancerBySpringCGLIB$$330c9c1e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-11 15:18:20.527 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8000 (http)
+2022-07-11 15:18:20.542 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8000"]
+2022-07-11 15:18:20.550 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2022-07-11 15:18:20.550 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.24]
+2022-07-11 15:18:21.002 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring embedded WebApplicationContext
+2022-07-11 15:18:21.002 [restartedMain] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 2028 ms
+2022-07-11 15:18:21.933 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-07-11 15:18:22.066 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-11 15:18:22.110 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2022-07-11 15:18:22.385 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2022-07-11 15:18:22.404 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2022-07-11 15:18:22.432 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2022-07-11 15:18:22.623 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8000"]
+2022-07-11 15:18:22.642 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8000 (http) with context path '/mystu'
+2022-07-11 15:18:22.645 [restartedMain] INFO  com.max.back.BackApplication -
+				Started BackApplication in 4.172 seconds (JVM running for 5.536)
+2022-07-11 15:18:34.614 [http-nio-8000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/mystu] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-11 15:18:34.614 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2022-07-11 15:18:34.621 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 7 ms
+2022-07-11 15:18:34.644 [http-nio-8000-exec-1] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-11 15:18:34.671 [http-nio-8000-exec-2] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/authentication/loginis start
+2022-07-11 15:18:34.833 [http-nio-8000-exec-2] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2022-07-11 15:18:35.222 [http-nio-8000-exec-2] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Start completed.
+2022-07-11 15:18:35.795 [http-nio-8000-exec-2] INFO  io.lettuce.core.EpollProvider -
+				Starting without optional epoll library
+2022-07-11 15:18:35.795 [http-nio-8000-exec-2] INFO  io.lettuce.core.KqueueProvider -
+				Starting without optional kqueue library
+2022-07-11 15:19:15.750 [http-nio-8000-exec-7] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bstudent/getstudentpagerlistis start
+2022-07-11 15:19:15.761 [http-nio-8000-exec-6] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bstudent/getstudentpagerlistis start
+2022-07-11 15:19:15.950 [http-nio-8000-exec-9] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bschool/getallscllistis start
+2022-07-11 15:19:15.951 [http-nio-8000-exec-10] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bcodename/getcodelistis start
+2022-07-11 15:19:15.961 [http-nio-8000-exec-1] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bcodename/getcodelistis start
+2022-07-11 15:21:15.218 [http-nio-8000-exec-7] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bstudent/getstudentpagerlistis start
+2022-07-11 15:21:15.328 [http-nio-8000-exec-10] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bcodename/getcodelistis start
+2022-07-11 15:21:15.332 [http-nio-8000-exec-1] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bschool/getallscllistis start
+2022-07-11 15:26:19.115 [http-nio-8000-exec-5] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bstudent/getstudentpagerlistis start
+2022-07-11 15:26:19.303 [http-nio-8000-exec-3] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bcodename/getcodelistis start
+2022-07-11 15:26:19.304 [http-nio-8000-exec-8] INFO  c.m.b.common.sercurity.intercept.AuthInterceptor -
+				/mystu/api/bschool/getallscllistis start
+2022-07-11 15:54:26.012 [Thread-17] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-11 15:54:26.019 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2022-07-11 15:54:26.029 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.

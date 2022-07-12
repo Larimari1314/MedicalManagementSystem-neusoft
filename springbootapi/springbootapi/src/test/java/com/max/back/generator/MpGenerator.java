@@ -17,7 +17,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 //@SpringBootTest
 public class MpGenerator {
 	private static String dirverName = "com.mysql.cj.jdbc.Driver";
-	private static String url = " jdbc:mysql://123.57.20.244:3306/mystudent?serverTimezone=UTC";
+	private static String url = " jdbc:mysql://123.57.20.244:3306/neusoft?serverTimezone=UTC";
 	private static String user = "root";
 	private static String password = "pcW0637dM3078VrhOK922w6cVV0I0D";
 
