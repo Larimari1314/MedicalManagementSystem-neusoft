@@ -6,6 +6,16 @@
         <el-form-item>
           <el-input v-model="filters.name" placeholder="姓名"></el-input>
         </el-form-item>
+        <el-form-item label="药品规格">
+          <el-select v-model="filters.spe" placeholder="请选择">
+            <el-option
+                v-for="item in Specification"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id">
+            </el-option>
+          </el-select>
+        </el-form-item>
         <el-form-item>
           <el-button type="primary" v-on:click="getUsers">查询</el-button>
         </el-form-item>
@@ -126,14 +136,16 @@
 <script>
 import util from '../../common/js/util'
 //import NProgress from 'nprogress'
-import { getUserListPage, removeUser, batchRemoveUser, editUser, addUser } from '../../api/api';
+import {getUserListPage, removeUser, batchRemoveUser, editUser, addUser, findAllSpecification} from '../../api/api';
 
 export default {
   data() {
     return {
       filters: {
-        name: ''
+        name: '',
+        spe:''
       },
+      Specification:[],
       users: [],
       total: 0,
       page: 1,
@@ -188,7 +200,8 @@ export default {
     getUsers() {
       let para = {
         page: this.page,
-        name: this.filters.name
+        name: this.filters.name,
+        specification:this.filters.spe
       };
       this.listLoading = true;
       //NProgress.start();
@@ -308,10 +321,16 @@ export default {
       }).catch(() => {
 
       });
+    },
+    getSpecification(){
+      findAllSpecification().then((res)=>{
+        this.Specification=res.data
+      })
     }
   },
   mounted() {
     this.getUsers();
+    this.getSpecification();
   }
 }
 

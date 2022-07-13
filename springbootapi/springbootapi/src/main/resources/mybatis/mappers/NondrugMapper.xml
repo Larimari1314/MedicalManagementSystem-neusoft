@@ -15,10 +15,5 @@
             <result property="enable" column="d_enable" jdbcType="INTEGER"/>
             <result property="version" column="d_version" jdbcType="INTEGER"/>
     </resultMap>
-
-    <sql id="Base_Column_List">
-        d_id,d_cover,d_name,
-        d_specification,d_number,d_price,
-        d_delete,d_enable,d_version
-    </sql>
+    
 </mapper>

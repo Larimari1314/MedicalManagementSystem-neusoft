@@ -45,5 +45,6 @@ export const updateRegisteredPrice = params => { return axios.post(`${parameter}
 //根据挂号级别查询医生
 export const findDoctorByRegistration = params => { return axios.post(`${parameter}/doctor/findByRegistered`,  params ) };
 
+export const findAllSpecification = params => { return axios.get(`${parameter}/nondrug/findAllSpecification`)};
 
 
