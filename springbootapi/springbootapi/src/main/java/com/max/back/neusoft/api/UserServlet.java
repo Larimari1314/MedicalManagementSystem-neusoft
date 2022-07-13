@@ -59,7 +59,6 @@ public class UserServlet {
     public String updateUser(@RequestBody UserUpdateFrom userUpdateFrom) throws IOException {
         System.out.println(userUpdateFrom);
         if (multipartFile != null) {
-            System.out.println("dedededed");
             String path = System.getProperty("user.dir");
             File newFile = new File(path + "\\src\\main\\webapp\\Img\\user\\" + userUpdateFrom.getId() + ".jpg");
             multipartFile.transferTo(newFile);

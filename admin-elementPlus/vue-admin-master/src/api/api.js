@@ -40,6 +40,10 @@ export const addUser = params => { return axios.post(`${parameter}/user/addUser`
 export const templateDownloadUser = params => { return axios.post(`${parameter}/user/dataTemplateDownload`, "", {responseType: 'blob'})};
 //导出全部数据
 export const exportDataUser = params => { return axios.post(`${parameter}/user/exportData`, "", {responseType: 'blob'})};
-
+//导入数据
 export const analyseFileUser = params => { return axios.get(`${parameter}/user/analyseFile`)};
+//显示全部挂号类型
+export const findRegistered = params => { return axios.post(`${parameter}/registered/findByName`,  params ) };
+//跟新价格
+export const updateRegisteredPrice = params => { return axios.post(`${parameter}/registered/updatePrice`,  params ) };
 

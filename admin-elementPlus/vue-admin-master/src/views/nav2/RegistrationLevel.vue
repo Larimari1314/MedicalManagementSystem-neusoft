@@ -7,28 +7,25 @@
           <el-input v-model="filters.name" placeholder="挂号名称"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" v-on:click="getUsers">查询</el-button>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="handleAdd">新增</el-button>
+          <el-button type="primary" v-on:click="getRegistered">查询</el-button>
         </el-form-item>
       </el-form>
     </el-col>
 
     <!--列表-->
-    <el-table :data="users" highlight-current-row v-loading="listLoading" @selection-change="selsChange" style="width: 100%;">
+    <el-table :data="registereds" highlight-current-row v-loading="listLoading"  style="width: 100%;">
       <el-table-column type="index" width="60">
       </el-table-column>
-      <el-table-column prop="name" label="挂号id" width="280" sortable>
+      <el-table-column prop="id" label="挂号级别id" width="280" sortable>
       </el-table-column>
-      <el-table-column prop="sex" label="挂号级别" width="300" :formatter="formatSex" sortable>
+      <el-table-column prop="name" label="挂号级别" width="300"  sortable>
       </el-table-column>
-      <el-table-column prop="age" label="挂号费用" width="300" sortable>
+      <el-table-column prop="price" label="挂号费用" width="300" sortable>
       </el-table-column>
       <el-table-column label="操作" width="300">
         <template scope="scope">
           <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-          <el-button size="small" @click="handleEdit(scope.$index, scope.row)">查看所属医师</el-button>
+          <el-button size="small" @click="handleLook(scope.$index, scope.row)">查看所属医师</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -42,23 +39,14 @@
     <!--编辑界面-->
     <el-dialog title="编辑" v-model="editFormVisible" :close-on-click-modal="false">
       <el-form :model="editForm" label-width="80px" :rules="editFormRules" ref="editForm">
-        <el-form-item label="科室编码" prop="name">
-          <el-input v-model="editForm.name" auto-complete="off"></el-input>
+        <el-form-item label="挂号名称" prop="name">
+          <el-input v-model="editForm.name" auto-complete="off" disabled></el-input>
         </el-form-item>
-        <el-form-item label="科室照片">
-          <el-radio-group v-model="editForm.sex">
-            <el-radio class="radio" :label="1">男</el-radio>
-            <el-radio class="radio" :label="0">女</el-radio>
-          </el-radio-group>
+        <el-form-item label="挂号级别id">
+          <el-input v-model="editForm.id" disabled></el-input>
         </el-form-item>
-        <el-form-item label="科室分类">
-          <el-input-number v-model="editForm.age" :min="0" :max="200"></el-input-number>
-        </el-form-item>
-        <el-form-item label="科室类别">
-          <el-date-picker type="date" placeholder="选择日期" v-model="editForm.birth"></el-date-picker>
-        </el-form-item>
-        <el-form-item label="科室名称">
-          <el-input type="textarea" v-model="editForm.addr"></el-input>
+        <el-form-item label="挂号费用">
+          <el-input placeholder="选择日期" v-model="editForm.price" type="number"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -66,46 +54,51 @@
         <el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
       </div>
     </el-dialog>
+    <el-dialog title="查看" v-model="lookAllVisible" :close-on-click-modal="false">
+      <el-col :span="24" class="toolbar" style="padding-bottom: 0px;">
+        <el-form :inline="true" :model="doctor">
+          <el-form-item>
+            <el-input v-model="doctor.name" placeholder="医生名称"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" v-on:click="getDoctorList">查询</el-button>
+          </el-form-item>
+        </el-form>
+      </el-col>
 
-    <!--新增界面-->
-    <el-dialog title="新增" v-model="addFormVisible" :close-on-click-modal="false">
-      <el-form :model="addForm" label-width="80px" :rules="addFormRules" ref="addForm">
-        <el-form-item label="科室编码" prop="name">
-          <el-input v-model="addForm.name" auto-complete="off"></el-input>
-        </el-form-item>
-        <el-form-item label="科室分类">
-          <el-radio-group v-model="addForm.sex">
-            <el-radio class="radio" :label="1">男</el-radio>
-            <el-radio class="radio" :label="0">女</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="科室图片">
-          <el-input-number v-model="addForm.age" :min="0" :max="200"></el-input-number>
-        </el-form-item>
-        <el-form-item label="科室列别">
-          <el-date-picker type="date" placeholder="选择日期" v-model="addForm.birth"></el-date-picker>
-        </el-form-item>
-        <el-form-item label="科室名称">
-          <el-input type="textarea" v-model="addForm.addr"></el-input>
-        </el-form-item>
-      </el-form>
-      <div slot="footer" class="dialog-footer">
-        <el-button @click.native="addFormVisible = false">取消</el-button>
-        <el-button type="primary" @click.native="addSubmit" :loading="addLoading">提交</el-button>
-      </div>
+      <!--列表-->
+      <el-table :data="doctorList" highlight-current-row v-loading="listLoading"  style="width: 100%;">
+        <el-table-column prop="id" label="医生姓名" width="120" sortable>
+        </el-table-column>
+        <el-table-column prop="name" label="医生性别" width="120"  sortable>
+        </el-table-column>
+        <el-table-column prop="price" label="医生年龄" width="120" sortable>
+        </el-table-column>
+        <el-table-column prop="price" label="医生当前班次" width="180" sortable>
+        </el-table-column>
+        <el-table-column prop="price" label="医生所在科室" width="180" sortable>
+        </el-table-column>
+      </el-table>
+      <!--工具条-->
+      <el-col :span="24" class="toolbar">
+        <el-pagination layout="prev, pager, next" @current-change="handleCurrentChangeDoctor" :page-size="20" :total="doctorTotal" style="float:right;">
+        </el-pagination>
+      </el-col>
     </el-dialog>
   </section>
 </template>
 
 <script>
-import util from '../../common/js/util'
-//import NProgress from 'nprogress'
-import { getUserListPage, removeUser, batchRemoveUser, editUser, addUser } from '../../api/api';
+import {
+  findRegistered,
+  updateRegisteredPrice
+} from '../../api/api';
 
 export default {
   data() {
     return {
-      category:'',
+      doctorTotal:0,
+      lookAllVisible:false,
       options: [{
         value: '选项1',
         label: '黄金糕'
@@ -113,93 +106,48 @@ export default {
         value: '选项2',
         label: '双皮奶'
       }],
+      doctor:{
+        name:''
+      },
       filters: {
         name: ''
       },
-      users: [],
+      doctorList:[],
+      registereds: [],
       total: 0,
       page: 1,
       listLoading: false,
-      sels: [],//列表选中列
-
       editFormVisible: false,//编辑界面是否显示
       editLoading: false,
-      editFormRules: {
-        name: [
-          { required: true, message: '请输入姓名', trigger: 'blur' }
-        ]
-      },
       //编辑界面数据
       editForm: {
         id: 0,
         name: '',
-        sex: -1,
-        age: 0,
-        birth: '',
-        addr: ''
+        price: '',
+        version:-1
       },
-
-      addFormVisible: false,//新增界面是否显示
-      addLoading: false,
-      addFormRules: {
-        name: [
-          { required: true, message: '请输入姓名', trigger: 'blur' }
-        ]
-      },
-      //新增界面数据
-      addForm: {
-        name: '',
-        sex: -1,
-        age: 0,
-        birth: '',
-        addr: ''
-      }
-
     }
   },
   methods: {
-    //性别显示转换
-    formatSex: function (row, column) {
-      return row.sex == 1 ? '男' : row.sex == 0 ? '女' : '未知';
-    },
     handleCurrentChange(val) {
       this.page = val;
       this.getUsers();
     },
+    handleCurrentChangeDoctor(val) {
+      this.page = val;
+      this.getUsers();
+    },
     //获取用户列表
-    getUsers() {
+    getRegistered() {
       let para = {
         page: this.page,
         name: this.filters.name
       };
-      this.listLoading = true;
-      //NProgress.start();
-      getUserListPage(para).then((res) => {
-        this.total = res.data.total;
-        this.users = res.data.users;
-        this.listLoading = false;
-        //NProgress.done();
-      });
-    },
-    //删除
-    handleDel: function (index, row) {
-      this.$confirm('确认删除该记录吗?', '提示', {
-        type: 'warning'
-      }).then(() => {
-        this.listLoading = true;
-        //NProgress.start();
-        let para = { id: row.id };
-        removeUser(para).then((res) => {
+      findRegistered(para).then((res) => {
+        if(res.data.msgId=='C200'){
+          this.registereds=res.data.result.list
           this.listLoading = false;
-          //NProgress.done();
-          this.$message({
-            message: '删除成功',
-            type: 'success'
-          });
-          this.getUsers();
-        });
-      }).catch(() => {
-
+        }
       });
     },
     //显示编辑界面
@@ -226,74 +174,40 @@ export default {
             this.editLoading = true;
             //NProgress.start();
             let para = Object.assign({}, this.editForm);
-            para.birth = (!para.birth || para.birth == '') ? '' : util.formatDate.format(new Date(para.birth), 'yyyy-MM-dd');
-            editUser(para).then((res) => {
-              this.editLoading = false;
-              //NProgress.done();
-              this.$message({
-                message: '提交成功',
-                type: 'success'
-              });
-              this.$refs['editForm'].resetFields();
-              this.editFormVisible = false;
-              this.getUsers();
-            });
+            updateRegisteredPrice(para).then((res)=>{
+              if(res.data.msgId=='C200'){
+                this.editLoading = false;
+                this.$notify.success({
+                  title: '成功',
+                  message: '修改成功'
+                });
+                this.$refs['editForm'].resetFields();
+                this.editFormVisible = false;
+                this.getRegistered();
+              }else {
+                this.editLoading = false;
+                this.$notify.error({
+                  title: '错误',
+                  message: '请尝试刷新界面再进行修改'
+                });
+                this.$refs['editForm'].resetFields();
+                this.editFormVisible = false;
+              }
+            })
           });
         }
       });
     },
-    //新增
-    addSubmit: function () {
-      this.$refs.addForm.validate((valid) => {
-        if (valid) {
-          this.$confirm('确认提交吗？', '提示', {}).then(() => {
-            this.addLoading = true;
-            //NProgress.start();
-            let para = Object.assign({}, this.addForm);
-            para.birth = (!para.birth || para.birth == '') ? '' : util.formatDate.format(new Date(para.birth), 'yyyy-MM-dd');
-            addUser(para).then((res) => {
-              this.addLoading = false;
-              //NProgress.done();
-              this.$message({
-                message: '提交成功',
-                type: 'success'
-              });
-              this.$refs['addForm'].resetFields();
-              this.addFormVisible = false;
-              this.getUsers();
-            });
-          });
-        }
-      });
-    },
-    selsChange: function (sels) {
-      this.sels = sels;
-    },
-    //批量删除
-    batchRemove: function () {
-      var ids = this.sels.map(item => item.id).toString();
-      this.$confirm('确认删除选中记录吗？', '提示', {
-        type: 'warning'
-      }).then(() => {
-        this.listLoading = true;
-        //NProgress.start();
-        let para = { ids: ids };
-        batchRemoveUser(para).then((res) => {
-          this.listLoading = false;
-          //NProgress.done();
-          this.$message({
-            message: '删除成功',
-            type: 'success'
-          });
-          this.getUsers();
-        });
-      }).catch(() => {
+    handleLook(){
+      this.lookAllVisible=true;
 
-      });
+    },
+    getDoctorList(){
+
     }
   },
   mounted() {
-    this.getUsers();
+    this.getRegistered();
   }
 }
 

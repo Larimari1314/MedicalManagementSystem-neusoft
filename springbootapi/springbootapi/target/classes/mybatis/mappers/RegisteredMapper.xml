@@ -5,14 +5,30 @@
 <mapper namespace="com.max.back.neusoft.dao.RegisteredMapper">
 
     <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.Registered">
-            <id property="id" column="r_id" jdbcType="VARCHAR"/>
-            <result property="name" column="r_name" jdbcType="CHAR"/>
-            <result property="price" column="r_price" jdbcType="INTEGER"/>
-            <result property="version" column="r_version" jdbcType="INTEGER"/>
+        <id property="id" column="r_id" jdbcType="VARCHAR"/>
+        <result property="name" column="r_name" jdbcType="CHAR"/>
+        <result property="price" column="r_price" jdbcType="INTEGER"/>
+        <result property="version" column="r_version" jdbcType="INTEGER"/>
     </resultMap>
-
-    <sql id="Base_Column_List">
-        r_id,r_name,r_price,
-        r_version
-    </sql>
+    <select id="findAll" resultType="java.util.Map" parameterType="com.max.back.neusoft.form.RegisteredFrom">
+        SELECT
+        n_registered.r_id id,
+        n_generalItem.value name,
+        n_registered.r_price price,
+        n_registered.r_version version
+        FROM n_registered
+        INNER JOIN n_generalItem ON n_registered.r_name = n_generalItem.coding
+        WHERE 1=1
+        <if test='name != null and name != "" '>
+            AND value LIKE CONCAT('%',#{name},'%')
+        </if>
+        ORDER BY n_registered.r_id
+    </select>
+    <update id="updateVersionInteger" parameterType="registered">
+        UPDATE n_registered
+        SET r_price=#{price},
+            r_version=r_version+1
+        WHERE r_id = #{id}
+          AND r_version = #{version}
+    </update>
 </mapper>

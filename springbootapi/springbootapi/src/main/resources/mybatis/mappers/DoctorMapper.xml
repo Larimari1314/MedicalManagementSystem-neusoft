@@ -15,9 +15,8 @@
             <result property="delete" column="d_delete" jdbcType="INTEGER"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        d_id,d_name,d_age,
-        d_sex,d_schedule,d_department,
-        d_regis,d_delete
-    </sql>
+
+    <select id="findByRegis" resultType="java.util.Map">
+        
+    </select>
 </mapper>
