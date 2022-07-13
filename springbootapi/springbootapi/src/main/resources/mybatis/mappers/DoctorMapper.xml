@@ -15,8 +15,22 @@
             <result property="delete" column="d_delete" jdbcType="INTEGER"/>
     </resultMap>
 
-
-    <select id="findByRegis" resultType="java.util.Map">
-        
+    <select id="findByRegis" resultType="java.util.Map" parameterType="com.max.back.neusoft.form.DoctorRegisteredFrom">
+            SELECT
+            n_doctor.d_id id,
+            n_doctor.d_name name,
+            n_doctor.d_age age,
+            n_generalItem.value sex,
+            n_department.d_name dname,
+            n_schedule.`s_name`sname
+            FROM n_doctor
+            INNER JOIN n_generalItem ON n_doctor.d_sex = n_generalItem.coding
+            INNER JOIN n_department ON n_doctor.d_department = n_department.d_id
+            INNER JOIN n_schedule ON n_doctor.d_schedule = n_schedule.s_id
+            WHERE 1=1
+            <if test='name != null and name != "" '>
+                AND n_doctor.d_name LIKE CONCAT('%',#{name},'%')
+            </if>  AND d_regis=#{regisId}
+            ORDER BY n_doctor.d_id
     </select>
 </mapper>

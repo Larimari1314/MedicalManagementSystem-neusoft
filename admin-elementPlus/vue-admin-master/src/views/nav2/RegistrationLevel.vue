@@ -16,16 +16,16 @@
     <el-table :data="registereds" highlight-current-row v-loading="listLoading"  style="width: 100%;">
       <el-table-column type="index" width="60">
       </el-table-column>
-      <el-table-column prop="id" label="挂号级别id" width="280" sortable>
+      <el-table-column prop="id" label="挂号级别id" width="280" >
       </el-table-column>
-      <el-table-column prop="name" label="挂号级别" width="300"  sortable>
+      <el-table-column prop="name" label="挂号级别" width="300"  >
       </el-table-column>
       <el-table-column prop="price" label="挂号费用" width="300" sortable>
       </el-table-column>
       <el-table-column label="操作" width="300">
         <template scope="scope">
           <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-          <el-button size="small" @click="handleLook(scope.$index, scope.row)">查看所属医师</el-button>
+          <el-button size="small" @click="handleLook(scope.$index, scope.row)" type="info">查看所属医师</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -38,7 +38,7 @@
 
     <!--编辑界面-->
     <el-dialog title="编辑" v-model="editFormVisible" :close-on-click-modal="false">
-      <el-form :model="editForm" label-width="80px" :rules="editFormRules" ref="editForm">
+      <el-form :model="editForm" label-width="80px"  ref="editForm">
         <el-form-item label="挂号名称" prop="name">
           <el-input v-model="editForm.name" auto-complete="off" disabled></el-input>
         </el-form-item>
@@ -68,20 +68,20 @@
 
       <!--列表-->
       <el-table :data="doctorList" highlight-current-row v-loading="listLoading"  style="width: 100%;">
-        <el-table-column prop="id" label="医生姓名" width="120" sortable>
+        <el-table-column prop="name" label="医生姓名" width="150" >
         </el-table-column>
-        <el-table-column prop="name" label="医生性别" width="120"  sortable>
+        <el-table-column prop="sex" label="医生性别" width="120"  >
         </el-table-column>
-        <el-table-column prop="price" label="医生年龄" width="120" sortable>
+        <el-table-column prop="age" label="医生年龄" width="120" sortable>
         </el-table-column>
-        <el-table-column prop="price" label="医生当前班次" width="180" sortable>
+        <el-table-column prop="sname" label="医生当前班次" width="150" >
         </el-table-column>
-        <el-table-column prop="price" label="医生所在科室" width="180" sortable>
+        <el-table-column prop="dname" label="医生所在科室" width="170" >
         </el-table-column>
       </el-table>
       <!--工具条-->
       <el-col :span="24" class="toolbar">
-        <el-pagination layout="prev, pager, next" @current-change="handleCurrentChangeDoctor" :page-size="20" :total="doctorTotal" style="float:right;">
+        <el-pagination layout="prev, pager, next" @current-change="handleCurrentChangeDoctor" :page-size="10" :total="doctorTotal" style="float:right;">
         </el-pagination>
       </el-col>
     </el-dialog>
@@ -90,6 +90,7 @@
 
 <script>
 import {
+  findDoctorByRegistration,
   findRegistered,
   updateRegisteredPrice
 } from '../../api/api';
@@ -97,6 +98,7 @@ import {
 export default {
   data() {
     return {
+      rowId:'',
       doctorTotal:0,
       lookAllVisible:false,
       options: [{
@@ -135,7 +137,7 @@ export default {
     },
     handleCurrentChangeDoctor(val) {
       this.page = val;
-      this.getUsers();
+      this.getDoctorList();
     },
     //获取用户列表
     getRegistered() {
@@ -198,12 +200,23 @@ export default {
         }
       });
     },
-    handleLook(){
+    handleLook: function (index, row) {
+      this.rowId=row.id
       this.lookAllVisible=true;
-
+      this.getDoctorList()
     },
     getDoctorList(){
-
+      let param={
+        "regisId":this.rowId,
+        "name":this.doctor.name,
+        "page":this.page
+      }
+      findDoctorByRegistration(param).then((res)=>{
+        if(res.data.msgId='C200'){
+          this.doctorList=res.data.result.list
+          this.doctorTotal=res.data.result.total
+        }
+      })
     }
   },
   mounted() {

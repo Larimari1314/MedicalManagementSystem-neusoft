@@ -1,5 +1,6 @@
 package com.max.back.neusoft.dao;
 
+import com.max.back.neusoft.form.DoctorRegisteredFrom;
 import com.max.back.neusoft.pojo.Doctor;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
@@ -16,7 +17,7 @@ import java.util.Map;
 */@Mapper
 @Repository
 public interface DoctorMapper extends BaseMapper<Doctor> {
-    public List<Map<String,Object>> findByRegis();
+    public List<Map<String,Object>> findByRegis(DoctorRegisteredFrom doctorRegisteredFrom);
 }
 
 
