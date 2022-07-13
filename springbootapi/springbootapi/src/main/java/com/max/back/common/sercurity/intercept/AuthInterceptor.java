@@ -14,6 +14,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.annotation.Annotation;
+/*
 
 @Component
 @Slf4j
@@ -44,3 +45,4 @@ public class AuthInterceptor implements HandlerInterceptor {
 		}
 	}
 }
+*/

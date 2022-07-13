@@ -1,5 +1,6 @@
 package com.max.back.neusoft.service;
 
+import com.max.back.neusoft.form.DepartmentFindFrom;
 import com.max.back.neusoft.pojo.Department;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface DepartmentService extends IService<Department> {
 
+    String findDepartment(DepartmentFindFrom departmentFindFrom);
 }

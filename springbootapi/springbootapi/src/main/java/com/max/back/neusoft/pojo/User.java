@@ -1,22 +1,20 @@
 package com.max.back.neusoft.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 
 /**
  * 
- * @TableName n_user
+ * 用户表
  */
 @TableName(value ="n_user")
 @Data
 public class User implements Serializable {
     /**
-     * 
+     * 用户id
      */
     @TableId(value = "u_id")
     private String id;
@@ -61,7 +59,8 @@ public class User implements Serializable {
      * 逻辑删除
      */
     @TableField("u_delete")
-    private Integer delete;
+    @TableLogic
+    private Integer deletes;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

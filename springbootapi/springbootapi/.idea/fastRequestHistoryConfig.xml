@@ -4,6 +4,183 @@
     <option name="historyList">
       <list>
         <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DepartmentServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="findDepartment" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;page&quot;: 1,&#10;  &quot;departmentClassification&quot;: &quot;&quot;,&#10;  &quot;name&quot;: &quot;&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.DepartmentServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;page&quot;: &quot;当前页码&quot;,&#10;  &quot;departmentClassification&quot;: &quot;科室类别&quot;,&#10;  &quot;name&quot;: &quot;搜索名字&quot;&#10;}" />
+              <option name="method" value="findDepartment" />
+              <option name="methodDescription" value="New Request" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/department/findDepartment" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/department/findDepartment" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/department/findDepartment&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 50&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;name&quot;:&quot;&quot;,&quot;page&quot;:1,&quot;departmentClassification&quot;:&quot;&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;endRow&quot;:5,&quot;hasNextPage&quot;:true,&quot;hasPreviousPage&quot;:false,&quot;isFirstPage&quot;:true,&quot;isLastPage&quot;:false,&quot;list&quot;:[{&quot;classification&quot;:&quot;D001&quot;,&quot;id&quot;:&quot;DE001&quot;,&quot;introduce&quot;:&quot;本科室诊疗范围包括急性心肌梗死、主动脉夹层、急性呼吸衰竭、休克、脓毒血症、心功能衰竭、脑血管意外、严重创伤、呼吸心跳骤停及其他急危重症。 尤其擅长诊治心脑肺复苏、脓毒血症、脓毒性休克、多器官功能障碍综合征、急性呼吸窘迫综合征、严重创伤及大手术后综合管理、物理/化学因素所致急危重症等。&quot;,&quot;name&quot;:&quot;急诊室&quot;},{&quot;classification&quot;:&quot;D001&quot;,&quot;id&quot;:&quot;DE002&quot;,&quot;introduce&quot;:&quot;内科学包含了依不同器官系统而分类的次专科：心脏内科、呼吸科、肝胆肠胃科、肾脏科（泌尿内科）、血液科、肿瘤科、内分泌科、传染病科、免疫科、风湿科、神经科、儿科、神经内科、老年病科等，但各地甚至各医院对次专科的分类可能有所不同。 各次专科多半有成立各自的医学会，各自审查次专科医师的资格并举办学术活动。&quot;,&quot;name&quot;:&quot;内科&quot;},{&quot;classification&quot;:&quot;D001&quot;,&quot;id&quot;:&quot;DE003&quot;,&quot;introduce&quot;:&quot;普通外科专业、骨科专业、泌尿外科专业、乳腺外科专业、肛肠外科专业等；共有医师8人，其中副主任医师5人，主治医师3人。\r\n外科专业是本院的核心业务之一。&quot;,&quot;name&quot;:&quot;外科&quot;},{&quot;classification&quot;:&quot;D001&quot;,&quot;id&quot;:&quot;DE004&quot;,&quot;introduce&quot;:&quot;妇产科是临床医学四大主要学科之一，主要研究女性生殖器官疾病的病因、病理、诊断及防治，妊娠、分娩的生理和病理变化，高危妊娠及难产的预防和诊治，女性生殖内分泌，计划生育及妇女保健等。现代分子生物学、肿瘤学、遗传学、生殖内分泌学及免疫学等医学基础理论的深入研究和临床医学诊疗检测技术的进步，拓宽和深化了妇产科学的发展，为保障妇女身体和生殖健康及防治各种妇产科疾病起着重要的作用。&quot;,&quot;name&quot;:&quot;妇产科&quot;},{&quot;classification&quot;:&quot;D002&quot;,&quot;id&quot;:&quot;DE005&quot;,&quot;introduce&quot;:&quot;药房基本介绍 药房主要销售西药、中成药、草药等各种药品，以方便人民群众购买药品, 以利于人民群众健康。 药房是还负责药品的计划预算、验收入库、领发保管药品、统计报销等，对于药房的工作人员，国家和医疗卫生部门都有明确的规定，并且制定了相关的规章制度和从业要求。&quot;,&quot;name&quot;:&quot;药房&quot;}],&quot;navigateFirstPage&quot;:1,&quot;navigateLastPage&quot;:2,&quot;navigatePages&quot;:8,&quot;navigatepageNums&quot;:[1,2],&quot;nextPage&quot;:2,&quot;pageNum&quot;:1,&quot;pageSize&quot;:5,&quot;pages&quot;:2,&quot;prePage&quot;:0,&quot;size&quot;:5,&quot;startRow&quot;:1,&quot;total&quot;:7},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/department/findDepartment" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DepartmentServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="findDepartment" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;page&quot;: 1,&#10;  &quot;departmentClassification&quot;: &quot;&quot;,&#10;  &quot;name&quot;: &quot;&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.DepartmentServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;page&quot;: &quot;当前页码&quot;,&#10;  &quot;departmentClassification&quot;: &quot;科室类别&quot;,&#10;  &quot;name&quot;: &quot;搜索名字&quot;&#10;}" />
+              <option name="method" value="findDepartment" />
+              <option name="methodDescription" value="New Request" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/department/findDepartment" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/department/findDepartment" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/department/findDepartment&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 50&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;name&quot;:&quot;&quot;,&quot;page&quot;:1,&quot;departmentClassification&quot;:&quot;&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;endRow&quot;:7,&quot;hasNextPage&quot;:false,&quot;hasPreviousPage&quot;:false,&quot;isFirstPage&quot;:true,&quot;isLastPage&quot;:true,&quot;list&quot;:[{&quot;classification&quot;:&quot;D001&quot;,&quot;id&quot;:&quot;DE001&quot;,&quot;introduce&quot;:&quot;本科室诊疗范围包括急性心肌梗死、主动脉夹层、急性呼吸衰竭、休克、脓毒血症、心功能衰竭、脑血管意外、严重创伤、呼吸心跳骤停及其他急危重症。 尤其擅长诊治心脑肺复苏、脓毒血症、脓毒性休克、多器官功能障碍综合征、急性呼吸窘迫综合征、严重创伤及大手术后综合管理、物理/化学因素所致急危重症等。&quot;,&quot;name&quot;:&quot;急诊室&quot;},{&quot;classification&quot;:&quot;D001&quot;,&quot;id&quot;:&quot;DE002&quot;,&quot;introduce&quot;:&quot;内科学包含了依不同器官系统而分类的次专科：心脏内科、呼吸科、肝胆肠胃科、肾脏科（泌尿内科）、血液科、肿瘤科、内分泌科、传染病科、免疫科、风湿科、神经科、儿科、神经内科、老年病科等，但各地甚至各医院对次专科的分类可能有所不同。 各次专科多半有成立各自的医学会，各自审查次专科医师的资格并举办学术活动。&quot;,&quot;name&quot;:&quot;内科&quot;},{&quot;classification&quot;:&quot;D001&quot;,&quot;id&quot;:&quot;DE003&quot;,&quot;introduce&quot;:&quot;普通外科专业、骨科专业、泌尿外科专业、乳腺外科专业、肛肠外科专业等；共有医师8人，其中副主任医师5人，主治医师3人。\r\n外科专业是本院的核心业务之一。&quot;,&quot;name&quot;:&quot;外科&quot;},{&quot;classification&quot;:&quot;D001&quot;,&quot;id&quot;:&quot;DE004&quot;,&quot;introduce&quot;:&quot;妇产科是临床医学四大主要学科之一，主要研究女性生殖器官疾病的病因、病理、诊断及防治，妊娠、分娩的生理和病理变化，高危妊娠及难产的预防和诊治，女性生殖内分泌，计划生育及妇女保健等。现代分子生物学、肿瘤学、遗传学、生殖内分泌学及免疫学等医学基础理论的深入研究和临床医学诊疗检测技术的进步，拓宽和深化了妇产科学的发展，为保障妇女身体和生殖健康及防治各种妇产科疾病起着重要的作用。&quot;,&quot;name&quot;:&quot;妇产科&quot;},{&quot;classification&quot;:&quot;D002&quot;,&quot;id&quot;:&quot;DE005&quot;,&quot;introduce&quot;:&quot;药房基本介绍 药房主要销售西药、中成药、草药等各种药品，以方便人民群众购买药品, 以利于人民群众健康。 药房是还负责药品的计划预算、验收入库、领发保管药品、统计报销等，对于药房的工作人员，国家和医疗卫生部门都有明确的规定，并且制定了相关的规章制度和从业要求。&quot;,&quot;name&quot;:&quot;药房&quot;},{&quot;classification&quot;:&quot;D002&quot;,&quot;id&quot;:&quot;DE006&quot;,&quot;introduce&quot;:&quot;检验科为临床医学检验实验室，主要是对血液，唾液，尿样等体液进行检验分析。设临检、微生物、生化、免疫、艾滋病检测点等六个实验部门和血库。&quot;,&quot;name&quot;:&quot;化验室&quot;},{&quot;classification&quot;:&quot;D002&quot;,&quot;id&quot;:&quot;DE007&quot;,&quot;introduce&quot;:&quot;消毒供应中心是医院内各种无菌物品的供应单位，它担负着医疗器材的清洗、包装、消毒灭菌和供应工作。现代医院供应品种繁多，涉及科室广，使用周转快，每项工作均关系到医疗、教学、科研的质量&quot;,&quot;name&quot;:&quot;消毒供应室&quot;}],&quot;navigateFirstPage&quot;:1,&quot;navigateLastPage&quot;:1,&quot;navigatePages&quot;:8,&quot;navigatepageNums&quot;:[1],&quot;nextPage&quot;:0,&quot;pageNum&quot;:1,&quot;pageSize&quot;:20,&quot;pages&quot;:1,&quot;prePage&quot;:0,&quot;size&quot;:7,&quot;startRow&quot;:1,&quot;total&quot;:7},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/department/findDepartment" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DepartmentServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="findDepartment" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;page&quot;: 1,&#10;  &quot;departmentClassification&quot;: &quot;departmentClassification_cpy1a&quot;,&#10;  &quot;name&quot;: &quot;name_oza9d&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.DepartmentServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;page&quot;: &quot;当前页码&quot;,&#10;  &quot;departmentClassification&quot;: &quot;科室类别&quot;,&#10;  &quot;name&quot;: &quot;搜索名字&quot;&#10;}" />
+              <option name="method" value="findDepartment" />
+              <option name="methodDescription" value="New Request" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/department/findDepartment" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/department/findDepartment" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/department/findDepartment&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 90&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;name&quot;:&quot;name_oza9d&quot;,&quot;page&quot;:1,&quot;departmentClassification&quot;:&quot;departmentClassification_cpy1a&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;endRow&quot;:0,&quot;hasNextPage&quot;:false,&quot;hasPreviousPage&quot;:false,&quot;isFirstPage&quot;:true,&quot;isLastPage&quot;:true,&quot;list&quot;:[],&quot;navigateFirstPage&quot;:0,&quot;navigateLastPage&quot;:0,&quot;navigatePages&quot;:8,&quot;navigatepageNums&quot;:[],&quot;nextPage&quot;:0,&quot;pageNum&quot;:1,&quot;pageSize&quot;:20,&quot;pages&quot;:0,&quot;prePage&quot;:0,&quot;size&quot;:0,&quot;startRow&quot;:0,&quot;total&quot;:0},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/department/findDepartment" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="getDepartClassList" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+              <option name="method" value="getDepartClassList" />
+              <option name="methodDescription" value="New Request" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/departClassification/getDepartClassList" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/departClassification/getDepartClassList" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/departClassification/getDepartClassList&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;result&quot;:[{&quot;id&quot;:&quot;D001&quot;,&quot;name&quot;:&quot;临床科&quot;},{&quot;id&quot;:&quot;D002&quot;,&quot;name&quot;:&quot;医技科&quot;},{&quot;id&quot;:&quot;D003&quot;,&quot;name&quot;:&quot;急诊科&quot;},{&quot;id&quot;:&quot;D004&quot;,&quot;name&quot;:&quot;心内科&quot;},{&quot;id&quot;:&quot;D005&quot;,&quot;name&quot;:&quot;肺病科&quot;},{&quot;id&quot;:&quot;D006&quot;,&quot;name&quot;:&quot;脾胃病科&quot;},{&quot;id&quot;:&quot;D007&quot;,&quot;name&quot;:&quot;肝病科&quot;}],&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/departClassification/getDepartClassList" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="getDepartClassList" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+              <option name="method" value="getDepartClassList" />
+              <option name="methodDescription" value="New Request" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/departClassification/getDepartClassList" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/departClassification/getDepartClassList" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/departClassification/getDepartClassList&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;result&quot;:[{&quot;id&quot;:&quot;D001&quot;,&quot;name&quot;:&quot;临床科&quot;},{&quot;id&quot;:&quot;D002&quot;,&quot;name&quot;:&quot;医技科&quot;},{&quot;id&quot;:&quot;D003&quot;,&quot;name&quot;:&quot;急诊科&quot;},{&quot;id&quot;:&quot;D004&quot;,&quot;name&quot;:&quot;心内科&quot;},{&quot;id&quot;:&quot;D005&quot;,&quot;name&quot;:&quot;肺病科&quot;},{&quot;id&quot;:&quot;D006&quot;,&quot;name&quot;:&quot;脾胃病科&quot;},{&quot;id&quot;:&quot;D007&quot;,&quot;name&quot;:&quot;肝病科&quot;}],&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/departClassification/getDepartClassList" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="getDepartClassList" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+              <option name="method" value="getDepartClassList" />
+              <option name="methodDescription" value="New Request" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/departClassification/getDepartClassList" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/departClassification/getDepartClassList" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/departClassification/getDepartClassList&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="[{&quot;id&quot;:&quot;D001&quot;,&quot;name&quot;:&quot;临床科&quot;},{&quot;id&quot;:&quot;D002&quot;,&quot;name&quot;:&quot;医技科&quot;},{&quot;id&quot;:&quot;D003&quot;,&quot;name&quot;:&quot;急诊科&quot;},{&quot;id&quot;:&quot;D004&quot;,&quot;name&quot;:&quot;心内科&quot;},{&quot;id&quot;:&quot;D005&quot;,&quot;name&quot;:&quot;肺病科&quot;},{&quot;id&quot;:&quot;D006&quot;,&quot;name&quot;:&quot;脾胃病科&quot;},{&quot;id&quot;:&quot;D007&quot;,&quot;name&quot;:&quot;肝病科&quot;}]" />
+          <option name="url" value="/departClassification/getDepartClassList" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="getDepartClassList" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+              <option name="method" value="getDepartClassList" />
+              <option name="methodDescription" value="New Request" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/departClassification/getDepartClassList" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/departClassification/getDepartClassList" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/departClassification/getDepartClassList&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;name&quot;:&quot;临床科&quot;,&quot;id&quot;:&quot;D001&quot;}" />
+          <option name="url" value="/departClassification/getDepartClassList" />
+        </ResponseHistory>
+        <ResponseHistory>
           <option name="className" value="com.max.back.demo.api.BstudentCtl" />
           <option name="code" value="200" />
           <option name="enableEnv" value="local8000" />

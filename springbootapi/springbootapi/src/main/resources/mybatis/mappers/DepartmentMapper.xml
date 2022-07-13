@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.max.back.neusoft.dao.DepartmentMapper">
+
+    <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.Department">
+        <id property="id" column="d_id" jdbcType="VARCHAR"/>
+        <result property="avatar" column="d_avatar" jdbcType="VARCHAR"/>
+        <result property="classification" column="d_classification" jdbcType="CHAR"/>
+        <result property="name" column="d_name" jdbcType="VARCHAR"/>
+        <result property="introduce" column="d_introduce" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="findDepartment" parameterType="com.max.back.neusoft.form.DepartmentFindFrom" resultType="java.util.Map">
+        SELECT
+        n_department.d_id id,
+        n_department.d_avatar avatar,
+        n_department.d_name name,
+        n_department.d_introduce introduce,
+        n_departClassification.c_name classification
+        FROM n_department
+        INNER JOIN n_departClassification ON n_department.d_classification = n_departClassification.c_id
+        WHERE 1=1
+        <if test='name != null and name != "" '>
+            AND d_name LIKE CONCAT('%',#{name},'%')
+        </if>
+        <if test='departmentClassification != null and departmentClassification != "" '>
+            AND d_classification = #{departmentClassification}
+        </if>
+        ORDER BY n_department.d_id
+    </select>
+</mapper>

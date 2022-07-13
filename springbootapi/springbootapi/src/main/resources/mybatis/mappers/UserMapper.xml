@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.max.back.neusoft.dao.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.User">
+        <id property="id" column="u_id" jdbcType="VARCHAR"/>
+        <result property="username" column="u_username" jdbcType="VARCHAR"/>
+        <result property="age" column="u_age" jdbcType="INTEGER"/>
+        <result property="birthday" column="u_birthday" jdbcType="DATE"/>
+        <result property="identitynumber" column="u_identityNumber" jdbcType="CHAR"/>
+        <result property="avatar" column="u_avatar" jdbcType="VARCHAR"/>
+        <result property="sex" column="u_sex" jdbcType="CHAR"/>
+        <result property="delete" column="u_delete" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="findUser" parameterType="com.max.back.neusoft.form.UserFindFrom" resultType="java.util.Map">
+        SELECT
+        n_user.u_id id,
+        n_user.u_username username,
+        n_user.u_age age,
+        n_user.u_birthday birthday,
+        n_user.u_identityNumber identityNumber,
+        n_user.u_avatar avatar,
+        n_generalItem.value sex
+        FROM n_user
+        INNER JOIN n_generalItem ON n_user.u_sex = n_generalItem.coding
+        WHERE 1=1
+        <if test='name != null and name != "" '>
+            AND u_username LIKE CONCAT('%',#{name},'%')
+        </if>
+        <if test='sex != null and sex != "" '>
+            AND u_sex = #{sex}
+        </if>
+        AND n_user.u_delete=0
+        ORDER BY n_user.u_id
+    </select>
+
+</mapper>

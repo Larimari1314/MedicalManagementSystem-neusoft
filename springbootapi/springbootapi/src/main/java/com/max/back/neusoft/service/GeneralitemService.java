@@ -9,5 +9,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2022-07-12 11:45:29
 */
 public interface GeneralitemService extends IService<Generalitem> {
-
+    public String findGender();
 }

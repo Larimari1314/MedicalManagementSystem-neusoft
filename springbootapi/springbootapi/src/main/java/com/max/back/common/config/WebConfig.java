@@ -1,5 +1,6 @@
 package com.max.back.common.config;
 
+/*
 import com.max.back.common.sercurity.intercept.AuthInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -15,3 +16,4 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addInterceptor(authInter).addPathPatterns("/api/**");
 	}
 }
+*/

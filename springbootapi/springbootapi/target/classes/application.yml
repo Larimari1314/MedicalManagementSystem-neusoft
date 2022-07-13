@@ -1,7 +1,7 @@
 server:
   port: 8000
   servlet:
-    context-path: /mystu
+    context-path: /hospital
 spring:
   profiles:
     active: test
@@ -10,6 +10,12 @@ spring:
     redis:
       time-to-live: 20000
       cache-null-values: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      enabled: true
+      file-size-threshold: 10MB
   datasource:
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -31,7 +37,7 @@ mybatis-plus:
   #配置MyBatis映射文件
   mapper-locations: classpath:/mybatis/mappers/*.xml
   #配置MyBatis返回类型别名
-  type-aliases-package: com.max.back.demo.entity
+  type-aliases-package: com.max.back.neusoft.pojo
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true
