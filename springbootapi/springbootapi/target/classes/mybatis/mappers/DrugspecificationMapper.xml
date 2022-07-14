@@ -9,8 +9,4 @@
             <result property="name" column="s_name" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        s_id,s_name
-    </sql>
-
 </mapper>

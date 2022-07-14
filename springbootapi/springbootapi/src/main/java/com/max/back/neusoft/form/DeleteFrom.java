@@ -8,9 +8,9 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.List;
 
-@ApiModel("用户删除")
+@ApiModel("根据id")
 @Data
-public class UserDeleteFrom implements Serializable {
+public class DeleteFrom implements Serializable {
     @ApiModelProperty("删除列表")
     @Size(min = 1)
 //    private String[] ids;

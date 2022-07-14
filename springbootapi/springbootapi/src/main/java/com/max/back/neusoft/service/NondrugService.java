@@ -1,5 +1,6 @@
 package com.max.back.neusoft.service;
 
+import com.max.back.neusoft.form.DrugFindFrom;
 import com.max.back.neusoft.pojo.Nondrug;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface NondrugService extends IService<Nondrug> {
 
+    String getAllDrugByRequire(DrugFindFrom drugFindFrom);
 }

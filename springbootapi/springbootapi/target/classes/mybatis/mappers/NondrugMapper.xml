@@ -15,10 +15,26 @@
             <result property="enable" column="d_enable" jdbcType="INTEGER"/>
             <result property="version" column="d_version" jdbcType="INTEGER"/>
     </resultMap>
-
-    <sql id="Base_Column_List">
-        d_id,d_cover,d_name,
-        d_specification,d_number,d_price,
-        d_delete,d_enable,d_version
-    </sql>
+    <select id="getAllDrugByRequire" parameterType="com.max.back.neusoft.form.DrugFindFrom" resultType="java.util.Map">
+        SELECT
+        n_nonDrug.d_id id,
+        n_nonDrug.d_cover cover,
+        n_nonDrug.d_name name,
+        n_nonDrug.d_number number,
+        n_nonDrug.d_price price,
+        n_nonDrug.d_version version,
+        n_nonDrug.d_enable enable,
+        n_drugSpecification.s_name sname
+        FROM n_nonDrug
+        INNER JOIN n_drugSpecification ON n_nonDrug.d_specification = n_drugSpecification.s_id
+        WHERE 1=1
+        <if test='name != null and name != "" '>
+            AND n_nonDrug.d_name LIKE CONCAT('%',#{name},'%')
+        </if>
+        <if test='specification != null and specification != "" '>
+            AND n_nonDrug.d_specification = #{specification}
+        </if>
+        AND n_nonDrug.d_delete=0
+        ORDER BY n_nonDrug.d_id
+    </select>
 </mapper>

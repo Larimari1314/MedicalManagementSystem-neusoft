@@ -5,10 +5,9 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.max.back.common.http.ResponseResult;
-import com.max.back.neusoft.form.UserDeleteFrom;
+import com.max.back.neusoft.form.DeleteFrom;
 import com.max.back.neusoft.form.UserFindFrom;
 import com.max.back.neusoft.form.UserUpdateFrom;
-import com.max.back.neusoft.pojo.Department;
 import com.max.back.neusoft.pojo.User;
 import com.max.back.neusoft.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ import java.util.UUID;
 @RequestMapping("/user")
 public class UserServlet {
     public static MultipartFile multipartFile = null;
-    public static String fileName=null;
+    public static String fileName = null;
     @Autowired
     private UserService userService;
 
@@ -41,7 +40,7 @@ public class UserServlet {
     }
 
     @PostMapping("/deleteByIds")
-    public String deleteById(@RequestBody @Valid UserDeleteFrom params) {
+    public String deleteById(@RequestBody @Valid DeleteFrom params) {
         boolean delete = userService.removeByIds(params.getIds());
         if (delete) {
             return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
@@ -115,6 +114,7 @@ public class UserServlet {
         outputStream.flush();
         outputStream.close();
     }
+
     @PostMapping("/exportData")
     public void exportDataUser(HttpServletResponse response) throws IOException {
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
@@ -132,17 +132,19 @@ public class UserServlet {
         outputStream.flush();
         outputStream.close();
     }
+
     @PostMapping("/uploadToServer")
     public void uploadToServer(@RequestBody MultipartFile file) {
         multipartFile = file;
         fileName = UUID.randomUUID().toString();
     }
+
     @GetMapping("/analyseFile")
     @ResponseBody
     public String analyseFile() throws IOException {
         String path = System.getProperty("user.dir");
         File newFile = new File(path + "\\src\\main\\webapp\\static\\" + fileName + ".xlsx");
         multipartFile.transferTo(newFile);
-        return  userService.analyseFile(fileName);
+        return userService.analyseFile(fileName);
     }
 }

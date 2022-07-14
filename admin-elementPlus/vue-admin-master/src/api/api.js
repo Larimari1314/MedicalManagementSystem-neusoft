@@ -45,6 +45,15 @@ export const updateRegisteredPrice = params => { return axios.post(`${parameter}
 //根据挂号级别查询医生
 export const findDoctorByRegistration = params => { return axios.post(`${parameter}/doctor/findByRegistered`,  params ) };
 
+//药品规格查询
 export const findAllSpecification = params => { return axios.get(`${parameter}/nondrug/findAllSpecification`)};
+//药品查询
+export const getAllDrugByRequire = params => { return axios.post(`${parameter}/nondrug/getAllDrugByRequire`,  params ) };
+//修改状态
+export const DrugModifyEnable = params => { return axios.post(`${parameter}/nondrug/modifyEnable`,  params ) };
+//删除业务
+export const deleteByIdsDrug = params => { return axios.post(`${parameter}/nondrug/deleteByIds`,  params ) };
+//跟新药品信息
+export const updateDrug = params => { return axios.post(`${parameter}/nondrug/updateDrug`,  params ) };
 
 

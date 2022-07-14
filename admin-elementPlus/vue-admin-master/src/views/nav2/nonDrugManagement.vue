@@ -35,38 +35,37 @@
     </el-col>
 
     <!--列表-->
-    <el-table :data="users" highlight-current-row v-loading="listLoading" @selection-change="selsChange" style="width: 100%;">
+    <el-table :data="nonDrug" highlight-current-row v-loading="listLoading" @selection-change="selsChange" style="width: 100%;">
       <el-table-column type="selection" width="55">
       </el-table-column>
       <el-table-column type="index" width="60">
       </el-table-column>
-      <el-table-column prop="avatarUrl" width="168" label="药品封面" scope="scope">
+      <el-table-column prop="cover" width="168" label="药品封面" scope="scope">
         <template scope="scope">
-          <img :src="users[scope.$index].avatarUrl" style="border-radius:10%; " width="100" height="100"
+          <img :src="nonDrug[scope.$index].cover" style="border-radius:10%; " width="100" height="100"
                alt="药品封面">
         </template>
       </el-table-column>
       <el-table-column prop="name" label="名称" width="120" sortable>
       </el-table-column>
-      <el-table-column prop="sex" label="药品规格" width="120" :formatter="formatSex" sortable>
+      <el-table-column prop="sname" label="药品规格" width="120">
       </el-table-column>
-      <el-table-column prop="age" label="药品数量" width="120" sortable>
+      <el-table-column prop="number" label="药品数量" width="120" sortable>
       </el-table-column>
-      <el-table-column prop="birth" label="药品类别" width="120" sortable>
-      </el-table-column>
-      <el-table-column prop="addr" label="药品单价" min-width="100" sortable>
+      <el-table-column prop="price" label="药品单价" min-width="100" sortable>
       </el-table-column>
       <el-table-column label="操作" width="300">
         <template scope="scope">
           <el-tooltip content="关闭后用户、医生无法查看药品" placement="top">
             <el-switch
-                v-model="users[scope.$index].exhibit"
+                v-model="nonDrug[scope.$index].enable"
                 on-text=""
                 off-text=""
                 active-color="#13ce66"
                 inactive-color="#ff4949"
                 active-value="100"
                 inactive-value="0"
+                @change=changeSwing($event,scope.row)
             >
 <!--              @change=changeSwing($event,scope.row)-->
             </el-switch>
@@ -87,17 +86,34 @@
     <!--编辑界面-->
     <el-dialog title="编辑" v-model="editFormVisible" :close-on-click-modal="false">
       <el-form :model="editForm" label-width="80px" :rules="editFormRules" ref="editForm">
-        <el-form-item label="姓名" prop="name">
+        <el-form-item label="药品编号" prop="id">
+          <el-input v-model="editForm.id" auto-complete="off" disabled></el-input>
+        </el-form-item>
+        <el-form-item label="药品封面" prop="avatar">
+          <img :src="editForm.cover" style="border-radius:50%; " width="100" height="100"
+               alt="药品封面">
+          <el-upload
+              action="http://localhost:8000/hospital/nondrug/avatar"
+              list-type="picture-card"
+              :on-preview="handlePictureCardPreview"
+              :on-remove="handleRemove"
+              :limit="1"
+          >
+            <i class="el-icon-plus"></i>
+          </el-upload>
+      
+        </el-form-item>
+        <el-form-item label="药品名称" prop="name">
           <el-input v-model="editForm.name" auto-complete="off"></el-input>
         </el-form-item>
-        <el-form-item label="性别">
-          <el-radio-group v-model="editForm.sex">
-            <el-radio class="radio" :label="1">男</el-radio>
-            <el-radio class="radio" :label="0">女</el-radio>
-          </el-radio-group>
+        <el-form-item label="药品规格" prop="sname">
+          <el-input v-model="editForm.sname" auto-complete="off" disabled></el-input>
         </el-form-item>
-        <el-form-item label="生日">
-          <el-date-picker type="date" placeholder="选择日期" v-model="editForm.birth"></el-date-picker>
+        <el-form-item label="现存数量">
+          <el-input v-model="editForm.number" auto-complete="off" type="number"></el-input>
+        </el-form-item>
+        <el-form-item label="价格" prop="number">
+          <el-input v-model="editForm.price" auto-complete="off" type="number"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -136,7 +152,15 @@
 <script>
 import util from '../../common/js/util'
 //import NProgress from 'nprogress'
-import {getUserListPage, removeUser, batchRemoveUser, editUser, addUser, findAllSpecification} from '../../api/api';
+import {
+  getUserListPage,
+  removeUser,
+  batchRemoveUser,
+  editUser,
+  addUser,
+  findAllSpecification,
+  getAllDrugByRequire, DrugModifyEnable, deleteByIdsDrug, updateDrug
+} from '../../api/api';
 
 export default {
   data() {
@@ -146,7 +170,7 @@ export default {
         spe:''
       },
       Specification:[],
-      users: [],
+      nonDrug: [],
       total: 0,
       page: 1,
       listLoading: false,
@@ -188,9 +212,12 @@ export default {
     }
   },
   methods: {
-    //性别显示转换
-    formatSex: function (row, column) {
-      return row.sex == 1 ? '男' : row.sex == 0 ? '女' : '未知';
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePictureCardPreview(file) {
+      this.dialogImageUrl = file.url;
+      this.dialogVisible = true;
     },
     handleCurrentChange(val) {
       this.page = val;
@@ -205,12 +232,26 @@ export default {
       };
       this.listLoading = true;
       //NProgress.start();
-      getUserListPage(para).then((res) => {
+      getAllDrugByRequire(para).then((res)=>{
+        if(res.data.msgId=='C200'){
+          this.total = res.data.result.total;
+          this.nonDrug = res.data.result.list;
+          this.nonDrug.forEach((item,index, arr) => {
+            if (item.enable == 0) {
+              item.enable = true
+            } else {
+              item.enable = false
+            }})
+          this.listLoading = false;
+        }
+
+      })
+/*      getUserListPage(para).then((res) => {
         this.total = res.data.total;
-        this.users = res.data.users;
+        this.nonDrug = res.data.nonDrug;
         this.listLoading = false;
         //NProgress.done();
-      });
+      });*/
     },
     //删除
     handleDel: function (index, row) {
@@ -219,15 +260,22 @@ export default {
       }).then(() => {
         this.listLoading = true;
         //NProgress.start();
-        let para = { id: row.id };
-        removeUser(para).then((res) => {
-          this.listLoading = false;
-          //NProgress.done();
-          this.$message({
-            message: '删除成功',
-            type: 'success'
-          });
-          this.getUsers();
+        let para = {'ids': [row.id]};
+        deleteByIdsDrug(para).then((res) => {
+          if (res.data.msgId == 'C200') {
+            this.listLoading = false;
+            this.$notify.success({
+              title: '成功',
+              message: '删除成功',
+              offset: 100
+            });
+            this.getUsers();
+          } else {
+            this.$notify.error({
+              title: '错误',
+              message: '删除失败'
+            });
+          }
         });
       }).catch(() => {
 
@@ -255,19 +303,23 @@ export default {
         if (valid) {
           this.$confirm('确认提交吗？', '提示', {}).then(() => {
             this.editLoading = true;
-            //NProgress.start();
             let para = Object.assign({}, this.editForm);
-            para.birth = (!para.birth || para.birth == '') ? '' : util.formatDate.format(new Date(para.birth), 'yyyy-MM-dd');
-            editUser(para).then((res) => {
-              this.editLoading = false;
-              //NProgress.done();
-              this.$message({
-                message: '提交成功',
-                type: 'success'
-              });
-              this.$refs['editForm'].resetFields();
-              this.editFormVisible = false;
-              this.getUsers();
+            updateDrug(para).then((res) => {
+              if(res.data.msgId='C200'){
+                this.editLoading = false;
+                this.$message({
+                  message: '修改成功',
+                  type: 'success'
+                });
+                this.$refs['editForm'].resetFields();
+                this.editFormVisible = false;
+                this.getUsers();
+              }else {
+                this.$message({
+                  message: '修改失败',
+                  type: 'error'
+                });
+              }
             });
           });
         }
@@ -302,20 +354,25 @@ export default {
     },
     //批量删除
     batchRemove: function () {
-      var ids = this.sels.map(item => item.id).toString();
+      var ids = this.sels.map(item => item.id);
+      let param = {"ids": ids}
       this.$confirm('确认删除选中记录吗？', '提示', {
         type: 'warning'
       }).then(() => {
         this.listLoading = true;
-        //NProgress.start();
-        let para = { ids: ids };
-        batchRemoveUser(para).then((res) => {
-          this.listLoading = false;
-          //NProgress.done();
-          this.$message({
-            message: '删除成功',
-            type: 'success'
-          });
+        deleteByIdsDrug(param).then((res) => {
+          if(res.data.msgId=='C200'){
+            this.listLoading = false;
+            this.$notify.success({
+              title: '成功',
+              message: '删除成功'
+            });
+          }else{
+            this.$notify.error({
+              title: '失败',
+              message: '删除失败'
+            });
+          }
           this.getUsers();
         });
       }).catch(() => {
@@ -326,7 +383,28 @@ export default {
       findAllSpecification().then((res)=>{
         this.Specification=res.data
       })
-    }
+    },
+    changeSwing:function (text,row) {
+      let params;
+      if(text){
+        params = {id: row.id,enable:0};
+      }else {
+        params = {id: row.id,enable:1};
+      }
+      DrugModifyEnable(params).then((res)=>{
+        if(res.data.msgId=='C200'){
+          this.$notify.success({
+            title: '成功',
+            message: '修改成功'
+          });
+        }else {
+          this.$notify.error({
+            title: '失败',
+            message: '修改失败'
+          });
+        }
+      })
+    },
   },
   mounted() {
     this.getUsers();
