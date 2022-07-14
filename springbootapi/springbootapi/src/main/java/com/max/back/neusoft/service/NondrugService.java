@@ -4,6 +4,8 @@ import com.max.back.neusoft.form.DrugFindFrom;
 import com.max.back.neusoft.pojo.Nondrug;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.io.ByteArrayOutputStream;
+
 /**
 * @author 86155
 * @description 针对表【n_nonDrug】的数据库操作Service
@@ -12,4 +14,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface NondrugService extends IService<Nondrug> {
 
     String getAllDrugByRequire(DrugFindFrom drugFindFrom);
+
+    ByteArrayOutputStream drugTemplateDownload(String url);
+
+    ByteArrayOutputStream drugExportData(String url);
+
+    String analyseFile(String fileName);
+
 }

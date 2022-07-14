@@ -7,7 +7,7 @@ import lombok.Data;
 
 /**
  * 
- * @TableName n_nonDrug
+ * 非药品表
  */
 @TableName(value ="n_nonDrug")
 @Data
@@ -53,7 +53,7 @@ public class Nondrug implements Serializable {
      */
     @TableField("d_delete")
     @TableLogic
-    private Integer delete;
+    private Integer deletes;
 
     /**
      * 对外启用

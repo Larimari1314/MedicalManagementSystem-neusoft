@@ -1,6 +1,7 @@
 package com.max.back.neusoft.api;
 
 import com.max.back.neusoft.service.GeneralitemService;
+import com.sun.javafx.tk.TKPulseListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,4 +19,10 @@ public class GeneralitemServlet {
     public String findGender(){
         return generalitemService.findGender();
     }
+
+    @GetMapping("/findByRegistered")
+    public String findByRegistered(){
+        return generalitemService.findByRegistered();
+    }
+
 }

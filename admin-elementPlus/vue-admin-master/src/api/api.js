@@ -1,17 +1,6 @@
 import axios from 'axios';
 
-let base = '';
 let parameter='http://localhost:8000/hospital';
-export const requestLogin = params => { return axios.post(`${base}/login`, params).then(res => res.data); };
-
-export const getUserList = params => { return axios.get(`${base}/user/list`, { params: params }); };
-
-export const getUserListPage = params => { return axios.get(`${base}/user/listpage`, { params: params }); };
-
-export const removeUser = params => { return axios.get(`${base}/user/remove`, { params: params }); };
-
-export const batchRemoveUser = params => { return axios.get(`${base}/user/batchremove`, { params: params }); };
-
 //查找科室列表
 export const getDepartClassList =params=>{return axios.get(`${parameter}/departClassification/getDepartClassList`,{params:params});};
 //查找科室
@@ -55,5 +44,26 @@ export const DrugModifyEnable = params => { return axios.post(`${parameter}/nond
 export const deleteByIdsDrug = params => { return axios.post(`${parameter}/nondrug/deleteByIds`,  params ) };
 //跟新药品信息
 export const updateDrug = params => { return axios.post(`${parameter}/nondrug/updateDrug`,  params ) };
+//显示
+export const addDrug = params => { return axios.post(`${parameter}/nondrug/addDrug`,  params ) };
+//下载数据模板药品
+export const templateDownloadDrug = params => { return axios.post(`${parameter}/nondrug/dataTemplateDownload`, "", {responseType: 'blob'})};
+//下载全部数据药品
+export const exportDataDrug = params => { return axios.post(`${parameter}/nondrug/exportData`, "", {responseType: 'blob'})};
+//上传数据
+export const analyseFileDrug = params => { return axios.get(`${parameter}/nondrug/analyseFile`)};
 
+//显示挂号级别
+export const findByRegistered =params=>{return axios.get(`${parameter}/generalitem/findByRegistered`,{params:params});};
+//获取科名
+export const findDepartment =params=>{return axios.get(`${parameter}/department/findDepartment`,{params:params});};
+//获取医生数据
+export const findAllDoctor =params=>{return axios.post(`${parameter}/doctor/findAllDoctor`,params);};
+//批量删除
+export const deleteByIdsDoctor =params=>{return axios.post(`${parameter}/doctor/deleteByIds`,params);};
+//跟新医生信息
+export const addDoctor =params=>{return axios.post(`${parameter}/doctor/addDoctor`,params);};
+//查找班次
+export const findScheduleList =params=>{return axios.get(`${parameter}/schedule/findScheduleList`,{params:params});};
+export const getAllScheduleList =params=>{return axios.post(`${parameter}/schedule/getAllScheduleList`,params);};
 

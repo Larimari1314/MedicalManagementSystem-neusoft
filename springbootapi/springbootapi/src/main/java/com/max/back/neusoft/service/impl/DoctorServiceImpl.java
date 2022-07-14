@@ -7,6 +7,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.max.back.common.http.ResponseResult;
 import com.max.back.neusoft.dao.DoctorMapper;
+import com.max.back.neusoft.form.DoctorFindFrom;
 import com.max.back.neusoft.form.DoctorRegisteredFrom;
 import com.max.back.neusoft.pojo.Doctor;
 import com.max.back.neusoft.service.DoctorService;
@@ -31,6 +32,14 @@ public class DoctorServiceImpl extends ServiceImpl<DoctorMapper, Doctor>
     public String findByRegis(DoctorRegisteredFrom doctorRegisteredFrom) {
         PageHelper.startPage(doctorRegisteredFrom.getPage(), 10);
         List<Map<String, Object>> byRegis = doctorMapper.findByRegis(doctorRegisteredFrom);
+        PageInfo pageInfo = new PageInfo(byRegis);
+        return JSON.toJSONString(ResponseResult.getSuccessResult(pageInfo, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
+    }
+
+    @Override
+    public String findByRegistered(DoctorFindFrom doctorFindFrom) {
+        PageHelper.startPage(doctorFindFrom.getPage(), 20);
+        List<Map<String, Object>> byRegis = doctorMapper.findDoctor(doctorFindFrom);
         PageInfo pageInfo = new PageInfo(byRegis);
         return JSON.toJSONString(ResponseResult.getSuccessResult(pageInfo, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
     }

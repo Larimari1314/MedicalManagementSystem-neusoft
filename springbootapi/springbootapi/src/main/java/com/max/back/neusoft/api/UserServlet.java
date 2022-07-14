@@ -142,9 +142,14 @@ public class UserServlet {
     @GetMapping("/analyseFile")
     @ResponseBody
     public String analyseFile() throws IOException {
-        String path = System.getProperty("user.dir");
-        File newFile = new File(path + "\\src\\main\\webapp\\static\\" + fileName + ".xlsx");
-        multipartFile.transferTo(newFile);
-        return userService.analyseFile(fileName);
+        try {
+            String path = System.getProperty("user.dir");
+            File newFile = new File(path + "\\src\\main\\webapp\\static\\" + fileName + ".xlsx");
+            multipartFile.transferTo(newFile);
+            return userService.analyseFile(fileName);
+        }catch (NullPointerException e){
+            return JSON.toJSONString(ResponseResult.getErrorResult("C502"));
+        }
+
     }
 }

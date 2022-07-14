@@ -1,9 +1,7 @@
 package com.max.back.neusoft.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import lombok.Data;
 
@@ -60,6 +58,7 @@ public class Doctor implements Serializable {
      * 逻辑删除
      */
     @TableField("d_delete")
+    @TableLogic
     private Integer delete;
 
     @TableField(exist = false)

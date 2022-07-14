@@ -30,7 +30,32 @@
             WHERE 1=1
             <if test='name != null and name != "" '>
                 AND n_doctor.d_name LIKE CONCAT('%',#{name},'%')
-            </if>  AND d_regis=#{regisId}
+            </if>  AND d_regis=#{regisId} AND d_delete=0
             ORDER BY n_doctor.d_id
     </select>
+        <select id="findDoctor" resultType="java.util.Map" parameterType="com.max.back.neusoft.form.DoctorFindFrom">
+            SELECT
+                n_doctor.d_id id,
+                n_doctor.d_name name,
+                n_doctor.d_age age,
+                n_doctor.d_department department,
+                n_doctor.d_schedule schedule,
+                n_generalItem.value sex,
+                n_department.d_name dname,
+                n_schedule.s_name sname
+            FROM n_doctor
+                     INNER JOIN n_generalItem ON n_doctor.d_sex = n_generalItem.coding
+                     INNER JOIN n_department ON n_doctor.d_department = n_department.d_id
+                     INNER JOIN n_schedule ON n_doctor.d_schedule = n_schedule.s_id
+            WHERE 1=1
+            <if test='name != null and name != "" '>
+                AND n_doctor.d_name LIKE CONCAT('%',#{name},'%')
+            </if>
+            <if test='department != null and department != "" '>
+                AND  n_doctor.d_department=#{department}
+            </if><if test='registered != null and registered != "" '>
+                AND  n_doctor.d_regis=#{registered}
+            </if> AND d_delete=0
+            ORDER BY n_doctor.d_id
+        </select>
 </mapper>

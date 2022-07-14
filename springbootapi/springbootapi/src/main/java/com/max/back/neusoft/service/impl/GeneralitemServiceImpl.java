@@ -28,6 +28,12 @@ public class GeneralitemServiceImpl extends ServiceImpl<GeneralitemMapper, Gener
         List<Map<String, Object>> gender = generalitemMapper.findGender();
         return JSON.toJSONString(gender, SerializerFeature.DisableCircularReferenceDetect);
     }
+
+    @Override
+    public String findByRegistered() {
+        List<Map<String, Object>> byRegistered = generalitemMapper.findByRegistered();
+        return JSON.toJSONString(byRegistered,SerializerFeature.DisableCircularReferenceDetect);
+    }
 }
 
 

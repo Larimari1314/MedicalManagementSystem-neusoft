@@ -33,9 +33,35 @@
         </el-form-item>
       </el-form>
     </el-col>
-
+    <el-dialog title="上传表单" v-model="uploadServerVisibleDrug" :close-on-click-modal="false">
+      <el-alert
+          title="上传须知"
+          type="warning"
+          description="上传表单格式务必按照模板，一次仅限上传一个文件"
+          show-icon>
+      </el-alert>
+      <!--最多上传1个文件，点击之后不立即上传-->
+      <el-upload
+          class="upload-demo"
+          ref="upload"
+          drag
+          :limit="1"
+          action="http://localhost:8000/hospital/nondrug/uploadToServer"
+          :file-list="fileList"
+          :on-exceed="handleExceed"
+          :on-preview="handlePreview"
+          :on-remove="handleRemove"
+          :before-remove="beforeRemove"
+      >
+        <i class="el-icon-upload"></i>
+        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+        <div class="el-upload__tip" slot="tip">只能上传xlsx文件，且文件大小不宜过大</div>
+      </el-upload>
+      <el-button type="success" plain @click="uploadToServer">确认提交</el-button>
+    </el-dialog>
     <!--列表-->
-    <el-table :data="nonDrug" highlight-current-row v-loading="listLoading" @selection-change="selsChange" style="width: 100%;">
+    <el-table :data="nonDrug" highlight-current-row v-loading="listLoading" @selection-change="selsChange"
+              style="width: 100%;">
       <el-table-column type="selection" width="55">
       </el-table-column>
       <el-table-column type="index" width="60">
@@ -67,7 +93,7 @@
                 inactive-value="0"
                 @change=changeSwing($event,scope.row)
             >
-<!--              @change=changeSwing($event,scope.row)-->
+              <!--              @change=changeSwing($event,scope.row)-->
             </el-switch>
           </el-tooltip>&nbsp;&nbsp;&nbsp;
           <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
@@ -79,7 +105,8 @@
     <!--工具条-->
     <el-col :span="24" class="toolbar">
       <el-button type="danger" @click="batchRemove" :disabled="this.sels.length===0">批量删除</el-button>
-      <el-pagination layout="prev, pager, next" @current-change="handleCurrentChange" :page-size="20" :total="total" style="float:right;">
+      <el-pagination layout="prev, pager, next" @current-change="handleCurrentChange" :page-size="10" :total="total"
+                     style="float:right;">
       </el-pagination>
     </el-col>
 
@@ -101,7 +128,7 @@
           >
             <i class="el-icon-plus"></i>
           </el-upload>
-      
+
         </el-form-item>
         <el-form-item label="药品名称" prop="name">
           <el-input v-model="editForm.name" auto-complete="off"></el-input>
@@ -124,21 +151,38 @@
 
     <!--新增界面-->
     <el-dialog title="新增" v-model="addFormVisible" :close-on-click-modal="false">
-      <el-form :model="addForm" label-width="80px" :rules="addFormRules" ref="addForm">
-        <el-form-item label="姓名" prop="name">
+      <el-form :model="addForm" label-width="80px" ref="addForm">
+        <el-form-item label="药品名称" prop="name" :rules="[
+                      { required: true, message: '姓名不能为空'}]">
           <el-input v-model="addForm.name" auto-complete="off"></el-input>
         </el-form-item>
-        <el-form-item label="性别">
-          <el-radio-group v-model="addForm.sex">
-            <el-radio class="radio" :label="1">男</el-radio>
-            <el-radio class="radio" :label="0">女</el-radio>
-          </el-radio-group>
+        <el-form-item label="药品封面" prop="cover">
+          <el-upload
+              action="http://localhost:8000/hospital/nondrug/avatar"
+              list-type="picture-card"
+              :on-preview="handlePictureCardPreview"
+              :on-remove="handleRemove"
+              :limit="1"
+          ><i class="el-icon-plus"></i></el-upload>
         </el-form-item>
-        <el-form-item label="生日">
-          <el-date-picker type="date" placeholder="选择日期" v-model="addForm.birth"></el-date-picker>
+        <el-form-item label="药品规格" prop="sname" :rules="[
+                      { required: true, message: '药品规格不能为空'}]">
+          <el-select v-model="addForm.sname" placeholder="请选择">
+            <el-option
+                v-for="item in Specification"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id">
+            </el-option>
+          </el-select>
         </el-form-item>
-        <el-form-item label="身份证号">
-          <el-input type="textarea" v-model="addForm.addr"></el-input>
+        <el-form-item label="药品数量" :rules="[
+                      { required: true, message: '药品数量不能为空'}]" prop="number">
+          <el-input type="number" v-model="addForm.number"></el-input>
+        </el-form-item>
+        <el-form-item label="药品单价" :rules="[
+                      { required: true, message: '药品单价不能为空'}]" prop="price">
+          <el-input type="number" v-model="addForm.price"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -150,26 +194,28 @@
 </template>
 
 <script>
-import util from '../../common/js/util'
 //import NProgress from 'nprogress'
 import {
-  getUserListPage,
-  removeUser,
-  batchRemoveUser,
-  editUser,
-  addUser,
+  addDrug, analyseFileDrug,
+  deleteByIdsDrug,
+  DrugModifyEnable,
+  exportDataDrug,
   findAllSpecification,
-  getAllDrugByRequire, DrugModifyEnable, deleteByIdsDrug, updateDrug
+  getAllDrugByRequire,
+  templateDownloadDrug,
+  updateDrug
 } from '../../api/api';
 
 export default {
   data() {
     return {
+      fileList: [],
+      uploadServerVisibleDrug:false,
       filters: {
         name: '',
-        spe:''
+        spe: ''
       },
-      Specification:[],
+      Specification: [],
       nonDrug: [],
       total: 0,
       page: 1,
@@ -180,38 +226,34 @@ export default {
       editLoading: false,
       editFormRules: {
         name: [
-          { required: true, message: '请输入姓名', trigger: 'blur' }
+          {required: true, message: '请输入姓名', trigger: 'blur'}
         ]
       },
       //编辑界面数据
-      editForm: {
-        id: 0,
-        name: '',
-        sex: -1,
-        age: 0,
-        birth: '',
-        addr: ''
-      },
-
+      editForm: {},
       addFormVisible: false,//新增界面是否显示
       addLoading: false,
-      addFormRules: {
-        name: [
-          { required: true, message: '请输入姓名', trigger: 'blur' }
-        ]
-      },
       //新增界面数据
       addForm: {
+        id: '',
         name: '',
-        sex: -1,
-        age: 0,
-        birth: '',
-        addr: ''
+        cover: '',
+        sname: '',
+        number: 0,
+        price: 0,
+        version: 0
       }
 
     }
   },
   methods: {
+    handleExceed(files, fileListDoctor) {
+      this.$message.warning(`当前限制选择 1 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileListDoctor.length} 个文件`);
+    }, handlePreview(file) {
+      console.log(file);
+    }, beforeRemove(file, fileList) {
+      return this.$confirm(`确定移除 ${file.name}？`);
+    },
     handleRemove(file, fileList) {
       console.log(file, fileList);
     },
@@ -228,30 +270,31 @@ export default {
       let para = {
         page: this.page,
         name: this.filters.name,
-        specification:this.filters.spe
+        specification: this.filters.spe
       };
       this.listLoading = true;
       //NProgress.start();
-      getAllDrugByRequire(para).then((res)=>{
-        if(res.data.msgId=='C200'){
+      getAllDrugByRequire(para).then((res) => {
+        if (res.data.msgId == 'C200') {
           this.total = res.data.result.total;
           this.nonDrug = res.data.result.list;
-          this.nonDrug.forEach((item,index, arr) => {
+          this.nonDrug.forEach((item, index, arr) => {
             if (item.enable == 0) {
               item.enable = true
             } else {
               item.enable = false
-            }})
+            }
+          })
           this.listLoading = false;
         }
 
       })
-/*      getUserListPage(para).then((res) => {
-        this.total = res.data.total;
-        this.nonDrug = res.data.nonDrug;
-        this.listLoading = false;
-        //NProgress.done();
-      });*/
+      /*      getUserListPage(para).then((res) => {
+              this.total = res.data.total;
+              this.nonDrug = res.data.nonDrug;
+              this.listLoading = false;
+              //NProgress.done();
+            });*/
     },
     //删除
     handleDel: function (index, row) {
@@ -290,11 +333,13 @@ export default {
     handleAdd: function () {
       this.addFormVisible = true;
       this.addForm = {
+        id: '',
         name: '',
-        sex: -1,
-        age: 0,
-        birth: '',
-        addr: ''
+        cover: '',
+        sname: '',
+        number: 0,
+        price: 0,
+        version: 0
       };
     },
     //编辑
@@ -305,7 +350,7 @@ export default {
             this.editLoading = true;
             let para = Object.assign({}, this.editForm);
             updateDrug(para).then((res) => {
-              if(res.data.msgId='C200'){
+              if (res.data.msgId = 'C200') {
                 this.editLoading = false;
                 this.$message({
                   message: '修改成功',
@@ -314,7 +359,7 @@ export default {
                 this.$refs['editForm'].resetFields();
                 this.editFormVisible = false;
                 this.getUsers();
-              }else {
+              } else {
                 this.$message({
                   message: '修改失败',
                   type: 'error'
@@ -330,20 +375,27 @@ export default {
       this.$refs.addForm.validate((valid) => {
         if (valid) {
           this.$confirm('确认提交吗？', '提示', {}).then(() => {
+            alert(JSON.stringify(this.addForm))
             this.addLoading = true;
             //NProgress.start();
             let para = Object.assign({}, this.addForm);
-            para.birth = (!para.birth || para.birth == '') ? '' : util.formatDate.format(new Date(para.birth), 'yyyy-MM-dd');
-            addUser(para).then((res) => {
-              this.addLoading = false;
-              //NProgress.done();
-              this.$message({
-                message: '提交成功',
-                type: 'success'
-              });
-              this.$refs['addForm'].resetFields();
-              this.addFormVisible = false;
-              this.getUsers();
+            addDrug(para).then((res) => {
+              if (res.data.msgId == 'C404') {
+                this.addLoading = false;
+                this.$notify.error({
+                  title: '错误',
+                  message: '请添加封面图片'
+                });
+              } else if (res.data.msgId == 'C200') {
+                this.addLoading = false;
+                this.$notify.success({
+                  title: '成功',
+                  message: '添加成功'
+                });
+                this.$refs['addForm'].resetFields();
+                this.addFormVisible = false;
+                this.getUsers();
+              }
             });
           });
         }
@@ -361,13 +413,13 @@ export default {
       }).then(() => {
         this.listLoading = true;
         deleteByIdsDrug(param).then((res) => {
-          if(res.data.msgId=='C200'){
+          if (res.data.msgId == 'C200') {
             this.listLoading = false;
             this.$notify.success({
               title: '成功',
               message: '删除成功'
             });
-          }else{
+          } else {
             this.$notify.error({
               title: '失败',
               message: '删除失败'
@@ -379,25 +431,25 @@ export default {
 
       });
     },
-    getSpecification(){
-      findAllSpecification().then((res)=>{
-        this.Specification=res.data
+    getSpecification() {
+      findAllSpecification().then((res) => {
+        this.Specification = res.data
       })
     },
-    changeSwing:function (text,row) {
+    changeSwing: function (text, row) {
       let params;
-      if(text){
-        params = {id: row.id,enable:0};
-      }else {
-        params = {id: row.id,enable:1};
+      if (text) {
+        params = {id: row.id, enable: 0};
+      } else {
+        params = {id: row.id, enable: 1};
       }
-      DrugModifyEnable(params).then((res)=>{
-        if(res.data.msgId=='C200'){
+      DrugModifyEnable(params).then((res) => {
+        if (res.data.msgId == 'C200') {
           this.$notify.success({
             title: '成功',
             message: '修改成功'
           });
-        }else {
+        } else {
           this.$notify.error({
             title: '失败',
             message: '修改失败'
@@ -405,6 +457,65 @@ export default {
         }
       })
     },
+    dataTemplateDownload() {
+      templateDownloadDrug().then((res) => {
+        const disposition = res.headers['content-disposition'];
+        let fileName = disposition.match(/=(.*)$/)[1];
+        let blob = new Blob([res.data])
+        let downloadElement = document.createElement('a')
+        let href = window.URL.createObjectURL(blob)
+        downloadElement.href = href
+        downloadElement.download = fileName
+        document.body.appendChild(downloadElement)
+        downloadElement.click()
+        document.body.removeChild(downloadElement)
+        window.URL.revokeObjectURL(href)
+      })
+    }, exportData() {
+      exportDataDrug().then((res) => {
+        const disposition = res.headers['content-disposition'];
+        let fileName = disposition.match(/=(.*)$/)[1];
+        let blob = new Blob([res.data])
+        let downloadElement = document.createElement('a')
+        let href = window.URL.createObjectURL(blob)
+        downloadElement.href = href
+        downloadElement.download = fileName
+        document.body.appendChild(downloadElement)
+        downloadElement.click()
+        document.body.removeChild(downloadElement)
+        window.URL.revokeObjectURL(href)
+      })
+    },
+    uploadServer: function () {
+      this.uploadServerVisibleDrug = true;
+    },
+    uploadToServer() {
+      analyseFileDrug().then((res) => {
+        this.uploadServerVisibleUser = false;
+        if(res.data.msgId=='C500'){
+          this.$notify.error({
+            title: '错误',
+            message: '数据异常，拒绝添加'
+          });
+        }else if(res.data.msgId=='C501'){
+          this.$notify.error({
+            title: '错误',
+            message: '可能的原因是：数据库存在相同数据，拒绝添加'
+          });
+        }else if(res.data.msgId=='C200'){
+          this.$notify.success({
+            title: '成功',
+            message: '添加成功'
+          });
+          this.getUsers()
+        }else if(res.data.msgId=='C502'){
+          this.$notify.error({
+            title: '错误',
+            message: '数据上传失败'
+          });
+        }
+      })
+    }
   },
   mounted() {
     this.getUsers();

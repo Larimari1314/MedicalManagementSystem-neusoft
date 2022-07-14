@@ -8,6 +8,7 @@ import user from './views/nav1/user.vue'
 import registrationLevel from './views/nav2/RegistrationLevel.vue'
 import nonDrugManagement from './views/nav2/nonDrugManagement.vue'
 import schedule from './views/nav2/schedule.vue'
+import dataBaseRecover from './views/dataBse/DataBaseRecover.vue'
 
 let routes = [
     {
@@ -26,7 +27,7 @@ let routes = [
     {
         path: '/',
         component: Home,
-        name: '导航一',
+        name: '医院信息',
         iconCls: 'fa fa-users',//图标样式class
         children: [
             { path: '/main', component: Main, name: '主页', hidden: true },
@@ -38,7 +39,7 @@ let routes = [
     {
         path: '/',
         component: Home,
-        name: '导航二',
+        name: '医护信息',
         iconCls: 'fa fa-ambulance',
         children: [
             { path: '/registrationLevel', component: registrationLevel, name: '挂号级别管理' },
@@ -53,7 +54,7 @@ let routes = [
         iconCls: 'fa fa-database',
         leaf: true,//只有一个节点
         children: [
-            { path: '/page6', component: schedule, name: '数据恢复' }
+            { path: '/dataBaseRecover', component: dataBaseRecover, name: '数据恢复' }
         ]
     },
     {

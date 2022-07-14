@@ -50,7 +50,6 @@ public class RedisConfig extends CachingConfigurerSupport {
 	public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
 		StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
 		Jackson2JsonRedisSerializer<Object> jacksonSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
-
 		RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
 		config = config.entryTtl(Duration.ofMinutes(60))
 				.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(stringRedisSerializer))

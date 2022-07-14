@@ -1,5 +1,6 @@
 package com.max.back.neusoft.dao;
 
+import com.max.back.neusoft.form.DoctorFindFrom;
 import com.max.back.neusoft.pojo.Generalitem;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
@@ -17,6 +18,8 @@ import java.util.Map;
 @Repository
 public interface GeneralitemMapper extends BaseMapper<Generalitem> {
     public List<Map<String,Object>> findGender();
+
+    public List<Map<String,Object>> findByRegistered();
 }
 
 

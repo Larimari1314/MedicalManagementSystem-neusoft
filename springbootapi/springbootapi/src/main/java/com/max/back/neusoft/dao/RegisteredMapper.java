@@ -20,6 +20,8 @@ public interface RegisteredMapper extends BaseMapper<Registered> {
     public List<Map<String,Object>> findAll(RegisteredFrom name);
 
     public Integer updateVersionInteger(Registered registered);
+
+
 }
 
 

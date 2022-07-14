@@ -2,6 +2,7 @@ package com.max.back.neusoft.api;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.max.back.common.http.ResponseResult;
 import com.max.back.neusoft.form.DepartmentFindFrom;
@@ -72,6 +73,13 @@ public class DepartmentServlet {
         }else {
             return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
         }
+    }
+
+    @GetMapping("/findDepartment")
+    public String findDepartment(){
+        QueryWrapper<Department> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("d_id","d_name");
+        return JSON.toJSONString( departmentService.listMaps(queryWrapper));
     }
 
 }
