@@ -17,4 +17,9 @@ public interface DoctorService extends IService<Doctor> {
     public String findByRegis(DoctorRegisteredFrom doctorRegisteredFrom);
     public String findByRegistered(DoctorFindFrom doctorFindFrom);
 
+    public String checkDeleteDoctor();
+    public String  deletePermanently(String id);
+    public String dataRecovery(String id);
+
+
 }

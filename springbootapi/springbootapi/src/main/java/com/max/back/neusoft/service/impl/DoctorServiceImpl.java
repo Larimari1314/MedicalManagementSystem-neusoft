@@ -43,6 +43,32 @@ public class DoctorServiceImpl extends ServiceImpl<DoctorMapper, Doctor>
         PageInfo pageInfo = new PageInfo(byRegis);
         return JSON.toJSONString(ResponseResult.getSuccessResult(pageInfo, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
     }
+
+    @Override
+    public String checkDeleteDoctor() {
+        List<Map<String, Object>> maps = doctorMapper.checkDeleteDoctor();
+        return JSON.toJSONString(ResponseResult.getSuccessResult(maps, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
+    }
+
+    @Override
+    public String deletePermanently(String id) {
+        Integer integer = doctorMapper.deletePermanently(id);
+        if(integer!=0){
+            return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
+        }else {
+            return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
+        }
+    }
+
+    @Override
+    public String dataRecovery(String id) {
+        Integer integer = doctorMapper.dataRecovery(id);
+        if(integer!=0){
+            return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
+        }else {
+            return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
+        }
+    }
 }
 
 

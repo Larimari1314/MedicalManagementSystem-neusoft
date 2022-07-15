@@ -1,6 +1,10 @@
 import axios from 'axios';
 
 let parameter='http://localhost:8000/hospital';
+
+let base = '';
+
+export const requestLogin = params => { return axios.post(`${base}/login`, params).then(res => res.data); };
 //查找科室列表
 export const getDepartClassList =params=>{return axios.get(`${parameter}/departClassification/getDepartClassList`,{params:params});};
 //查找科室
@@ -65,5 +69,23 @@ export const deleteByIdsDoctor =params=>{return axios.post(`${parameter}/doctor/
 export const addDoctor =params=>{return axios.post(`${parameter}/doctor/addDoctor`,params);};
 //查找班次
 export const findScheduleList =params=>{return axios.get(`${parameter}/schedule/findScheduleList`,{params:params});};
+//获取排班列表
 export const getAllScheduleList =params=>{return axios.post(`${parameter}/schedule/getAllScheduleList`,params);};
+//设置排班规则
+export const setUpSchedule =params=>{return axios.post(`${parameter}/doctor/setUpSchedule`,params);};
+
+//永久删除
+export const deletePermanently =params=>{return axios.post(`${parameter}/doctor/deletePermanently`,params);};
+//恢复数据
+export const dataRecoveryDoctor =params=>{return axios.post(`${parameter}/doctor/dataRecovery`,params);};
+//恢复数据显示医生列表
+export const checkDeleteDoctor =params=>{return axios.get(`${parameter}/doctor/checkDeleteDoctor`);};
+
+
+//获取登录广告
+export const GetAllAds =params=>{return axios.get(`${parameter}/login/getAllAds`);};
+//获取用户登录头像
+export const getAdminImgUrl =params=>{return axios.post(`${parameter}/login/getAdminImgUrl`,params);};
+//管理员登录
+export const adminRequestLogin =params=>{return axios.post(`${parameter}/login/adminRequestLogin`,params);};
 

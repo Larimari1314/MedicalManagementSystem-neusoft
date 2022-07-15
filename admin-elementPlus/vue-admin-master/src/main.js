@@ -7,10 +7,8 @@ import VueRouter from 'vue-router'
 import store from './vuex/store'
 import Vuex from 'vuex'
 import routes from './routes'
-// import myChart from './common/js/echarts.min'
 // import Mock from './mock'
 // Mock.bootstrap();
-// Vue.use(myChart)
 import axios from 'axios'
 Vue.prototype.$ajax = axios;
 const xhr = new XMLHttpRequest();

@@ -10,16 +10,16 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Map;
 
-/**
-* @author 86155
-* @description 针对表【n_doctor】的数据库操作Mapper
-* @createDate 2022-07-12 11:41:46
-* @Entity com.max.back.neusoft.pojo.Doctor
-*/@Mapper
+@Mapper
 @Repository
 public interface DoctorMapper extends BaseMapper<Doctor> {
     public List<Map<String,Object>> findByRegis(DoctorRegisteredFrom doctorRegisteredFrom);
     List<Map<String,Object>> findDoctor(DoctorFindFrom doctorFindFrom);
+    public List<Map<String,Object>> checkDeleteDoctor();
+
+    public Integer deletePermanently(String id);
+
+    public Integer dataRecovery(String id);
 }
 
 

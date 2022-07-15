@@ -3,59 +3,87 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.max.back.neusoft.dao.DoctorMapper">
-
     <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.Doctor">
-            <id property="id" column="d_id" jdbcType="VARCHAR"/>
-            <result property="name" column="d_name" jdbcType="VARCHAR"/>
-            <result property="age" column="d_age" jdbcType="INTEGER"/>
-            <result property="sex" column="d_sex" jdbcType="CHAR"/>
-            <result property="schedule" column="d_schedule" jdbcType="CHAR"/>
-            <result property="department" column="d_department" jdbcType="VARCHAR"/>
-            <result property="regis" column="d_regis" jdbcType="VARCHAR"/>
-            <result property="delete" column="d_delete" jdbcType="INTEGER"/>
+        <id property="id" column="d_id" jdbcType="VARCHAR"/>
+        <result property="name" column="d_name" jdbcType="VARCHAR"/>
+        <result property="age" column="d_age" jdbcType="INTEGER"/>
+        <result property="sex" column="d_sex" jdbcType="CHAR"/>
+        <result property="schedule" column="d_schedule" jdbcType="CHAR"/>
+        <result property="department" column="d_department" jdbcType="VARCHAR"/>
+        <result property="regis" column="d_regis" jdbcType="VARCHAR"/>
+        <result property="delete" column="d_delete" jdbcType="INTEGER"/>
     </resultMap>
 
     <select id="findByRegis" resultType="java.util.Map" parameterType="com.max.back.neusoft.form.DoctorRegisteredFrom">
-            SELECT
-            n_doctor.d_id id,
-            n_doctor.d_name name,
-            n_doctor.d_age age,
-            n_generalItem.value sex,
-            n_department.d_name dname,
-            n_schedule.`s_name`sname
-            FROM n_doctor
-            INNER JOIN n_generalItem ON n_doctor.d_sex = n_generalItem.coding
-            INNER JOIN n_department ON n_doctor.d_department = n_department.d_id
-            INNER JOIN n_schedule ON n_doctor.d_schedule = n_schedule.s_id
-            WHERE 1=1
-            <if test='name != null and name != "" '>
-                AND n_doctor.d_name LIKE CONCAT('%',#{name},'%')
-            </if>  AND d_regis=#{regisId} AND d_delete=0
-            ORDER BY n_doctor.d_id
+        SELECT
+        n_doctor.d_id id,
+        n_doctor.d_name name,
+        n_doctor.d_age age,
+        n_generalItem.value sex,
+        n_department.d_name dname,
+        n_schedule.`s_name`sname
+        FROM n_doctor
+        INNER JOIN n_generalItem ON n_doctor.d_sex = n_generalItem.coding
+        INNER JOIN n_department ON n_doctor.d_department = n_department.d_id
+        INNER JOIN n_schedule ON n_doctor.d_schedule = n_schedule.s_id
+        WHERE 1=1
+        <if test='name != null and name != "" '>
+            AND n_doctor.d_name LIKE CONCAT('%',#{name},'%')
+        </if>
+        AND d_regis=#{regisId} AND d_delete=0
+        ORDER BY n_doctor.d_id
     </select>
-        <select id="findDoctor" resultType="java.util.Map" parameterType="com.max.back.neusoft.form.DoctorFindFrom">
-            SELECT
-                n_doctor.d_id id,
-                n_doctor.d_name name,
-                n_doctor.d_age age,
-                n_doctor.d_department department,
-                n_doctor.d_schedule schedule,
-                n_generalItem.value sex,
-                n_department.d_name dname,
-                n_schedule.s_name sname
-            FROM n_doctor
-                     INNER JOIN n_generalItem ON n_doctor.d_sex = n_generalItem.coding
-                     INNER JOIN n_department ON n_doctor.d_department = n_department.d_id
-                     INNER JOIN n_schedule ON n_doctor.d_schedule = n_schedule.s_id
-            WHERE 1=1
-            <if test='name != null and name != "" '>
-                AND n_doctor.d_name LIKE CONCAT('%',#{name},'%')
-            </if>
-            <if test='department != null and department != "" '>
-                AND  n_doctor.d_department=#{department}
-            </if><if test='registered != null and registered != "" '>
-                AND  n_doctor.d_regis=#{registered}
-            </if> AND d_delete=0
-            ORDER BY n_doctor.d_id
-        </select>
+    <select id="findDoctor" resultType="java.util.Map" parameterType="com.max.back.neusoft.form.DoctorFindFrom">
+        SELECT
+        n_doctor.d_id id,
+        n_doctor.d_name name,
+        n_doctor.d_age age,
+        n_doctor.d_department department,
+        n_doctor.d_schedule schedule,
+        n_generalItem.value sex,
+        n_department.d_name dname,
+        n_schedule.s_name sname
+        FROM n_doctor
+        INNER JOIN n_generalItem ON n_doctor.d_sex = n_generalItem.coding
+        INNER JOIN n_department ON n_doctor.d_department = n_department.d_id
+        INNER JOIN n_schedule ON n_doctor.d_schedule = n_schedule.s_id
+        WHERE 1=1
+        <if test='name != null and name != "" '>
+            AND n_doctor.d_name LIKE CONCAT('%',#{name},'%')
+        </if>
+        <if test='department != null and department != "" '>
+            AND n_doctor.d_department=#{department}
+        </if>
+        <if test='registered != null and registered != "" '>
+            AND n_doctor.d_regis=#{registered}
+        </if>
+        AND d_delete=0
+        ORDER BY n_doctor.d_id
+    </select>
+    <select id="checkDeleteDoctor" resultType="java.util.Map">
+        SELECT n_doctor.d_id         id,
+               n_doctor.d_name       name,
+               n_doctor.d_age        age,
+               n_doctor.d_department department,
+               n_doctor.d_schedule   schedule,
+               n_generalItem.value   sex,
+               n_department.d_name   dname,
+               n_schedule.s_name     sname
+        FROM n_doctor
+                 INNER JOIN n_generalItem ON n_doctor.d_sex = n_generalItem.coding
+                 INNER JOIN n_department ON n_doctor.d_department = n_department.d_id
+                 INNER JOIN n_schedule ON n_doctor.d_schedule = n_schedule.s_id
+        WHERE d_delete = 1
+        ORDER BY n_doctor.d_id
+    </select>
+    <delete id="deletePermanently" parameterType="java.lang.String">
+        DELETE
+        FROM n_doctor
+        WHERE d_id = #{id} AND d_delete=1
+    </delete>
+    <update id="dataRecovery" parameterType="java.lang.String">
+        UPDATE n_doctor
+        SET d_delete=0
+        WHERE d_id = #{id} AND d_delete=1
+    </update>
 </mapper>
