@@ -5,6 +5,8 @@ import com.max.back.neusoft.pojo.Nondrug;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.io.ByteArrayOutputStream;
+import java.util.List;
+import java.util.Map;
 
 /**
 * @author 86155
@@ -21,4 +23,7 @@ public interface NondrugService extends IService<Nondrug> {
 
     String analyseFile(String fileName);
 
+    public String  deletePermanently(String id);
+    public String dataRecovery(String id);
+    String getDeletes();
 }

@@ -19,6 +19,11 @@ import java.util.Map;
 @Repository
 public interface NondrugMapper extends BaseMapper<Nondrug> {
     public abstract List<Map<String, Object>>  getAllDrugByRequire(DrugFindFrom drugFindFrom);
+   List<Map<String,Object>> getDeletes();
+
+    public Integer deletePermanently(String id);
+
+    public Integer dataRecovery(String id);
 }
 
 

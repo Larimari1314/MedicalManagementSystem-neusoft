@@ -19,10 +19,13 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @CrossOrigin
@@ -184,5 +187,22 @@ public class DrugServlet {
             return JSON.toJSONString(ResponseResult.getErrorResult("C502"));
         }
     }
+    @GetMapping("/getDeleteDrug")
+    public String getDeletes(){
+       return nondrugService.getDeletes();
+    }
+    @PostMapping("/deletePermanently")
+    public String deletePermanently(@RequestBody @NotBlank String id) {
+        id = id.replace("=", "");
+        String path = System.getProperty("user.dir");
+        File newFile = new File(path + "\\src\\main\\webapp\\Img\\nonDrug\\" + id+"\\"+id+".jpg");
+        newFile.delete();
+        return nondrugService.deletePermanently(id);
+    }
 
+    @PostMapping("/dataRecovery")
+    public String dataRecovery(@RequestBody @NotBlank String id) {
+        id = id.replace("=", "");
+        return nondrugService.dataRecovery(id);
+    }
 }

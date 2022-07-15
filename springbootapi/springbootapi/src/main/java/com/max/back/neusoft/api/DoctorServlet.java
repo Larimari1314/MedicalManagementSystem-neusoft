@@ -85,11 +85,13 @@ public class DoctorServlet {
 
     @PostMapping("/deletePermanently")
     public String deletePermanently(@RequestBody @NotBlank String id) {
+        id = id.replace("=", "");
         return doctorService.deletePermanently(id);
     }
 
     @PostMapping("/dataRecovery")
     public String dataRecovery(@RequestBody @NotBlank String id) {
+        id = id.replace("=", "");
         return doctorService.dataRecovery(id);
     }
 

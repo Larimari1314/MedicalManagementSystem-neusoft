@@ -5,16 +5,26 @@
 <mapper namespace="com.max.back.neusoft.dao.NondrugMapper">
 
     <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.Nondrug">
-            <id property="id" column="d_id" jdbcType="VARCHAR"/>
-            <result property="cover" column="d_cover" jdbcType="VARCHAR"/>
-            <result property="name" column="d_name" jdbcType="VARCHAR"/>
-            <result property="specification" column="d_specification" jdbcType="VARCHAR"/>
-            <result property="number" column="d_number" jdbcType="INTEGER"/>
-            <result property="price" column="d_price" jdbcType="INTEGER"/>
-            <result property="delete" column="d_delete" jdbcType="INTEGER"/>
-            <result property="enable" column="d_enable" jdbcType="INTEGER"/>
-            <result property="version" column="d_version" jdbcType="INTEGER"/>
+        <id property="id" column="d_id" jdbcType="VARCHAR"/>
+        <result property="cover" column="d_cover" jdbcType="VARCHAR"/>
+        <result property="name" column="d_name" jdbcType="VARCHAR"/>
+        <result property="specification" column="d_specification" jdbcType="VARCHAR"/>
+        <result property="number" column="d_number" jdbcType="INTEGER"/>
+        <result property="price" column="d_price" jdbcType="INTEGER"/>
+        <result property="delete" column="d_delete" jdbcType="INTEGER"/>
+        <result property="enable" column="d_enable" jdbcType="INTEGER"/>
+        <result property="version" column="d_version" jdbcType="INTEGER"/>
     </resultMap>
+    <delete id="deletePermanently" parameterType="java.lang.String">
+        DELETE
+        FROM n_nonDrug
+        WHERE d_id = #{id} AND d_delete=1
+    </delete>
+    <update id="dataRecovery" parameterType="java.lang.String">
+        UPDATE n_nonDrug
+        SET d_delete=0
+        WHERE d_id = #{id} AND d_delete=1
+    </update>
     <select id="getAllDrugByRequire" parameterType="com.max.back.neusoft.form.DrugFindFrom" resultType="java.util.Map">
         SELECT
         n_nonDrug.d_id id,
@@ -36,5 +46,14 @@
         </if>
         AND n_nonDrug.d_delete=0
         ORDER BY n_nonDrug.d_id
+    </select>
+    <select id="getDeletes" resultType="java.util.Map">
+        SELECT  n_nonDrug.d_id id,
+            n_nonDrug.d_name   name,
+               n_nonDrug.d_cover cover,
+               n_nonDrug.d_number number,
+               n_nonDrug.d_price  price
+        FROM n_nonDrug
+        WHERE n_nonDrug.d_delete = 1
     </select>
 </mapper>

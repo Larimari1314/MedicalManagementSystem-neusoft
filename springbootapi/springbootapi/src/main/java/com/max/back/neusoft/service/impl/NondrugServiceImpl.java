@@ -10,7 +10,6 @@ import com.max.back.common.sercurity.utils.export.ExportDataUtils;
 import com.max.back.neusoft.dao.NondrugMapper;
 import com.max.back.neusoft.form.DrugFindFrom;
 import com.max.back.neusoft.pojo.Nondrug;
-import com.max.back.neusoft.pojo.User;
 import com.max.back.neusoft.service.NondrugService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -28,7 +27,6 @@ import org.springframework.stereotype.Service;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -47,10 +45,10 @@ public class NondrugServiceImpl extends ServiceImpl<NondrugMapper, Nondrug>
 
     @Override
     public String getAllDrugByRequire(DrugFindFrom drugFindFrom) {
-        PageHelper.startPage(drugFindFrom.getPage(),10);
+        PageHelper.startPage(drugFindFrom.getPage(), 10);
         List<Map<String, Object>> allDrugByRequire = nondrugMapper.getAllDrugByRequire(drugFindFrom);
-        PageInfo pageInfo=new PageInfo(allDrugByRequire);
-        return JSON.toJSONString(ResponseResult.getSuccessResult(pageInfo,"C200", null), SerializerFeature.DisableCircularReferenceDetect);
+        PageInfo pageInfo = new PageInfo(allDrugByRequire);
+        return JSON.toJSONString(ResponseResult.getSuccessResult(pageInfo, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -163,7 +161,7 @@ public class NondrugServiceImpl extends ServiceImpl<NondrugMapper, Nondrug>
         int newRow = 3;
         ArrayList<Nondrug> nondrugs = new ArrayList<>();
         while (true) {
-           Nondrug nondrug=new Nondrug();
+            Nondrug nondrug = new Nondrug();
             XSSFRow new_row = sheetAt.getRow(newRow);
             try {
                 String rawValue = new_row.getCell(1).getRawValue();
@@ -172,7 +170,7 @@ public class NondrugServiceImpl extends ServiceImpl<NondrugMapper, Nondrug>
                 }
                 nondrug.setId(rawValue);
                 nondrug.setCover(new_row.getCell(2).getStringCellValue());
-               nondrug.setName(new_row.getCell(3).getStringCellValue());
+                nondrug.setName(new_row.getCell(3).getStringCellValue());
                 nondrug.setSpecification(new_row.getCell(4).getStringCellValue());
                 nondrug.setNumber(Integer.parseInt(new_row.getCell(5).getStringCellValue()));
                 nondrug.setPrice(Integer.parseInt(new_row.getCell(6).getStringCellValue()));
@@ -186,9 +184,9 @@ public class NondrugServiceImpl extends ServiceImpl<NondrugMapper, Nondrug>
                 //抱空指针异常表明数据读取完，跳出循环即可
             } catch (Exception e) {
                 return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
-            }finally {
+            } finally {
                 //删除源文件
-                if(!file.delete()){
+                if (!file.delete()) {
                     file.delete();
                 }
             }
@@ -200,14 +198,40 @@ public class NondrugServiceImpl extends ServiceImpl<NondrugMapper, Nondrug>
         } catch (Exception e) {
             //原因分析为数据可能已存在
             return JSON.toJSONString(ResponseResult.getErrorResult("C501"));
-        }finally {
+        } finally {
             //删除源文件
-            if(!file.delete()){
+            if (!file.delete()) {
                 file.delete();
             }
         }
         //上述没报错误就是导入成功了
-        return JSON.toJSONString(ResponseResult.getSuccessResult(null,"C200", null));
+        return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null));
+    }
+
+    @Override
+    public String getDeletes() {
+        List<Map<String, Object>> deletes = nondrugMapper.getDeletes();
+        return JSON.toJSONString(ResponseResult.getSuccessResult(deletes, "C200", null));
+    }
+
+    @Override
+    public String deletePermanently(String id) {
+        Integer integer = nondrugMapper.deletePermanently(id);
+        if (integer != 0) {
+            return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
+        } else {
+            return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
+        }
+    }
+
+    @Override
+    public String dataRecovery(String id) {
+        Integer integer = nondrugMapper.dataRecovery(id);
+        if (integer != 0) {
+            return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
+        } else {
+            return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
+        }
     }
 }
 

@@ -20,6 +20,12 @@ import java.util.Map;
 @Repository
 public interface UserMapper extends BaseMapper<User> {
     public List<Map<String,Object>> findUser(UserFindFrom userFindFrom);
+
+    List<Map<String,Object>> getDeletes();
+
+    public Integer deletePermanently(String id);
+
+    public Integer dataRecovery(String id);
 }
 
 

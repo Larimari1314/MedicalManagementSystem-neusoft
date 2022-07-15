@@ -32,13 +32,45 @@
 						<el-menu-item v-if="item.leaf&&item.children.length>0" :index="item.children[0].path"><i :class="item.iconCls"></i>{{item.children[0].name}}</el-menu-item>
 					</template>
 				</el-menu>
-
+        <el-dialog title="编辑" v-model="editFormVisible" :close-on-click-modal="false">
+          <el-tabs v-model="activeName" @tab-click="handleClick">
+            <el-tab-pane label="修改信息" name="first">
+              <el-form :model="editForm" label-width="80px" ref="editForm">
+                <el-form-item label="用户头像" prop="avatar">
+                  <img :src="this.sysUserAvatar" style="border-radius:50%; " width="100" height="100"
+                       alt="头像">
+                  <el-upload
+                      action="http://localhost:8000/hospital/login/avatar"
+                      list-type="picture-card"
+                      :on-preview="handlePictureCardPreview"
+                      :on-remove="handleRemove"
+                      :limit="1"
+                  >
+                    <i class="el-icon-plus"></i>
+                  </el-upload>
+                </el-form-item>
+                <el-form-item label="登录名" prop="username" :rules="[
+                      { required: true, message: '请填写登录名'}]">
+                  <el-input v-model="editForm.username"></el-input>
+                </el-form-item>
+                <el-form-item label="登录密码" prop="password" :rules="[
+                      { required: true, message: '请填写登陆密码'}]">
+                  <el-input v-model="editForm.password" type="password"></el-input>
+                </el-form-item>
+              </el-form>
+            </el-tab-pane>
+          </el-tabs>
+          <div slot="footer" class="dialog-footer">
+            <el-button @click.native="editFormVisible = false">取消</el-button>
+            <el-button type="primary" @click.native="submit" :loading="addLoading">提交</el-button>
+          </div>
+        </el-dialog>
 				<!--导航菜单-折叠后-->
 				<ul class="el-menu el-menu-vertical-demo collapsed" v-show="collapsed" ref="menuCollapsed">
 					<li v-for="(item,index) in $router.options.routes" v-if="!item.hidden" class="el-submenu item">
 						<template v-if="!item.leaf">
 							<div class="el-submenu__title" style="padding-left: 20px;" @mouseover="showMenu(index,true)" @mouseout="showMenu(index,false)"><i :class="item.iconCls"></i></div>
-							<ul class="el-menu submenu" :class="'submenu-hook-'+index" @mouseover="showMenu(index,true)" @mouseout="showMenu(index,false)"> 
+							<ul class="el-menu submenu" :class="'submenu-hook-'+index" @mouseover="showMenu(index,true)" @mouseout="showMenu(index,false)">
 								<li v-for="child in item.children" v-if="!child.hidden" :key="child.path" class="el-menu-item" style="padding-left: 40px;" :class="$route.path==child.path?'is-active':''" @click="$router.push(child.path)">{{child.name}}</li>
 							</ul>
 						</template>
@@ -69,12 +101,25 @@
 			</section>
 		</el-col>
 	</el-row>
+
 </template>
 
 <script>
-	export default {
+import {logout, modifyLoginInformation} from "../api/api";
+
+  export default {
 		data() {
 			return {
+        Userlist:{},
+        editForm:{
+          avatar:'',
+          username:'',
+          password:'',
+          id:''
+        },
+        addLoading:false,
+        activeName: 'first',
+        editFormVisible:false,
 				sysName:'智能医疗云台',
 				collapsed:false,
 				sysUserName: '',
@@ -92,6 +137,41 @@
 			}
 		},
 		methods: {
+      submit(){
+        this.editForm.id=this.Userlist.id
+        modifyLoginInformation(this.editForm).then((res)=>{
+          if(res.data.msgId=='C405'){
+            this.$notify.error({
+              title: '失败',
+              message: '当前数据库已存在此用户名'
+            });
+          }else if(res.data.msgId=='C200'){
+            this.editFormVisible=false
+            this.$notify.success({
+              title: '成功',
+              message: '修改成功'
+            });
+            sessionStorage.removeItem('user');
+            this.$router.push('/login');
+          }
+          else if(res.data.msgId=="C500"){
+            this.$notify.error({
+              title: '失败',
+              message: '修改失败'
+            });
+          }
+        })
+      },
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePictureCardPreview(file) {
+        this.dialogImageUrl = file.url;
+        this.dialogVisible = true;
+      },
+      handleClick(tab, event) {
+        console.log(tab, event);
+      },
       adminInformation:function(){
         this.editFormVisible=true
       },
@@ -113,7 +193,8 @@
 					//type: 'warning'
 				}).then(() => {
 					sessionStorage.removeItem('user');
-					_this.$router.push('/login');
+          _this.$router.push('/login');
+          logout().then()
 				}).catch(() => {
 
 				});
@@ -132,7 +213,8 @@
 			var user = sessionStorage.getItem('user');
 			if (user) {
 				user = JSON.parse(user);
-				this.sysUserName = user.name || '';
+        this.Userlist=user
+				this.sysUserName = user.username || '';
 				this.sysUserAvatar = user.avatar || '';
 			}
 

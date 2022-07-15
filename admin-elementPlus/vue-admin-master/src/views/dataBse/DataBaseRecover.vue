@@ -5,7 +5,7 @@
         :data="doctorList"
         border
         style="width: 100%"
-        max-height="250"  ref="doctorList">
+        max-height="250" ref="doctorList">
       <el-table-column
           prop="id"
           label="医生编号"
@@ -13,7 +13,7 @@
       </el-table-column>
       <el-table-column
           label="姓名"
-          width="300">
+          width="280">
         <template scope="scope">
           <el-popover trigger="hover" placement="top">
             <p>姓名: {{ scope.row.name }}</p>
@@ -61,22 +61,32 @@
     </el-table>
     <div style="text-align: center;color: red"><h1>非药品表删除数据</h1></div>
     <el-table
-        :data="tableData4"
+        :data="nonDrugList"
         border
         style="width: 100%"
         max-height="250">
       <el-table-column
-          prop="date"
-          label="日期"
+          prop="id"
+          label="编号"
           width="150">
       </el-table-column>
       <el-table-column
+          prop="cover"
+          label="药品封面"
+          width="250">
+        <template scope="scope">
+          <img :src="nonDrugList[scope.$index].cover" style="border-radius:50%; " width="100" height="100"
+               alt="药品封面">
+        </template>
+      </el-table-column>
+      <el-table-column
           label="姓名"
-          width="180">
+          width="200">
         <template scope="scope">
           <el-popover trigger="hover" placement="top">
             <p>姓名: {{ scope.row.name }}</p>
-            <p>住址: {{ scope.row.address }}</p>
+            <p>数量: {{ scope.row.number }}</p>
+            <p>价格: {{ scope.row.price }}</p>
             <div slot="reference" class="name-wrapper">
               <el-tag>{{ scope.row.name }}</el-tag>
             </div>
@@ -84,56 +94,62 @@
         </template>
       </el-table-column>
       <el-table-column
-          prop="province"
-          label="省份"
-          width="120">
+          prop="number"
+          label="数量"
+          width="150">
       </el-table-column>
       <el-table-column
-          prop="city"
-          label="市区"
-          width="120">
-      </el-table-column>
-      <el-table-column
-          prop="address"
-          label="地址"
-          width="300">
-      </el-table-column>
-      <el-table-column
-          prop="zip"
-          label="邮编"
-          width="120">
+          prop="price"
+          label="价格"
+          width="180">
       </el-table-column>
       <el-table-column
           label="操作"
-          width="120">
+          width="300">
         <template scope="scope">
           <el-button
-              @click.native.prevent="deleteRow(scope.$index, tableData4)"
-              type="text"
+              @click.native="deleteRowDrug(scope.$index, scope.row)"
+              type="danger"
               size="small">
-            移除
+            永久删除
+          </el-button>
+          <el-button
+              @click.native="dataRecoveryDrug(scope.$index, scope.row)"
+              type="primary"
+              size="small">
+            恢复数据
           </el-button>
         </template>
       </el-table-column>
     </el-table>
     <div style="text-align: center;color: red"><h1>用户表已删除数据</h1></div>
     <el-table
-        :data="tableData4"
+        :data="userList"
         border
         style="width: 100%"
         max-height="250">
       <el-table-column
-          prop="date"
-          label="日期"
+          prop="id"
+          label="编号"
           width="150">
       </el-table-column>
       <el-table-column
-          label="姓名"
+          prop="avatar"
+          label="用户头像"
           width="180">
+        <template scope="scope">
+          <img :src="userList[scope.$index].avatar" style="border-radius:50%; " width="100" height="100"
+               alt="药品封面">
+        </template>
+      </el-table-column>
+      <el-table-column
+          label="姓名"
+          width="280">
         <template scope="scope">
           <el-popover trigger="hover" placement="top">
             <p>姓名: {{ scope.row.name }}</p>
-            <p>住址: {{ scope.row.address }}</p>
+            <p>身份证号: {{ scope.row.identityNumber }}</p>
+            <p>年龄: {{ scope.row.cover }}</p>
             <div slot="reference" class="name-wrapper">
               <el-tag>{{ scope.row.name }}</el-tag>
             </div>
@@ -141,34 +157,30 @@
         </template>
       </el-table-column>
       <el-table-column
-          prop="province"
-          label="省份"
+          prop="cover"
+          label="年龄"
           width="120">
       </el-table-column>
       <el-table-column
-          prop="city"
-          label="市区"
-          width="120">
-      </el-table-column>
-      <el-table-column
-          prop="address"
-          label="地址"
-          width="300">
-      </el-table-column>
-      <el-table-column
-          prop="zip"
-          label="邮编"
-          width="120">
+          prop="identityNumber"
+          label="身份证号"
+          width="180">
       </el-table-column>
       <el-table-column
           label="操作"
-          width="120">
+          width="300">
         <template scope="scope">
           <el-button
-              @click.native.prevent="deleteRow(scope.$index, tableData4)"
-              type="text"
+              @click.native="deleteRowUser(scope.$index, scope.row)"
+              type="danger"
               size="small">
-            移除
+            永久删除
+          </el-button>
+          <el-button
+              @click.native="dataRecoveryUser(scope.$index, scope.row)"
+              type="primary"
+              size="small">
+            恢复数据
           </el-button>
         </template>
       </el-table-column>
@@ -179,11 +191,21 @@
 
 <script>
 
-import {checkDeleteDoctor, dataRecoveryDoctor, deletePermanently} from "../../api/api";
+import {
+  checkDeleteDoctor,
+  dataRecoveryDoctor,
+  dataRecoveryDrug, dataRecoveryUser,
+  deletePermanently,
+  deletePermanentlyDrug, deletePermanentlyUser,
+  getDeleteDrug,
+  getDeleteUser
+} from "../../api/api";
 
 export default {
   data() {
     return {
+      userList:[],
+      nonDrugList: [],
       doctorList: [],
       tableData4: [{
         date: '2016-05-03',
@@ -241,11 +263,58 @@ export default {
     deleteRow(index, rows) {
       rows.splice(index, 1);
     },
+    deleteRowDrug(index, row) {
+      this.$confirm('确认删除该记录吗?', '提示', {
+        type: 'warning'
+      }).then(() => {
+            deletePermanentlyDrug(row.id).then((res) => {
+              if (res.data.msgId == 'C200') {
+                this.$notify.success({
+                  title: '成功',
+                  message: '删除成功',
+                  offset: 100
+                });
+                this.getNonDrug()
+              } else {
+                this.$notify.error({
+                  title: '失败',
+                  message: '删除失败',
+                  offset: 100
+                });
+                this.getNonDrug()
+              }
+            })
+          }
+      )
+    },
+    deleteRowUser(index, row) {
+      this.$confirm('确认删除该记录吗?', '提示', {
+        type: 'warning'
+      }).then(() => {
+            deletePermanentlyUser(row.id).then((res) => {
+              if (res.data.msgId == 'C200') {
+                this.$notify.success({
+                  title: '成功',
+                  message: '删除成功',
+                  offset: 100
+                });
+                this.getUser()
+              } else {
+                this.$notify.error({
+                  title: '失败',
+                  message: '删除失败',
+                  offset: 100
+                });
+                this.getUser()
+              }
+            })
+          }
+      )
+    },
     deleteRowDoctor(index, row) {
       this.$confirm('确认删除该记录吗?', '提示', {
         type: 'warning'
-      }).
-          then(() => {
+      }).then(() => {
             deletePermanently(row.id).then((res) => {
               if (res.data.msgId == 'C200') {
                 this.$notify.success({
@@ -254,7 +323,7 @@ export default {
                   offset: 100
                 });
                 this.getDoctorDelete()
-              }else {
+              } else {
                 this.$notify.error({
                   title: '失败',
                   message: '删除失败',
@@ -264,10 +333,10 @@ export default {
               }
             })
           }
-          )
+      )
     },
-    dataRecoveryDoctor(index,row){
-      dataRecoveryDoctor(row.id).then((res)=>{
+    dataRecoveryDoctor(index, row) {
+      dataRecoveryDoctor(row.id).then((res) => {
         if (res.data.msgId == 'C200') {
           this.$notify.success({
             title: '成功',
@@ -275,7 +344,7 @@ export default {
             offset: 100
           });
           this.getDoctorDelete()
-        }else {
+        } else {
           this.$notify.error({
             title: '失败',
             message: '恢复失败',
@@ -284,7 +353,44 @@ export default {
           this.getDoctorDelete()
         }
       })
-
+    },
+    dataRecoveryUser(index, row) {
+      dataRecoveryUser(row.id).then((res) => {
+        if (res.data.msgId == 'C200') {
+          this.$notify.success({
+            title: '成功',
+            message: '恢复成功',
+            offset: 100
+          });
+          this.getUser()
+        } else {
+          this.$notify.error({
+            title: '失败',
+            message: '恢复失败',
+            offset: 100
+          });
+          this.getUser()
+        }
+      })
+    },
+    dataRecoveryDrug(index, row) {
+      dataRecoveryDrug(row.id).then((res) => {
+        if (res.data.msgId == 'C200') {
+          this.$notify.success({
+            title: '成功',
+            message: '恢复成功',
+            offset: 100
+          });
+          this.getNonDrug()
+        } else {
+          this.$notify.error({
+            title: '失败',
+            message: '恢复失败',
+            offset: 100
+          });
+          this.getNonDrug()
+        }
+      })
     },
     getDoctorDelete() {
       checkDeleteDoctor().then((res) => {
@@ -293,8 +399,24 @@ export default {
         }
       })
     }
+    , getNonDrug() {
+      getDeleteDrug().then((res) => {
+        if (res.data.msgId == 'C200') {
+          this.nonDrugList = res.data.result
+        }
+      })
+    }
+    , getUser() {
+      getDeleteUser().then((res) => {
+        if (res.data.msgId == 'C200') {
+          this.userList = res.data.result
+        }
+      })
+    }
   }, created() {
     this.getDoctorDelete();
+    this.getNonDrug();
+    this.getUser()
   }
 }
 </script>

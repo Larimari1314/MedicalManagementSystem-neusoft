@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import Main from './views/Main.vue'
 import departmentManagement from './views/nav1/DepartmentManagement.vue'
 import UserManagement from './views/nav1/UserManagement.vue'
-import user from './views/nav1/user.vue'
+import Generalitem from './views/nav1/Generalitem.vue'
 import registrationLevel from './views/nav2/RegistrationLevel.vue'
 import nonDrugManagement from './views/nav2/nonDrugManagement.vue'
 import schedule from './views/nav2/schedule.vue'
@@ -33,7 +33,7 @@ let routes = [
             { path: '/main', component: Main, name: '主页', hidden: true },
             { path: '/departmentManagement', component: departmentManagement, name: '科室管理' },
             { path: '/UserManagement', component: UserManagement, name: '用户管理' },
-            { path: '/user', component: user, name: '常数类别管理' },
+            { path: '/Generalitem', component: Generalitem, name: '常数类别管理' },
         ]
     },
     {

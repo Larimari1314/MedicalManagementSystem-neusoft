@@ -211,6 +211,30 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         //上述没报错误就是导入成功了
         return JSON.toJSONString(ResponseResult.getSuccessResult(null,"C200", null));
     }
+    @Override
+    public String getDeletes() {
+        List<Map<String, Object>> deletes = userMapper.getDeletes();
+        return JSON.toJSONString(ResponseResult.getSuccessResult(deletes,"C200",null));
+    }
+    @Override
+    public String deletePermanently(String id) {
+        Integer integer = userMapper.deletePermanently(id);
+        if(integer!=0){
+            return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
+        }else {
+            return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
+        }
+    }
+
+    @Override
+    public String dataRecovery(String id) {
+        Integer integer = userMapper.dataRecovery(id);
+        if(integer!=0){
+            return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
+        }else {
+            return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
+        }
+    }
 }
 
 

@@ -1,10 +1,7 @@
 import axios from 'axios';
 
 let parameter='http://localhost:8000/hospital';
-
-let base = '';
-
-export const requestLogin = params => { return axios.post(`${base}/login`, params).then(res => res.data); };
+/*需要拦截请求*/
 //查找科室列表
 export const getDepartClassList =params=>{return axios.get(`${parameter}/departClassification/getDepartClassList`,{params:params});};
 //查找科室
@@ -74,18 +71,40 @@ export const getAllScheduleList =params=>{return axios.post(`${parameter}/schedu
 //设置排班规则
 export const setUpSchedule =params=>{return axios.post(`${parameter}/doctor/setUpSchedule`,params);};
 
+//显示全部常数类别
+export const getAllGeneralItem =params=>{return axios.post(`${parameter}/generalitem/getAll`,params);};
+//修改常数类别
+export const editGeneralItem =params=>{return axios.post(`${parameter}/generalitem/editGeneralitem`,params);};
+
 //永久删除
 export const deletePermanently =params=>{return axios.post(`${parameter}/doctor/deletePermanently`,params);};
 //恢复数据
 export const dataRecoveryDoctor =params=>{return axios.post(`${parameter}/doctor/dataRecovery`,params);};
-//恢复数据显示医生列表
+//显示·1数据
 export const checkDeleteDoctor =params=>{return axios.get(`${parameter}/doctor/checkDeleteDoctor`);};
+//获取删除的药品信息
+export const getDeleteDrug =params=>{return axios.get(`${parameter}/nondrug/getDeleteDrug`);};
+//药品恢复
+export const dataRecoveryDrug =params=>{return axios.post(`${parameter}/nondrug/dataRecovery`,params);};
+//永久删除药品
+export const deletePermanentlyDrug =params=>{return axios.post(`${parameter}/nondrug/deletePermanently`,params);};
+//显示患者信息
+export const getDeleteUser =params=>{return axios.get(`${parameter}/user/getDeleteUser`);};
+//药品恢复
+export const dataRecoveryUser =params=>{return axios.post(`${parameter}/user/dataRecovery`,params);};
+//永久删除用户信息
+export const deletePermanentlyUser =params=>{return axios.post(`${parameter}/user/deletePermanently`,params);};
 
+//修改用户信息
+export const modifyLoginInformation =params=>{return axios.post(`${parameter}/login/modifyLoginInformation`,params);};
 
+/*不需要拦截请求*/
 //获取登录广告
 export const GetAllAds =params=>{return axios.get(`${parameter}/login/getAllAds`);};
 //获取用户登录头像
 export const getAdminImgUrl =params=>{return axios.post(`${parameter}/login/getAdminImgUrl`,params);};
+export const logout =params=>{return axios.get(`${parameter}/login/logout`);};
 //管理员登录
 export const adminRequestLogin =params=>{return axios.post(`${parameter}/login/adminRequestLogin`,params);};
+
 

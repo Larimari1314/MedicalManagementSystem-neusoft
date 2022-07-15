@@ -31,10 +31,12 @@
             </template>
           </el-form-item>
           <el-form-item prop="account">
-            <el-input type="text" v-model="ruleForm2.account" auto-complete="off" placeholder="用户名" @blur="getIngUrl"></el-input>
+            <el-input type="text" v-model="ruleForm2.account" auto-complete="off" placeholder="用户名"
+                      @blur="getIngUrl"></el-input>
           </el-form-item>
           <el-form-item prop="checkPass">
-            <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off" placeholder="密码" :disabled="disable"></el-input>
+            <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off" placeholder="密码"
+                      :disabled="disable"></el-input>
           </el-form-item>
           <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox>
           <el-form-item style="width:100%;">
@@ -56,7 +58,7 @@ import {adminRequestLogin, getAdminImgUrl, GetAllAds} from '../api/api';
 export default {
   data() {
     return {
-      disable:true,
+      disable: true,
       adminImgUrl: ' http://localhost:8000/hospital/Img/user/default.jpg',
       bannerHeight: 400,//图片父容器的高度
       screenWidth: 0,//屏幕的宽度
@@ -85,34 +87,37 @@ export default {
     };
   },
   methods: {
-    getIngUrl(){
-      if(this.ruleForm2.account!=null||this.ruleForm2.account==''){
-        getAdminImgUrl(this.ruleForm2.account).then((res)=>{
-          if(res.data.msgId=='C200'){
-            this.adminImgUrl=res.data.result.l_avatar
-            this.disable=false
+    getIngUrl() {
+      if (this.ruleForm2.account != null || this.ruleForm2.account == '') {
+        getAdminImgUrl(this.ruleForm2.account).then((res) => {
+          if (res.data.msgId == 'C200') {
+            this.adminImgUrl = res.data.result.l_avatar
+            this.disable = false
             this.$notify({
               title: '成功',
               message: "欢迎登录",
               type: 'success'
             });
-          }else if(res.data.msgId=='C404'){
-            this.adminImgUrl='http://localhost:8000/hospital/Img/user/default.jpg'
-            this.disable=true
+          } else if (res.data.msgId == 'C404') {
+            this.adminImgUrl = 'http://localhost:8000/hospital/Img/user/default.jpg'
+            this.disable = true
             this.$notify({
               title: '警告',
               message: '用户名不存在，请检查后重试',
               type: 'warning'
             });
-          }else if(res.data.msgId=='C201'){
-            this.disable=false
+          } else if (res.data.msgId == 'C201') {
+            this.disable = false
             this.$notify({
               title: '成功',
               message: "当前用户名存在多个，头像无法正常显示",
               type: 'success'
             });
           }
-        })}
+        })
+      } else {
+        this.adminImgUrl = 'http://localhost:8000/hospital/Img/user/default.jpg'
+      }
     },
     handleReset2() {
       this.$refs.ruleForm2.resetFields();
@@ -123,12 +128,12 @@ export default {
         if (valid) {
           _this.logining = true;
           let loginParams = {username: this.ruleForm2.account, password: this.ruleForm2.checkPass};
-          adminRequestLogin(loginParams).then((res)=>{
+          adminRequestLogin(loginParams).then((res) => {
             this.logining = false;
-            if(res.data.msgId=='C200'){
+            if (res.data.msgId == 'C200') {
               sessionStorage.setItem('user', JSON.stringify(res.data.result));
               this.$router.push({path: '/departmentManagement'});
-            } else if( res.data.msgId=='C404'){
+            } else if (res.data.msgId == 'C404') {
               _this.$notify({
                 title: '错误',
                 message: '密码错误',
@@ -144,7 +149,7 @@ export default {
     }
   }, created() {
     GetAllAds().then((res) => {
-        this.item = res.data
+      this.item = res.data
     });
   }
 }

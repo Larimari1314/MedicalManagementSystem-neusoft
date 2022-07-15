@@ -37,7 +37,19 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
-
+axios.interceptors.response.use(
+    response => {
+      return response;
+    },
+    error => {
+      if (error.response.status == 500) {
+        sessionStorage.removeItem('user');
+      } else {
+        message.error("出错了");
+        return Promise.reject(error);
+      }
+    }
+);
 
 new Vue({
   router,

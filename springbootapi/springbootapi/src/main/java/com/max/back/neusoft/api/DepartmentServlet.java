@@ -28,7 +28,6 @@ public class DepartmentServlet {
 
     @PostMapping("/findDepartment")
     public String findDepartment(@RequestBody @Valid DepartmentFindFrom departmentFindFrom) {
-        System.out.println(departmentFindFrom);
         return departmentService.findDepartment(departmentFindFrom);
     }
 
@@ -39,7 +38,6 @@ public class DepartmentServlet {
 
     @PostMapping("/updateDepartment")
     public String updateDepartment(@RequestBody @Valid DepartmentSaveForm departmentSaveForm) throws IOException {
-        System.out.println(departmentSaveForm.toString());
         //更新，存储界面收到的图片
         if (multipartFile!=null) {
             String path = System.getProperty("user.dir");

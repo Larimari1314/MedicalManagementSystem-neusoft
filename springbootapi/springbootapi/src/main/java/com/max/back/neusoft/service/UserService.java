@@ -21,4 +21,8 @@ public interface UserService extends IService<User> {
     ByteArrayOutputStream userExportData(String url);
 
     String analyseFile(String fileName);
+
+    public String  deletePermanently(String id);
+    public String dataRecovery(String id);
+    String getDeletes();
 }

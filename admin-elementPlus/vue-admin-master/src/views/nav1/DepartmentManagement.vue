@@ -325,7 +325,7 @@ export default {
             this.addForm.id='DE'+this.addForm.id
             this.addLoading = true;
             //NProgress.start();
-            alert(JSON.stringify(this.addForm))
+            // alert(JSON.stringify(this.addForm))
             saveDepartment(this.addForm).then((res)=>{
               if(res.data.msgId=='C200'){
                 this.addFormVisible = false;

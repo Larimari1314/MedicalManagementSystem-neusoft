@@ -369,7 +369,7 @@ export default {
             //NProgress.start();
             let para = Object.assign({}, this.addForm);
             para.birthday = (!para.birthday || para.birthday == '') ? '' : util.formatDate.format(new Date(para.birthday), 'yyyy-MM-dd');
-            alert(JSON.stringify(para))
+            // alert(JSON.stringify(para))
             addUser(para).then((res) => {
               this.addLoading = false;
               //NProgress.done();

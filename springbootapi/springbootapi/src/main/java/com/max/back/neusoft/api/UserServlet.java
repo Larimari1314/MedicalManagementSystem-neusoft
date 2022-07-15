@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -151,5 +152,23 @@ public class UserServlet {
             return JSON.toJSONString(ResponseResult.getErrorResult("C502"));
         }
 
+    }
+    @GetMapping("/getDeleteUser")
+    public String getDeletes(){
+        return userService.getDeletes();
+    }
+    @PostMapping("/deletePermanently")
+    public String deletePermanently(@RequestBody @NotBlank String id) {
+        id = id.replace("=", "");
+        String path = System.getProperty("user.dir");
+        File newFile = new File(path + "\\src\\main\\webapp\\Img\\user\\" +id+".jpg");
+        newFile.delete();
+        return userService.deletePermanently(id);
+    }
+
+    @PostMapping("/dataRecovery")
+    public String dataRecovery(@RequestBody @NotBlank String id) {
+        id = id.replace("=", "");
+        return userService.dataRecovery(id);
     }
 }

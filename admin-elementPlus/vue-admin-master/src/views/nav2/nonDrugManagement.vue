@@ -375,7 +375,7 @@ export default {
       this.$refs.addForm.validate((valid) => {
         if (valid) {
           this.$confirm('确认提交吗？', '提示', {}).then(() => {
-            alert(JSON.stringify(this.addForm))
+            // alert(JSON.stringify(this.addForm))
             this.addLoading = true;
             //NProgress.start();
             let para = Object.assign({}, this.addForm);
