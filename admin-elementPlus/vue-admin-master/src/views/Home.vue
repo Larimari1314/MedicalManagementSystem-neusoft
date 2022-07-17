@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import {logout, modifyLoginInformation} from "../api/api";
+	import {modifyLoginInformation} from "../api/api";
 
   export default {
 		data() {

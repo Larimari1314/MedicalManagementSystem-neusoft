@@ -25,7 +25,9 @@ public class WebConfig implements WebMvcConfigurer {
                 "/nondrug/uploadToServer",
                 "/login/avatar",
                 "/user/avatar",
-                "/user/uploadToServer"
+                "/user/uploadToServer",
+                "/pay/pay",
+                "/pay/scanStatus"
         );
     }
 }

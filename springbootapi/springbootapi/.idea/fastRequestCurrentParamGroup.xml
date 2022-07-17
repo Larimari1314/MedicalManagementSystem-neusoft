@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="fastRequestCurrentParamGroup">
-    <option name="bodyParamMap">
-      <map>
-        <entry key="adminUserName">
-          <value>
-            <Object />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
-    <option name="method" value="getAdminImgUrl" />
-    <option name="methodType" value="POST" />
+    <option name="className" value="com.max.back.neusoft.api.GeneralitemServlet" />
+    <option name="method" value="getMedicationStatus" />
     <option name="module" value="springbootapi" />
-    <option name="originUrl" value="/login/getAdminImgUrl" />
-    <option name="url" value="/login/getAdminImgUrl" />
+    <option name="originUrl" value="/generalitem/getMedicationStatus" />
+    <option name="url" value="/generalitem/getMedicationStatus" />
   </component>
 </project>

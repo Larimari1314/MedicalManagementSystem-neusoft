@@ -109,7 +109,6 @@ public class LoginServlet {
     @PostMapping("/modifyLoginInformation")
     public String modifyLoginInformation(@RequestBody @Valid LoginInformationFrom loginInformationFrom) throws IOException {
         if (multipartFile != null) {
-            System.out.println(111);
             String path = System.getProperty("user.dir");
             File newFile = new File(path + "\\src\\main\\webapp\\Img\\admin\\" + loginInformationFrom.getId()+"\\"+loginInformationFrom.getId() + ".jpg");
             multipartFile.transferTo(newFile);

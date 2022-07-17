@@ -31,7 +31,7 @@ router.beforeEach((to, from, next) => {
     sessionStorage.removeItem('user');
   }
   let user = JSON.parse(sessionStorage.getItem('user'));
-  if (!user && to.path != '/login') {
+  if (!user && to.path !== '/login' && to.path.slice(0,7)!=='/paying') {
     next({ path: '/login' })
   } else {
     next()
@@ -42,7 +42,7 @@ axios.interceptors.response.use(
       return response;
     },
     error => {
-      if (error.response.status == 500) {
+      if (error.response.status == 509) {
         sessionStorage.removeItem('user');
       } else {
         message.error("出错了");

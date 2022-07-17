@@ -14,4 +14,5 @@ import java.util.Map;
 public interface GeneralitemService extends IService<Generalitem> {
     public String findGender();
     public String findByRegistered();
+    public String getMedicationStatus();
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.max.back.neusoft.dao.PatientmedicineMapper">
+
+    <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.Patientmedicine">
+        <id property="id" column="p_id" jdbcType="VARCHAR"/>
+        <result property="userid" column="p_userId" jdbcType="VARCHAR"/>
+        <result property="doctorid" column="p_doctorId" jdbcType="VARCHAR"/>
+        <result property="date" column="p_date" jdbcType="TIMESTAMP"/>
+        <result property="state" column="p_state" jdbcType="INTEGER"/>
+        <result property="version" column="p_version" jdbcType="INTEGER"/>
+        <result property="delete" column="p_delete" jdbcType="INTEGER"/>
+        <result property="price" column="p_price" jdbcType="DOUBLE"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        p_id
+        ,p_userId,p_doctorId,
+        p_date,p_state,p_version,
+        p_delete,p_price
+    </sql>
+    <select id="selectByUsernameAndDoctorName" resultType="map" parameterType="com.max.back.neusoft.form.DispensingMedicineFrom">
+        SELECT
+        p_id id,n_user.u_username username,n_doctor.d_name dname,
+        p_date times,p_state state,p_version version,p_price
+        price
+        FROM
+        n_patientMedicine
+        INNER JOIN n_user ON n_patientMedicine.p_userId = n_user.u_id
+        INNER JOIN n_doctor ON n_patientMedicine.p_doctorId=n_doctor.d_id
+        WHERE 1=1
+        <if test='username != null and username != "" '>
+            AND username LIKE CONCAT('%',#{username},'%')
+        </if>
+        <if test='doctorName != null and doctorName != "" '>
+            AND dname LIKE CONCAT('%',#{doctorName},'%')
+        </if>
+        <if test='id != null and id != "" '>
+            AND p_id=#{id}
+        </if>
+        <if test='state != null and state != "" '>
+            AND p_state=#{state}
+        </if>
+        AND p_delete=0
+        ORDER BY n_patientMedicine.p_id
+    </select>
+    <select id="findOrderDrug" parameterType="java.lang.String" resultType="map">
+        SELECT
+            n_patientMedicine.p_id pid, n_nonDrug.d_name name,n_nonDrug.d_price dprice,
+            n_orderDrug.o_number number
+        FROM
+            n_orderDrug
+                INNER JOIN n_patientMedicine ON n_patientMedicine.p_id=n_orderDrug.o_id
+                INNER JOIN n_nonDrug ON n_orderDrug.o_drugId=n_nonDrug.d_id
+        WHERE n_patientMedicine.p_id=#{id}
+        ORDER BY n_patientMedicine.p_id
+    </select>
+    <select id="getTotalPrice" parameterType="java.lang.String" resultType="map">
+        SELECT
+            n_nonDrug.d_price price,
+            n_orderDrug.o_number number
+        FROM
+            n_orderDrug
+                INNER JOIN n_patientMedicine ON n_patientMedicine.p_id=n_orderDrug.o_id
+                INNER JOIN n_nonDrug ON n_orderDrug.o_drugId=n_nonDrug.d_id
+        WHERE n_patientMedicine.p_id=#{id}
+        ORDER BY n_patientMedicine.p_id
+    </select>
+    <select id="payList" parameterType="java.lang.String" resultType="map">
+        SELECT
+            n_nonDrug.d_id id,
+            n_nonDrug.d_price price,
+            n_orderDrug.o_number number,
+            n_patientMedicine.p_price pprice,
+            n_nonDrug.d_name name
+        FROM
+            n_orderDrug
+                INNER JOIN n_patientMedicine ON n_patientMedicine.p_id=n_orderDrug.o_id
+                INNER JOIN n_nonDrug ON n_orderDrug.o_drugId=n_nonDrug.d_id
+        WHERE n_patientMedicine.p_id=#{id}
+        ORDER BY n_patientMedicine.p_id
+    </select>
+</mapper>

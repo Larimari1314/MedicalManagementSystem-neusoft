@@ -19,7 +19,9 @@ import java.util.Map;
 public interface GeneralitemMapper extends BaseMapper<Generalitem> {
     public List<Map<String,Object>> findGender();
 
-    public List<Map<String,Object>> findByRegistered();
+    public List<Map<String, Object>> findByRegistered();
+
+    public List<Map<String,Object>> getMedicationStatus();
 }
 
 

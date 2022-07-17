@@ -16,6 +16,8 @@
         </div>
       </el-col>
       <el-col :span="10">
+<!--        <div  style="text-align: right">
+          <el-button type="text">发药工作人员登录</el-button></div>-->
         <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-position="left" label-width="0px"
                  class="demo-ruleForm login-container">
           <el-form-item>
@@ -58,6 +60,7 @@ import {adminRequestLogin, getAdminImgUrl, GetAllAds} from '../api/api';
 export default {
   data() {
     return {
+      adminLoginVisible:true,
       disable: true,
       adminImgUrl: ' http://localhost:8000/hospital/Img/user/default.jpg',
       bannerHeight: 400,//图片父容器的高度
@@ -194,7 +197,6 @@ export default {
   line-height: 200px;
   margin: auto 100px;
 }
-
 
 el-row {
   margin-bottom: 20px;

@@ -34,6 +34,12 @@ public class GeneralitemServiceImpl extends ServiceImpl<GeneralitemMapper, Gener
         List<Map<String, Object>> byRegistered = generalitemMapper.findByRegistered();
         return JSON.toJSONString(byRegistered,SerializerFeature.DisableCircularReferenceDetect);
     }
+
+    @Override
+    public String getMedicationStatus() {
+        List<Map<String, Object>> medicationStatus = generalitemMapper.getMedicationStatus();
+        return JSON.toJSONString(medicationStatus);
+    }
 }
 
 

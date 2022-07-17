@@ -9,7 +9,9 @@ import registrationLevel from './views/nav2/RegistrationLevel.vue'
 import nonDrugManagement from './views/nav2/nonDrugManagement.vue'
 import schedule from './views/nav2/schedule.vue'
 import dataBaseRecover from './views/dataBse/DataBaseRecover.vue'
-
+import workstation from './views/Workstation/DoctorWorkstation'
+import pay from './views/pay/pay'
+import paying from './views/pay/paying'
 let routes = [
     {
         path: '/login',
@@ -20,6 +22,18 @@ let routes = [
     {
         path: '/404',
         component: NotFound,
+        name: '',
+        hidden: true
+    },
+    {
+        path: '/paying/:id',
+        component: paying,
+        name: '',
+        hidden: true
+    },
+    {
+        path: '/pay',
+        component: pay,
         name: '',
         hidden: true
     },
@@ -56,6 +70,21 @@ let routes = [
         children: [
             { path: '/dataBaseRecover', component: dataBaseRecover, name: '数据恢复' }
         ]
+    },
+    {
+        path: '/',
+        component: Home,
+        name: '',
+        iconCls: 'fa fa-database',
+        leaf: true,//只有一个节点
+        children: [
+            { path: '/workstation', component: workstation, name: '患者发药' }
+        ]
+    },
+    {
+        path: '/paying/*',
+        hidden: true,
+        redirect: { path: '/paying/*' }
     },
     {
         path: '*',

@@ -52,4 +52,8 @@ public class GeneralitemServlet {
             return JSON.toJSONString(ResponseResult.getErrorResult("C500"), SerializerFeature.DisableCircularReferenceDetect);
         }
     }
+    @GetMapping("/getMedicationStatus")
+    public String getMedicationStatus(){
+       return generalitemService.getMedicationStatus();
+    }
 }

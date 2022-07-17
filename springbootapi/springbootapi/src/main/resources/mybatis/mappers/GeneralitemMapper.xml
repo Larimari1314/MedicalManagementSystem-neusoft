@@ -12,14 +12,21 @@
     <select id="findGender" resultType="java.util.Map">
         SELECT *
         FROM n_generalItem
-        WHERE coding='G001' OR coding='G002'
+        WHERE coding = 'G001'
+           OR coding = 'G002'
     </select>
     <select id="findByRegistered" resultType="java.util.Map">
-        SELECT
-            n_registered.r_id id,
-            n_generalItem.value valu
+        SELECT n_registered.r_id   id,
+               n_generalItem.value valu
         FROM n_registered
-            INNER JOIN n_generalItem ON n_registered.r_name = n_generalItem.coding
+                 INNER JOIN n_generalItem ON n_registered.r_name = n_generalItem.coding
         ORDER BY n_registered.r_id
+    </select>
+    <select id="getMedicationStatus" resultType="map">
+        SELECT *
+        FROM n_generalItem
+        WHERE coding = 'G008'
+           OR coding = 'G009'
+           OR coding = 'G010'
     </select>
 </mapper>

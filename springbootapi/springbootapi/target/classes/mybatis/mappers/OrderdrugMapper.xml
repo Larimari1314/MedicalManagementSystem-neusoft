@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.max.back.neusoft.dao.OrderdrugMapper">
+
+    <resultMap id="BaseResultMap" type="com.max.back.neusoft.pojo.Orderdrug">
+            <result property="id" column="o_id" jdbcType="VARCHAR"/>
+            <result property="drugid" column="o_drugId" jdbcType="VARCHAR"/>
+            <result property="number" column="o_number" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        o_id,o_drugId,o_number
+    </sql>
+</mapper>

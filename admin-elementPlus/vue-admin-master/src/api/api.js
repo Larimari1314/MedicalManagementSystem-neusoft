@@ -107,4 +107,17 @@ export const logout =params=>{return axios.get(`${parameter}/login/logout`);};
 //管理员登录
 export const adminRequestLogin =params=>{return axios.post(`${parameter}/login/adminRequestLogin`,params);};
 
+//获取全部待取药品信息
+export const findPatientMedic =params=>{return axios.post(`${parameter}/patientMedicine/findPatientMedic`,params);};
+//获取当前药品发放信息
+export const getMedicationStatus =params=>{return axios.get(`${parameter}/generalitem/getMedicationStatus`);};
+//根绝id查询所属药品
+export const ViewListMedicines =params=>{return axios.post(`${parameter}/patientMedicine/viewListMedicines`,params);};
 
+export const dataValidation =params=>{return axios.post(`${parameter}/pay/dataValidation`,params);};
+//获取订单数据
+export const paymentStatement =params=>{return axios.post(`${parameter}/pay/paymentStatement`,params);};
+export const paymentStatus =params=>{return axios.post(`${parameter}/pay/paymentStatus`,params);};
+
+export const pay =params=>{return axios.post(`http://192.168.1.106:8000/hospital/pay/pay`,params);};
+export const scanStatus =params=>{return axios.post(`http://192.168.1.106:8000/hospital/pay/scanStatus`,params);};
