@@ -24,7 +24,7 @@
   </div>
     </div>
     <div :hidden="payingState" style="color: #13ce66;font-size: 30px">
-      <h1>用户以扫描，请点击支付按钮支付</h1>
+      <h1>用户已扫描，请点击支付按钮支付</h1>
     </div>
     <div :hidden="successPaying" style="color: #13ce66;font-size: 30px">
       用户支付成功,正在跳转到发药界面

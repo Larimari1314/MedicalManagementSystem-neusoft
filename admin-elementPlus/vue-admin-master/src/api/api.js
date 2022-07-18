@@ -113,11 +113,18 @@ export const findPatientMedic =params=>{return axios.post(`${parameter}/patientM
 export const getMedicationStatus =params=>{return axios.get(`${parameter}/generalitem/getMedicationStatus`);};
 //根绝id查询所属药品
 export const ViewListMedicines =params=>{return axios.post(`${parameter}/patientMedicine/viewListMedicines`,params);};
-
+//退药
+export const withdrawal =params=>{return axios.post(`${parameter}/patientMedicine/withdrawal`,params);};
+//根据id查找订单信息
+export const orderDetails =params=>{return axios.post(`${parameter}/patientMedicine/orderDetails`,params);};
+//创建相同订单
+export const createSameOrder =params=>{return axios.post(`${parameter}/patientMedicine/createSameOrder`,params);};
+//数据校验
 export const dataValidation =params=>{return axios.post(`${parameter}/pay/dataValidation`,params);};
 //获取订单数据
 export const paymentStatement =params=>{return axios.post(`${parameter}/pay/paymentStatement`,params);};
-export const paymentStatus =params=>{return axios.post(`${parameter}/pay/paymentStatus`,params);};
 
+export const paymentStatus =params=>{return axios.post(`${parameter}/pay/paymentStatus`,params);};
+//支付
 export const pay =params=>{return axios.post(`http://192.168.1.106:8000/hospital/pay/pay`,params);};
 export const scanStatus =params=>{return axios.post(`http://192.168.1.106:8000/hospital/pay/scanStatus`,params);};

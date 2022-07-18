@@ -26,16 +26,31 @@ public class DepartmentServlet {
     @Autowired
     private DepartmentService departmentService;
 
+    /**
+     * 根据规则查找科室
+     * @param departmentFindFrom 根据此信息查找
+     * @return
+     */
     @PostMapping("/findDepartment")
     public String findDepartment(@RequestBody @Valid DepartmentFindFrom departmentFindFrom) {
         return departmentService.findDepartment(departmentFindFrom);
     }
 
+    /**
+     * 科室上传封面接收
+     * @param file
+     */
     @PostMapping("/avatar")
     public void avatar(@RequestBody MultipartFile file) {
         multipartFile=file;
     }
 
+    /**
+     * 更新科室
+     * @param departmentSaveForm
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/updateDepartment")
     public String updateDepartment(@RequestBody @Valid DepartmentSaveForm departmentSaveForm) throws IOException {
         //更新，存储界面收到的图片
@@ -44,8 +59,10 @@ public class DepartmentServlet {
             File newFile = new File(path + "\\src\\main\\webapp\\Img\\department\\" + departmentSaveForm.getId() + ".jpg");
             multipartFile.transferTo(newFile);
             multipartFile=null;
+            //存储头像链接地址
             departmentSaveForm.setAvatar("http://localhost:8000/hospital/Img/department/"  + departmentSaveForm.getId() + ".jpg");
         }
+        //更新信息
         UpdateWrapper<Department> updateWrapper = new UpdateWrapper<>();
         updateWrapper.eq("d_id", departmentSaveForm.getId())
                 .set("d_name", departmentSaveForm.getName())
@@ -58,11 +75,18 @@ public class DepartmentServlet {
         }
     }
 
+    /**
+     * 添加科室
+     * @param departmentSaveForm
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/addDepartment")
     public String addDepartment(@RequestBody @Valid DepartmentSaveForm departmentSaveForm) throws IOException {
         String path = System.getProperty("user.dir");
         File newFile = new File(path + "\\src\\main\\webapp\\Img\\department\\" + departmentSaveForm.getId() + ".jpg");
         multipartFile.transferTo(newFile);
+        //存储头像链接地址
         departmentSaveForm.setAvatar("http://localhost:8000/hospital/Img/department/"  + departmentSaveForm.getId() + ".jpg");
         Department department = BeanUtil.toBean(departmentSaveForm, Department.class);
         System.out.println(department);
@@ -72,7 +96,10 @@ public class DepartmentServlet {
             return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
         }
     }
-
+    /**
+     * 查找科室id和名称
+     * @return
+     */
     @GetMapping("/findDepartment")
     public String findDepartment(){
         QueryWrapper<Department> queryWrapper = new QueryWrapper<>();

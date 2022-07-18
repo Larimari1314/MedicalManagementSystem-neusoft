@@ -18,6 +18,10 @@ public class DepartclassificationServlet {
     @Autowired
     private DepartclassificationService departclassificationService;
 
+    /**
+     * 获取科室类别列表
+     * @return
+     */
     @GetMapping("/getDepartClassList")
     public String getDepartClassList(){
        return JSON.toJSONString(ResponseResult.getSuccessResult(departclassificationService.list()), SerializerFeature.DisableCircularReferenceDetect);

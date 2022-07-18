@@ -45,7 +45,8 @@
         <el-form-item label="挂号级别id">
           <el-input v-model="editForm.id" disabled></el-input>
         </el-form-item>
-        <el-form-item label="挂号费用">
+        <el-form-item label="挂号费用" prop="price" :rules="[
+                      { required: true, message: '挂号费用不得为空'}]">
           <el-input placeholder="选择日期" v-model="editForm.price" type="number"></el-input>
         </el-form-item>
       </el-form>

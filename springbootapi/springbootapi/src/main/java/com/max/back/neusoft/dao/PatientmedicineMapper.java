@@ -25,6 +25,7 @@ public interface PatientmedicineMapper extends BaseMapper<Patientmedicine> {
     //获取价格和信息
     public List<Map<String,Object>> getTotalPrice(String id);
     public List<Map<String,Object>> payList(String id);
+    public List<Map<String,Object>> orderDetails(String id);
 }
 
 

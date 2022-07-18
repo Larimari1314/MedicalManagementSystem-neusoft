@@ -19,5 +19,6 @@ public class PatientMedicineExhibit {
     private String state;
     @ApiModelProperty("版本号")
     private Integer version;
-
+    @ApiModelProperty("价格")
+    private Double price;
 }

@@ -9,5 +9,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2022-07-17 07:10:40
 */
 public interface OrderdrugService extends IService<Orderdrug> {
-
+    public boolean createSameOrder(String oldId,String newId);
 }

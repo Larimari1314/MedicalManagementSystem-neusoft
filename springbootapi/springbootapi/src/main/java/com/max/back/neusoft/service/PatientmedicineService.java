@@ -17,4 +17,5 @@ public interface PatientmedicineService extends IService<Patientmedicine> {
     public String findOrderDrug(String id);
     public Integer getTotalPrice(String id);
     public String payList(String id);
+    public String orderDetails(String id);
 }

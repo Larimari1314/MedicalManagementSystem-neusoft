@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -35,7 +34,7 @@ public class PatientmedicineServiceImpl extends ServiceImpl<PatientmedicineMappe
 
     @Override
     public String selectByUsernameAndDoctorName(DispensingMedicineFrom dispensingMedicineFrom) {
-        PageHelper.startPage(dispensingMedicineFrom.getPage(), 20);
+        PageHelper.startPage(dispensingMedicineFrom.getPage(), 50);
         List<PatientMedicineExhibit> mapList = patientmedicineMapper.selectByUsernameAndDoctorName(dispensingMedicineFrom).stream().map(
                 s -> {
                     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -53,19 +52,19 @@ public class PatientmedicineServiceImpl extends ServiceImpl<PatientmedicineMappe
     public String findOrderDrug(String id) {
         List<Map<String, Object>> orderDrug = patientmedicineMapper.findOrderDrug(id);
         orderDrug.forEach(
-                s->{
-                    int i = (Integer)s.get("number") * (Integer) s.get("dprice");
+                s -> {
+                    int i = (Integer) s.get("number") * (Integer) s.get("dprice");
                     s.put("zprice", i);
                 }
         );
-        return JSON.toJSONString(ResponseResult.getSuccessResult(orderDrug,"C200",null),SerializerFeature.DisableCircularReferenceDetect);
+        return JSON.toJSONString(ResponseResult.getSuccessResult(orderDrug, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
     public Integer getTotalPrice(String id) {
         List<Map<String, Object>> totalPrice = patientmedicineMapper.getTotalPrice(id);
-        AtomicInteger number= new AtomicInteger();
-        totalPrice.stream().forEach(s->{
+        AtomicInteger number = new AtomicInteger();
+        totalPrice.stream().forEach(s -> {
             number.addAndGet((Integer) s.get("number") * (Integer) s.get("price"));
         });
         return number.get();
@@ -74,6 +73,16 @@ public class PatientmedicineServiceImpl extends ServiceImpl<PatientmedicineMappe
     @Override
     public String payList(String id) {
         List<Map<String, Object>> res = patientmedicineMapper.payList(id);
+        return JSON.toJSONString(ResponseResult.getSuccessResult(res, "C200", null));
+    }
+
+    @Override
+    public String orderDetails(String id) {
+        List<Map<String, Object>> res = patientmedicineMapper.orderDetails(id);
+        for (Map<String, Object> re : res) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            re.put("pdate", simpleDateFormat.format(re.get("pdate")));
+        }
         return JSON.toJSONString(ResponseResult.getSuccessResult(res,"C200",null));
     }
 }

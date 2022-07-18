@@ -287,7 +287,15 @@ export default {
               offset: 100
             });
             this.getUsers();
-          } else {
+          }else if(res.data.msgId=="C405"){
+            this.listLoading = false;
+            this.$notify.error({
+              title: '错误',
+              message: '用户数据在订单表，不可删除'
+            });
+          }
+          else {
+            this.listLoading = false;
             this.$notify.error({
               title: '错误',
               message: '删除失败'
@@ -406,7 +414,14 @@ export default {
               offset: 100
             });
             this.getUsers();
+          }else if(res.data.msgId=="C405"){
+            this.listLoading = false;
+            this.$notify.error({
+              title: '错误',
+              message: '用户数据在订单表，不可删除'
+            });
           } else {
+            this.listLoading = false;
             this.$notify.error({
               title: '错误',
               message: '删除失败'

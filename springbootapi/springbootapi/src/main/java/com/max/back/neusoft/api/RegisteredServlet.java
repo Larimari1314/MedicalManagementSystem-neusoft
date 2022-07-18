@@ -3,10 +3,9 @@ package com.max.back.neusoft.api;
 import com.max.back.neusoft.form.RegisteredFrom;
 import com.max.back.neusoft.form.RegisteredUpdateFrom;
 import com.max.back.neusoft.service.RegisteredService;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @CrossOrigin
 @RestController
@@ -15,6 +14,7 @@ public class RegisteredServlet {
     @Autowired
     private RegisteredService registeredService;
 
+    //根据名称返回挂号列表
     @PostMapping("/findByName")
     public String findByName(@RequestBody RegisteredFrom registeredFrom) {
         return registeredService.findAll(registeredFrom);
@@ -25,4 +25,5 @@ public class RegisteredServlet {
     public String updatePrice(@RequestBody @Valid RegisteredUpdateFrom registeredUpdateFrom) {
         return registeredService.updatePrice(registeredUpdateFrom);
     }
+
 }

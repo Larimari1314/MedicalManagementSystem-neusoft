@@ -92,10 +92,12 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="科室名称">
+        <el-form-item label="科室名称" prop="name" :rules="[
+                      { required: true, message: '科室名称不得为空'}]">
           <el-input v-model="editForm.name"></el-input>
         </el-form-item>
-        <el-form-item label="科室介绍">
+        <el-form-item label="科室介绍" prop="introduce" :rules="[
+                      { required: true, message: '科室介绍不得为空'}]">
           <el-input type="textarea" v-model="editForm.introduce"></el-input>
         </el-form-item>
       </el-form>

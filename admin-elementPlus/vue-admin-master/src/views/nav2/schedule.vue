@@ -282,7 +282,13 @@ export default {
               offset: 100
             });
             this.getUsers();
-          } else {
+          } else if(res.data.msgId=="C405"){
+            this.listLoading = false;
+            this.$notify.error({
+              title: '错误',
+              message: '医生数据在订单表，不可删除'
+            });
+          }else {
             this.$notify.error({
               title: '错误',
               message: '删除失败'
@@ -356,7 +362,14 @@ export default {
               title: '成功',
               message: '删除成功'
             });
-          } else {
+          } else if(res.data.msgId=="C405"){
+            this.listLoading = false;
+            this.$notify.error({
+              title: '错误',
+              message: '医生数据在订单表，不可删除'
+            });
+          }else {
+            this.listLoading = false;
             this.$notify.error({
               title: '失败',
               message: '删除失败'

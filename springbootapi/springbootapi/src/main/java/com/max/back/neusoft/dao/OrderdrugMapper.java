@@ -2,6 +2,8 @@ package com.max.back.neusoft.dao;
 
 import com.max.back.neusoft.pojo.Orderdrug;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 /**
 * @author 86155
@@ -9,6 +11,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2022-07-17 07:10:40
 * @Entity com.max.back.neusoft.pojo.Orderdrug
 */
+@Mapper
+@Repository
 public interface OrderdrugMapper extends BaseMapper<Orderdrug> {
 
 }

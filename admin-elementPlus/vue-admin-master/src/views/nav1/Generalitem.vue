@@ -33,7 +33,8 @@
         <el-form-item label="常数项" prop="name">
           <el-input v-model="editForm.coding" auto-complete="off" disabled></el-input>
         </el-form-item>
-        <el-form-item label="常数项值">
+        <el-form-item label="常数项值" prop="value" :rules="[
+                      { required: true, message: '常数项值不得为空'}]">
           <el-input v-model="editForm.value" auto-complete="off"></el-input>
         </el-form-item>
       </el-form>

@@ -33,6 +33,11 @@ public class GeneralitemServlet {
         return generalitemService.findByRegistered();
     }
 
+    /**
+     * 获取全部常规项
+     * @param name
+     * @return
+     */
     @PostMapping("/getAll")
     public String getAllGeneralitem(@RequestBody NameFrom name) {
         QueryWrapper<Generalitem> findByName = new QueryWrapper<>();
@@ -40,6 +45,11 @@ public class GeneralitemServlet {
         return JSON.toJSONString(generalitemService.list(findByName));
     }
 
+    /**
+     * 跟新常规项
+     * @param generalitemFrom
+     * @return
+     */
     @PostMapping("/editGeneralitem")
     public String editGeneralitem(@RequestBody @Valid GeneralitemFrom generalitemFrom) {
         UpdateWrapper<Generalitem> updateWrapper = new UpdateWrapper<>();
@@ -52,6 +62,11 @@ public class GeneralitemServlet {
             return JSON.toJSONString(ResponseResult.getErrorResult("C500"), SerializerFeature.DisableCircularReferenceDetect);
         }
     }
+
+    /**
+     * 获取药物状态常规项
+     * @return
+     */
     @GetMapping("/getMedicationStatus")
     public String getMedicationStatus(){
        return generalitemService.getMedicationStatus();

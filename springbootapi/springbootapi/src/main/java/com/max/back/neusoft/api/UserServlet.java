@@ -3,12 +3,15 @@ package com.max.back.neusoft.api;
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.max.back.common.http.ResponseResult;
 import com.max.back.neusoft.form.DeleteFrom;
 import com.max.back.neusoft.form.UserFindFrom;
 import com.max.back.neusoft.form.UserUpdateFrom;
+import com.max.back.neusoft.pojo.Patientmedicine;
 import com.max.back.neusoft.pojo.User;
+import com.max.back.neusoft.service.PatientmedicineService;
 import com.max.back.neusoft.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +27,11 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * 患者暴漏链接
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/user")
@@ -33,7 +40,8 @@ public class UserServlet {
     public static String fileName = null;
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private PatientmedicineService patientmedicineService;
     //获取全部用户信息
     @PostMapping("/findUser")
     public String findAllUser(@RequestBody @Valid UserFindFrom userFindFrom) {
@@ -42,6 +50,18 @@ public class UserServlet {
 
     @PostMapping("/deleteByIds")
     public String deleteById(@RequestBody @Valid DeleteFrom params) {
+        //在订单表根据用户id查找是否存在相同用户
+        AtomicBoolean same = new AtomicBoolean(false);
+        params.getIds().stream().forEach(s -> {
+            QueryWrapper<Patientmedicine> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("p_userId",s);
+            if(patientmedicineService.getMap(queryWrapper)!=null){
+                same.set(true);
+            }
+        });
+        if(same.get()){
+            return JSON.toJSONString(ResponseResult.getErrorResult("C405"));
+        }
         boolean delete = userService.removeByIds(params.getIds());
         if (delete) {
             return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);

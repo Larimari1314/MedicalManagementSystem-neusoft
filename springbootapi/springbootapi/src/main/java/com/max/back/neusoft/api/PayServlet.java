@@ -1,5 +1,6 @@
 package com.max.back.neusoft.api;
 
+import cn.hutool.core.date.DateTime;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -30,6 +31,12 @@ public class PayServlet {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    /**
+     * 数据校验，检测待支付订单得订单状态是否是未发放药物状态
+     *
+     * @param payFrom
+     * @return
+     */
     @PostMapping("/dataValidation")
     public String dataValidation(@RequestBody @Valid PayFrom payFrom) {
         Integer totalPrice = patientmedicineService.getTotalPrice(payFrom.getId());
@@ -60,6 +67,12 @@ public class PayServlet {
         return JSON.toJSONString(ResponseResult.getSuccessResult(substring, "C200", null));
     }
 
+    /**
+     * 通过付款id查找药品信息，并返回页面
+     *
+     * @param payId
+     * @return
+     */
     @PostMapping("/paymentStatement")
     public String paymentStatement(@RequestBody String payId) {
         payId = payId.replace("=", "");
@@ -71,6 +84,12 @@ public class PayServlet {
         return patientmedicineService.payList(pid);
     }
 
+    /**
+     * 进行付款操作
+     *
+     * @param payId
+     * @return
+     */
     @PostMapping("/pay")
     public String pay(@RequestBody String payId) {
         payId = payId.substring(0, 24);
@@ -80,25 +99,31 @@ public class PayServlet {
         if (!StringUtils.isNotBlank(pid)) {
             return JSON.toJSONString(ResponseResult.getErrorResult("C404"));
         }
+        //查看订单当前状态，是否是未发放状态
         QueryWrapper<Patientmedicine> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("p_id", pid);
         Patientmedicine one = patientmedicineService.getOne(queryWrapper);
         if (!StringUtils.isNotBlank(one.getState()) || !one.getState().equals("G008")) {
             return JSON.toJSONString(ResponseResult.getErrorResult("C504"));
         }
+        //付款，修改状态为已付款状态
         UpdateWrapper<Patientmedicine> updateWrapper = new UpdateWrapper<>();
+        DateTime dateTime = new DateTime();
+//        System.out.println(dateTime);
         updateWrapper.eq("p_id", pid)
-                .set("p_state", "G009");
+                .set("p_state", "G009")
+                .set("p_date", dateTime);
         boolean update = patientmedicineService.update(updateWrapper);
         if (update) {
+            //删除生成得二维码
             String path = System.getProperty("user.dir");
             File File = new File(path + "\\src\\main\\webapp\\Img\\pay\\" + payId + "\\" + payId + ".jpg");
             File.delete();
             File Files = new File(path + "\\src\\main\\webapp\\Img\\pay\\" + payId);
             Files.delete();
             payId = payId + "status";
+            //将扫描状态改为C200已付款状态
             redisTemplate.boundValueOps(payId).set("C200", 5, TimeUnit.MINUTES);
-
             return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
         } else {
             return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
@@ -109,15 +134,25 @@ public class PayServlet {
     public String paymentStatus(@RequestBody String id) {
         id = id.replace("=", "");
         String status = (String) redisTemplate.boundValueOps(id).get();
+        //根绝id获取当前用户扫描后的状态
         if (status != null && status.equals("C201")) {
+            //已经扫描
             return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C201", null));
         } else if (status != null && status.equals("C200")) {
+            //已付款
             return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null));
         } else {
+            //未扫描
             return JSON.toJSONString(ResponseResult.getErrorResult("C408"));
         }
     }
 
+    /**
+     * 用户扫描后执行方法将扫描状态改为C201
+     *
+     * @param payId
+     * @return
+     */
     @PostMapping("/scanStatus")
     public String scanStatus(@RequestBody String payId) {
         payId = payId.substring(0, 24) + "status";

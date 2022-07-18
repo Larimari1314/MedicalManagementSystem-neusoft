@@ -17,6 +17,8 @@ axios.defaults.baseURL ='http://localhost:8000/';
 axios.defaults.timeout = 5000;
 axios.defaults.withCredentials = true;
 import 'font-awesome/css/font-awesome.min.css'
+import watermark from './vuex/watermark';
+Vue.use(watermark);
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(Vuex)

@@ -136,10 +136,12 @@
         <el-form-item label="药品规格" prop="sname">
           <el-input v-model="editForm.sname" auto-complete="off" disabled></el-input>
         </el-form-item>
-        <el-form-item label="现存数量">
+        <el-form-item label="现存数量" prop="number" :rules="[
+                      { required: true, message: '数量不得为空'}]">
           <el-input v-model="editForm.number" auto-complete="off" type="number"></el-input>
         </el-form-item>
-        <el-form-item label="价格" prop="number">
+        <el-form-item label="价格" prop="price" :rules="[
+                      { required: true, message: '药品价格不得为空'}]">
           <el-input v-model="editForm.price" auto-complete="off" type="number"></el-input>
         </el-form-item>
       </el-form>
@@ -313,7 +315,14 @@ export default {
               offset: 100
             });
             this.getUsers();
-          } else {
+          } else if(res.data.msgId=="C405"){
+            this.listLoading = false;
+            this.$notify.error({
+              title: '错误',
+              message: '药品数据在订单表，不可删除'
+            });
+          }else {
+            this.listLoading = false;
             this.$notify.error({
               title: '错误',
               message: '删除失败'
@@ -419,7 +428,13 @@ export default {
               title: '成功',
               message: '删除成功'
             });
-          } else {
+          }else if(res.data.msgId=="C405"){
+            this.$notify.error({
+              title: '错误',
+              message: '药品数据在订单表，不可删除'
+            });
+          }
+          else {
             this.$notify.error({
               title: '失败',
               message: '删除失败'
