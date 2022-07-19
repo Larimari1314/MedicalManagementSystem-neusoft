@@ -25,4 +25,5 @@ public interface UserService extends IService<User> {
     public String  deletePermanently(String id);
     public String dataRecovery(String id);
     String getDeletes();
+    public String mainGetNumber();
 }

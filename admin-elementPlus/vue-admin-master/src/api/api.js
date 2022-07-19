@@ -125,6 +125,10 @@ export const dataValidation =params=>{return axios.post(`${parameter}/pay/dataVa
 export const paymentStatement =params=>{return axios.post(`${parameter}/pay/paymentStatement`,params);};
 
 export const paymentStatus =params=>{return axios.post(`${parameter}/pay/paymentStatus`,params);};
+//首页获取数量
+export const mainGetNumber =params=>{return axios.post(`${parameter}/user/mainGetNumber`,params);};
+export const getDayNumber =params=>{return axios.get(`${parameter}/patientMedicine/getDayNumber`);};
+export const getAllValues =params=>{return axios.get(`${parameter}/patientMedicine/getAllValues`);};
 //支付
 export const pay =params=>{return axios.post(`http://192.168.1.106:8000/hospital/pay/pay`,params);};
 export const scanStatus =params=>{return axios.post(`http://192.168.1.106:8000/hospital/pay/scanStatus`,params);};

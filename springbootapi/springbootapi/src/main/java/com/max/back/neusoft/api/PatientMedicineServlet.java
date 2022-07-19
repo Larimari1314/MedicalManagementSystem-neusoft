@@ -113,5 +113,13 @@ public class PatientMedicineServlet {
             return JSON.toJSONString(ResponseResult.getErrorResult("C500"), SerializerFeature.DisableCircularReferenceDetect);
         }
     }
+    @GetMapping("/getDayNumber")
+    public String getDayNumber(){
+        return patientmedicineService.getDayMedicine();
+    }
+    @GetMapping("/getAllValues")
+    public String getAllValues(){
+        return patientmedicineService.getAllValues();
+    }
 }
 

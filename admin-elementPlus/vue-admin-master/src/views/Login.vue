@@ -135,7 +135,7 @@ export default {
             this.logining = false;
             if (res.data.msgId == 'C200') {
               sessionStorage.setItem('user', JSON.stringify(res.data.result));
-              this.$router.push({path: '/departmentManagement'});
+              this.$router.push({path: '/HomeMain'});
             } else if (res.data.msgId == 'C404') {
               _this.$notify({
                 title: '错误',

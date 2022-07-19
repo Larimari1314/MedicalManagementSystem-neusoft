@@ -96,4 +96,12 @@
                 INNER JOIN n_generalItem ON n_generalItem.coding=n_registered.r_name
         WHERE n_patientMedicine.p_id=#{id}
     </select>
+    <select id="getDayMedicine" resultType="java.util.Map">
+        SELECT DATE_FORMAT(p_date,'%m%d') days,COUNT(p_id) COUNT
+        FROM n_patientMedicine GROUP BY days;
+    </select>
+    <select id="getAllValues" resultType="java.util.Map">
+        SELECT (SELECT  COUNT(n_doctor.d_id) FROM n_doctor) 医生数量,(SELECT  COUNT(n_user.u_id) FROM n_user) 患者数量,
+               (SELECT  COUNT(n_patientMedicine.p_id) FROM n_patientMedicine) 订单数量,COUNT(n_nonDrug.d_id) 药品数量 FROM n_nonDrug
+    </select>
 </mapper>

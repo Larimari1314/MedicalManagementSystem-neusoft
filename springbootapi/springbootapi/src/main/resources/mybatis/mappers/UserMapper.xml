@@ -54,4 +54,8 @@
         FROM n_user
         WHERE n_user.u_delete = 1
     </select>
+    <select id="mainGetNumber" resultType="java.util.Map">
+        SELECT (SELECT  COUNT(n_doctor.d_id) FROM n_doctor) doctorNumber,(SELECT  COUNT(n_user.u_id) FROM n_user) patientNumber,
+               COUNT(n_nonDrug.d_id) drugNumber FROM n_nonDrug
+    </select>
 </mapper>

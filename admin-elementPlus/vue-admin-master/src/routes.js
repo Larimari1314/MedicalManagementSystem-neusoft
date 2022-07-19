@@ -12,6 +12,7 @@ import dataBaseRecover from './views/dataBse/DataBaseRecover.vue'
 import workstation from './views/Workstation/DoctorWorkstation'
 import pay from './views/pay/pay'
 import paying from './views/pay/paying'
+import HomeMain from './views/echars/home'
 let routes = [
     {
         path: '/login',
@@ -36,6 +37,16 @@ let routes = [
         component: pay,
         name: '',
         hidden: true
+    },
+    {
+        path: '/',
+        component: Home,
+        name: '',
+        iconCls: 'fa fa-home',
+        leaf: true,//只有一个节点
+        children: [
+            { path: '/HomeMain', component: HomeMain, name: '首页' }
+        ]
     },
     //{ path: '/main', component: Main },
     {

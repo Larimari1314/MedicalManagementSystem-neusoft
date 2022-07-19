@@ -191,4 +191,8 @@ public class UserServlet {
         id = id.replace("=", "");
         return userService.dataRecovery(id);
     }
+    @PostMapping("/mainGetNumber")
+    public String mainGetNumber(){
+        return userService.mainGetNumber();
+    }
 }

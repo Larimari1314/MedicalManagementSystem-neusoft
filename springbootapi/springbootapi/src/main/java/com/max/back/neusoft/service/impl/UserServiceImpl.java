@@ -216,6 +216,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         List<Map<String, Object>> deletes = userMapper.getDeletes();
         return JSON.toJSONString(ResponseResult.getSuccessResult(deletes,"C200",null));
     }
+
     @Override
     public String deletePermanently(String id) {
         Integer integer = userMapper.deletePermanently(id);
@@ -234,6 +235,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         }else {
             return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
         }
+    }
+
+    /**
+     * 首页获取医生患者数量
+     * @return
+     */
+    @Override
+    public String mainGetNumber() {
+        return JSON.toJSONString(userMapper.mainGetNumber());
     }
 }
 

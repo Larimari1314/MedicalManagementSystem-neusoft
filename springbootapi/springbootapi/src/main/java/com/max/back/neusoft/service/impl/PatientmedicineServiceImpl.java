@@ -16,8 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -84,6 +83,42 @@ public class PatientmedicineServiceImpl extends ServiceImpl<PatientmedicineMappe
             re.put("pdate", simpleDateFormat.format(re.get("pdate")));
         }
         return JSON.toJSONString(ResponseResult.getSuccessResult(res,"C200",null));
+    }
+
+    @Override
+    public String getDayMedicine() {
+        List<Map<String, Object>> dayMedicine = patientmedicineMapper.getDayMedicine();
+        List<ArrayList<String>> arrayLists=new ArrayList<>();
+        ArrayList<String> arrayDay=new ArrayList<>();
+        ArrayList<String> arrayNumber=new ArrayList<>();
+        dayMedicine.stream().forEach(s->{
+            arrayDay.add(s.get("days").toString());
+            arrayNumber.add( s.get("COUNT").toString());
+        });
+        arrayLists.add(arrayDay);
+        arrayLists.add(arrayNumber);
+        return JSON.toJSONString(arrayLists);
+    }
+
+    @Override
+    public String getAllValues() {
+       Map<String, Object> allValues = patientmedicineMapper.getAllValues();
+        Set<Map.Entry<String, Object>> entrySet = allValues.entrySet();
+        Iterator<Map.Entry<String, Object>> it = entrySet.iterator();
+        List<ArrayList<Object>> arrayLists=new ArrayList<>();
+        ArrayList<Object> arrayName=new ArrayList<>();
+        ArrayList<Object> arrayNumber=new ArrayList<>();
+        while(it.hasNext()) {
+            Map.Entry<String, Object> entry = it.next();
+            arrayName.add(entry.getKey());
+            if (entry.getValue()!=null){
+                arrayNumber.add( entry.getValue());
+            }
+        }
+        arrayLists.add(arrayName);
+        arrayLists.add(arrayNumber);
+        return JSON.toJSONString(arrayLists);
+
     }
 }
 

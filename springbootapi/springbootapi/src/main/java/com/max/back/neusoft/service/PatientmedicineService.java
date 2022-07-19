@@ -18,4 +18,6 @@ public interface PatientmedicineService extends IService<Patientmedicine> {
     public Integer getTotalPrice(String id);
     public String payList(String id);
     public String orderDetails(String id);
+    public String getDayMedicine();
+    public String getAllValues();
 }

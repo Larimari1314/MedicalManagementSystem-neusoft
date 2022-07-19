@@ -19,9 +19,7 @@ public class BackApplicationTests {
 private DrugspecificationMapper drugspecificationMapper;
 	@Test
 	public void contextLoads() {
-		Date date=new Date();
-		SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMdd");
-		System.out.println(simpleDateFormat.format(date));
+
 	}
 
 }

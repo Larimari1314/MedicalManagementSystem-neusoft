@@ -26,6 +26,7 @@ public interface UserMapper extends BaseMapper<User> {
     public Integer deletePermanently(String id);
 
     public Integer dataRecovery(String id);
+    public List<Map<String,Object>> mainGetNumber();
 }
 
 

@@ -1,4 +1,4 @@
-import babelpolyfill from 'babel-polyfill'
+
 import Vue from 'vue'
 import App from './App'
 import ElementUI from 'element-ui'
@@ -7,8 +7,6 @@ import VueRouter from 'vue-router'
 import store from './vuex/store'
 import Vuex from 'vuex'
 import routes from './routes'
-// import Mock from './mock'
-// Mock.bootstrap();
 import axios from 'axios'
 Vue.prototype.$ajax = axios;
 const xhr = new XMLHttpRequest();
@@ -22,7 +20,8 @@ Vue.use(watermark);
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(Vuex)
-
+import * as echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 const router = new VueRouter({
   routes
 })
