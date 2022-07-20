@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 let parameter='http://localhost:8000/hospital';
+// let parameter='http://192.168.1.106:8000/hospital';
 /*需要拦截请求*/
 //查找科室列表
 export const getDepartClassList =params=>{return axios.get(`${parameter}/departClassification/getDepartClassList`,{params:params});};

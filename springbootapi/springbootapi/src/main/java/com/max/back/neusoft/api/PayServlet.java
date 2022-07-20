@@ -10,6 +10,7 @@ import com.max.back.common.sercurity.utils.QRcodeZxingUtil2;
 import com.max.back.neusoft.form.PayFrom;
 import com.max.back.neusoft.pojo.Patientmedicine;
 import com.max.back.neusoft.service.PatientmedicineService;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -40,6 +41,7 @@ public class PayServlet {
      * @param payFrom
      * @return
      */
+    @ApiOperation(value = "数据校验")
     @PostMapping("/dataValidation")
     public String dataValidation(@RequestBody @Valid PayFrom payFrom) {
         Integer totalPrice = patientmedicineService.getTotalPrice(payFrom.getId());
@@ -76,6 +78,7 @@ public class PayServlet {
      * @param payId
      * @return
      */
+    @ApiOperation(value = "通过付款id查找药品信息")
     @PostMapping("/paymentStatement")
     public String paymentStatement(@RequestBody String payId) {
         payId = payId.replace("=", "");
@@ -93,6 +96,7 @@ public class PayServlet {
      * @param payId
      * @return
      */
+    @ApiOperation(value = "进行付款操作")
     @PostMapping("/pay")
     public String pay(@RequestBody String payId) {
         payId = payId.substring(0, 24);
@@ -112,7 +116,6 @@ public class PayServlet {
         //付款，修改状态为已付款状态
         UpdateWrapper<Patientmedicine> updateWrapper = new UpdateWrapper<>();
         DateTime dateTime = new DateTime();
-//        System.out.println(dateTime);
         updateWrapper.eq("p_id", pid)
                 .set("p_state", "G009")
                 .set("p_date", dateTime);
@@ -156,6 +159,7 @@ public class PayServlet {
      * @param payId
      * @return
      */
+    @ApiOperation(value = "用户扫描执行方法")
     @PostMapping("/scanStatus")
     public String scanStatus(@RequestBody String payId) {
         payId = payId.substring(0, 24) + "status";

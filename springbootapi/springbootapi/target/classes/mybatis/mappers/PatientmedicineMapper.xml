@@ -32,10 +32,10 @@
         INNER JOIN n_doctor ON n_patientMedicine.p_doctorId=n_doctor.d_id
         WHERE 1=1
         <if test='username != null and username != "" '>
-            AND username LIKE CONCAT('%',#{username},'%')
+            AND n_user.u_usernam LIKE CONCAT('%',#{username},'%')
         </if>
         <if test='doctorName != null and doctorName != "" '>
-            AND dname LIKE CONCAT('%',#{doctorName},'%')
+            AND n_doctor.d_name LIKE CONCAT('%',#{doctorName},'%')
         </if>
         <if test='id != null and id != "" '>
             AND p_id=#{id}
@@ -82,8 +82,7 @@
     <select id="orderDetails" parameterType="java.lang.String" resultType="map">
         SELECT n_patientMedicine.p_id    pid,
                n_patientMedicine.p_date  pdate,
-               n_patientMedicine.p_price price
-                ,
+               n_patientMedicine.p_price price,
                n_user.u_username         username,
                n_user.u_identityNumber   identityNumber,
                n_doctor.d_name           dname,
@@ -103,11 +102,12 @@
         GROUP BY days;
     </select>
     <select id="getAllValues" resultType="java.util.Map">
-        SELECT (SELECT COUNT(n_doctor.d_id) FROM n_doctor)                   医生数量,
-               (SELECT COUNT(n_user.u_id) FROM n_user)                       患者数量,
-               (SELECT COUNT(n_patientMedicine.p_id) FROM n_patientMedicine) 订单数量,
-               COUNT(n_nonDrug.d_id)                                         药品数量
+        SELECT    (SELECT COUNT(n_doctor.d_id) FROM n_doctor WHERE d_delete = 0) 医生数量,
+                  (SELECT COUNT(n_user.u_id) FROM n_user WHERE u_delete = 0)   患者数量,
+                  (SELECT COUNT(n_patientMedicine.p_id) FROM n_patientMedicine)  订单数量,
+                  COUNT(n_nonDrug.d_id)                                          药品数量
         FROM n_nonDrug
+        WHERE d_delete = 0
     </select>
     <select id="getStateStatistics" resultType="java.util.Map">
         SELECT COUNT(p_id) value,n_generalItem.value name

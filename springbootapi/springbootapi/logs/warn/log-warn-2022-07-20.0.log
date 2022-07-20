@@ -1,0 +1,626 @@
+2022-07-20 07:06:29.272 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.276 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.276 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.278 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.278 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.278 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.278 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.278 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.278 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.279 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.279 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.279 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:06:29.279 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.476 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.476 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.476 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.476 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.476 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.476 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.476 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.477 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.477 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.477 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.477 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.477 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:09:18.477 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.055 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.056 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.056 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.056 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.056 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.056 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.056 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.057 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.057 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.057 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.057 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.057 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:14:44.057 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.194 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.194 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.195 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.195 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.195 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.196 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.196 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.196 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.196 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.197 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.197 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:15:59.197 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.504 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.505 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.506 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.506 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:16:56.506 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:20:36.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:21:19.266 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.611 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 07:35:12.612 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 08:08:27.735 [http-nio-8000-exec-5] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 08:08:34.195 [http-nio-8000-exec-1] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 08:09:19.030 [http-nio-8000-exec-3] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 08:09:21.463 [http-nio-8000-exec-2] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 08:09:24.327 [http-nio-8000-exec-1] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 08:09:31.680 [http-nio-8000-exec-7] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 08:09:55.890 [http-nio-8000-exec-5] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 08:40:14.379 [http-nio-8000-exec-10] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 08:40:16.553 [http-nio-8000-exec-4] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 09:25:46.632 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.634 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.635 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.635 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 09:25:46.635 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.123 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.125 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.125 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.125 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.125 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.125 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.125 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.125 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.125 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.126 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.126 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.126 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:11:36.126 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.276 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.277 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.278 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:15:05.278 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.876 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.877 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.877 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.877 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.877 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.877 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.877 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.878 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.878 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.878 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.878 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.878 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:16:32.878 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.655 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.656 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.656 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.656 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:10.656 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.591 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.593 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.593 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.593 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.593 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.593 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.593 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.594 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.594 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.594 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.594 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.594 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:17:36.597 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.067 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.067 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.067 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.067 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:18:21.068 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.258 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.259 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.259 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.259 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.259 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.259 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.260 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.260 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.260 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.260 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.260 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.260 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:19:11.260 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.539 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.539 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.539 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.540 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 10:52:40.541 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 11:34:16.791 [http-nio-8000-exec-3] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 13:00:16.198 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.198 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.198 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.199 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.199 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.199 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.199 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.199 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.199 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.199 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.200 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.200 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:00:16.200 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 13:40:44.813 [http-nio-8000-exec-1] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 13:47:55.613 [http-nio-8000-exec-10] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 18:21:01.811 [http-nio-8000-exec-9] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 18:31:09.861 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.861 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.861 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.861 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.862 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.862 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.862 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.862 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.862 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.862 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.862 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.862 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:31:09.863 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.836 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.837 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.837 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.837 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.837 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.837 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.837 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.837 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.837 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.838 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.838 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.838 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 18:43:41.838 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.190 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.191 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.192 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.192 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.192 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:36:54.192 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.780 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.781 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.781 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.781 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.781 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.781 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.781 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.781 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.782 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.782 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.782 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.782 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:47:57.782 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:50:47.707 [http-nio-8000-exec-7] WARN  c.m.b.neusoft.service.impl.PermissionServiceImpl -
+				Warn: execute Method There are  2 results.
+2022-07-20 20:58:53.037 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departclassificationMapper' and 'com.max.back.neusoft.dao.DepartclassificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'departmentMapper' and 'com.max.back.neusoft.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'doctorMapper' and 'com.max.back.neusoft.dao.DoctorMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'drugspecificationMapper' and 'com.max.back.neusoft.dao.DrugspecificationMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'generalitemMapper' and 'com.max.back.neusoft.dao.GeneralitemMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'loginMapper' and 'com.max.back.neusoft.dao.LoginMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'nondrugMapper' and 'com.max.back.neusoft.dao.NondrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'orderdrugMapper' and 'com.max.back.neusoft.dao.OrderdrugMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'patientmedicineMapper' and 'com.max.back.neusoft.dao.PatientmedicineMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.038 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'permissionMapper' and 'com.max.back.neusoft.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.039 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'registeredMapper' and 'com.max.back.neusoft.dao.RegisteredMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.039 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'scheduleMapper' and 'com.max.back.neusoft.dao.ScheduleMapper' mapperInterface. Bean already defined with the same name!
+2022-07-20 20:58:53.039 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner -
+				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!

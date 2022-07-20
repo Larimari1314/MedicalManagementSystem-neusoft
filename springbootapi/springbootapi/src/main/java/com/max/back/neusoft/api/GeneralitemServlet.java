@@ -9,6 +9,7 @@ import com.max.back.neusoft.form.GeneralitemFrom;
 import com.max.back.neusoft.form.NameFrom;
 import com.max.back.neusoft.pojo.Generalitem;
 import com.max.back.neusoft.service.GeneralitemService;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,11 +27,17 @@ public class GeneralitemServlet {
     private GeneralitemService generalitemService;
 
     //查找性别
+    @ApiOperation(value = "查找性别")
     @GetMapping("/findGender")
     public String findGender() {
         return generalitemService.findGender();
     }
 
+    /**
+     * 查找状态
+     * @return
+     */
+    @ApiOperation(value = "恢复数据")
     @GetMapping("/findByRegistered")
     public String findByRegistered() {
         return generalitemService.findByRegistered();
@@ -41,6 +48,7 @@ public class GeneralitemServlet {
      * @param name
      * @return
      */
+    @ApiOperation(value = "获取全部常规项")
     @PostMapping("/getAll")
     public String getAllGeneralitem(@RequestBody NameFrom name) {
         QueryWrapper<Generalitem> findByName = new QueryWrapper<>();
@@ -53,6 +61,7 @@ public class GeneralitemServlet {
      * @param generalitemFrom
      * @return
      */
+    @ApiOperation(value = "跟新常规项")
     @PostMapping("/editGeneralitem")
     public String editGeneralitem(@RequestBody @Valid GeneralitemFrom generalitemFrom) {
         UpdateWrapper<Generalitem> updateWrapper = new UpdateWrapper<>();
@@ -70,6 +79,7 @@ public class GeneralitemServlet {
      * 获取药物状态常规项
      * @return
      */
+    @ApiOperation(value = "获取药物状态常规项")
     @GetMapping("/getMedicationStatus")
     public String getMedicationStatus(){
        return generalitemService.getMedicationStatus();

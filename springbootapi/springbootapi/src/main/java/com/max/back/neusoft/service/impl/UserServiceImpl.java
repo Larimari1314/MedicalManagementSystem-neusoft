@@ -2,13 +2,16 @@ package com.max.back.neusoft.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.max.back.common.http.ResponseResult;
 import com.max.back.common.sercurity.utils.export.ExportDataUtils;
 import com.max.back.neusoft.form.UserFindFrom;
+import com.max.back.neusoft.pojo.Patientmedicine;
 import com.max.back.neusoft.pojo.User;
+import com.max.back.neusoft.service.PatientmedicineService;
 import com.max.back.neusoft.service.UserService;
 import com.max.back.neusoft.dao.UserMapper;
 import org.apache.commons.lang3.StringUtils;
@@ -29,6 +32,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
 /**
@@ -41,6 +45,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     implements UserService{
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private PatientmedicineService patientmedicineService;
     @Override
     public String findUser(UserFindFrom userFindFrom) {
         try {
@@ -219,6 +225,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
     @Override
     public String deletePermanently(String id) {
+        QueryWrapper<Patientmedicine> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("p_userId", id);
+        if (patientmedicineService.getMap(queryWrapper) != null) {
+            return JSON.toJSONString(ResponseResult.getErrorResult("C405"));
+        }
         Integer integer = userMapper.deletePermanently(id);
         if(integer!=0){
             return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);

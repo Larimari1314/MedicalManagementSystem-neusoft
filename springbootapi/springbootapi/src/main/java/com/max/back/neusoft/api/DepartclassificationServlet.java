@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.max.back.common.http.ResponseResult;
 import com.max.back.neusoft.service.DepartclassificationService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,7 @@ public class DepartclassificationServlet {
      * @return
      */
     @GetMapping("/getDepartClassList")
+    @ApiOperation(value = "获取科室类别列表")
     public String getDepartClassList(){
        return JSON.toJSONString(ResponseResult.getSuccessResult(departclassificationService.list()), SerializerFeature.DisableCircularReferenceDetect);
     }

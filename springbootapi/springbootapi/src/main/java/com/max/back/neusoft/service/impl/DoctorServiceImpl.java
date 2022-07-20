@@ -2,6 +2,7 @@ package com.max.back.neusoft.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -10,12 +11,15 @@ import com.max.back.neusoft.dao.DoctorMapper;
 import com.max.back.neusoft.form.DoctorFindFrom;
 import com.max.back.neusoft.form.DoctorRegisteredFrom;
 import com.max.back.neusoft.pojo.Doctor;
+import com.max.back.neusoft.pojo.Patientmedicine;
 import com.max.back.neusoft.service.DoctorService;
+import com.max.back.neusoft.service.PatientmedicineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author 86155
@@ -27,7 +31,8 @@ public class DoctorServiceImpl extends ServiceImpl<DoctorMapper, Doctor>
         implements DoctorService {
     @Autowired
     private DoctorMapper doctorMapper;
-
+    @Autowired
+    private PatientmedicineService patientmedicineService;
     @Override
     public String findByRegis(DoctorRegisteredFrom doctorRegisteredFrom) {
         PageHelper.startPage(doctorRegisteredFrom.getPage(), 10);
@@ -52,6 +57,11 @@ public class DoctorServiceImpl extends ServiceImpl<DoctorMapper, Doctor>
 
     @Override
     public String deletePermanently(String id) {
+        QueryWrapper<Patientmedicine> queryWrapper = new QueryWrapper<>();
+          queryWrapper.eq("p_doctorId", id);
+         if (patientmedicineService.getMap(queryWrapper) != null) {
+             return JSON.toJSONString(ResponseResult.getErrorResult("C405"));
+            }
         Integer integer = doctorMapper.deletePermanently(id);
         if(integer!=0){
             return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);

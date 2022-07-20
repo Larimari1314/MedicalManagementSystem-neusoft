@@ -10,6 +10,7 @@ import com.max.back.neusoft.form.DispensingMedicineFrom;
 import com.max.back.neusoft.pojo.Patientmedicine;
 import com.max.back.neusoft.service.OrderdrugService;
 import com.max.back.neusoft.service.PatientmedicineService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +30,7 @@ public class PatientMedicineServlet {
      * @param dispensingMedicineFrom
      * @return
      */
+    @ApiOperation(value = "根据信息查找发药列表")
     @PostMapping("/findPatientMedic")
     public String findPatientMedic(@RequestBody DispensingMedicineFrom dispensingMedicineFrom) {
         return patientmedicineService.selectByUsernameAndDoctorName(dispensingMedicineFrom);
@@ -39,6 +41,7 @@ public class PatientMedicineServlet {
      * @param id
      * @return
      */
+    @ApiOperation(value = "根据订单id查看所属药物")
     @PostMapping("/viewListMedicines")
     public String viewListMedicines(@RequestBody String id) {
         id = id.replace("=", "");
@@ -50,6 +53,7 @@ public class PatientMedicineServlet {
      * @param id
      * @return
      */
+    @ApiOperation(value = "退费操作")
     @PostMapping("/withdrawal")
     public String withdrawal(@RequestBody String id) {
         id = id.replace("=", "");
@@ -84,6 +88,7 @@ public class PatientMedicineServlet {
      * @param id
      * @return
      */
+    @ApiOperation(value = "根据id创建相同订单")
     @PostMapping("/createSameOrder")
     public String createSameOrder(@RequestBody String id){
         id=id.replace("=","");

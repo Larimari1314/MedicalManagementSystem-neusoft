@@ -60,7 +60,7 @@ CREATE TABLE `n_department`
 /*Data for the table `n_department` */
 
 insert into `n_department`(`d_id`, `d_avatar`, `d_classification`, `d_name`, `d_introduce`)
-values ('DE001', 'http://localhost:8000/hospital/Img/department/DE001.jpg', 'D001', '急诊室',
+values ('DE001', 'http://localhost:8000/hospital/Img/department/DE001.jpg', 'D001', '急诊科',
         '本科室诊疗范围包括急性心肌梗死、主动脉夹层、急性呼吸衰竭、休克、脓毒血症、心功能衰竭、脑血管意外、严重创伤、呼吸心跳骤停及其他急危重症。 尤其擅长诊治心脑肺复苏、脓毒血症、脓毒性休克、多器官功能障碍综合征、急性呼吸窘迫综合征、严重创伤及大手术后综合管理、物理/化学因素所致急危重症'),
        ('DE002', 'http://localhost:8000/hospital/Img/department/DE002.jpg', 'D001', '内科',
         '内科学包含了依不同器官系统而分类的次专科：心脏内科、呼吸科、肝胆肠胃科、肾脏科（泌尿内科）、血液科、肿瘤科、内分泌科、传染病科、免疫科、风湿科、神经科、儿科、神经内科、老年病科等，但各地甚至各医院对次专科的分类可能有所不同。 各次专科多半有成立各自的医学会，各自审查次专科医师的资格并举办学术活动。'),
@@ -446,7 +446,10 @@ values ('G001', '男'),
        ('G004', '特需号'),
        ('G005', '会诊'),
        ('G006', '普通门诊'),
-       ('G007', '一般门诊');
+       ('G007', '一般门诊'),
+       ('G008', '未发放'),
+       ('G009', '已发放'),
+       ('G010', '已退费');
 
 /*Table structure for table `n_landingAds` */
 
@@ -494,7 +497,9 @@ CREATE TABLE `n_login`
 /*Data for the table `n_login` */
 
 insert into `n_login`(`l_id`, `l_avatar`, `l_userName`, `l_password`, `l_permission`)
-values ('1', 'http://localhost:8000/hospital/Img/admin/1/1.jpg', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 1);
+values ('1', 'http://localhost:8000/hospital/Img/admin/1/1.jpg', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 1),
+       ('2', 'http://localhost:8000/hospital/Img/admin/2/2.png', 'admin2', 'e10adc3949ba59abbe56e057f20f883e', 1),
+       ('3', 'http://localhost:8000/hospital/Img/admin/3/3.jpg', 'admin3', 'e10adc3949ba59abbe56e057f20f883e', 1);
 
 /*Table structure for table `n_nonDrug` */
 
@@ -521,7 +526,7 @@ CREATE TABLE `n_nonDrug`
 insert into `n_nonDrug`(`d_id`, `d_cover`, `d_name`, `d_specification`, `d_number`, `d_price`, `d_delete`, `d_enable`,
                         `d_version`)
 values ('1', 'http://localhost:8000/hospital/Img/nonDrug/1/1.jpg', '氟烷气体', 'S-001', 998, 80, 0, 0, 5),
-       ('10', 'http://localhost:8000/hospital/Img/nonDrug/10/10.jpg', '咪达唑仑\r', 'S-005', 999, 150, 1, 0, 0),
+       ('10', 'http://localhost:8000/hospital/Img/nonDrug/10/10.jpg', '咪达唑仑\r', 'S-005', 999, 150, 0, 0, 0),
        ('11', 'http://localhost:8000/hospital/Img/nonDrug/11/11.jpg', '吗啡', 'S-005', 999, 125, 0, 1, 0),
        ('12', 'http://localhost:8000/hospital/Img/nonDrug/12/12.jpg', '氧气', 'S-004', 999, 35, 0, 0, 0),
        ('13', 'http://localhost:8000/hospital/Img/nonDrug/13/13.jpg', '乙酰水杨酸', 'S-005', 999, 54, 0, 0, 0),
@@ -530,7 +535,7 @@ values ('1', 'http://localhost:8000/hospital/Img/nonDrug/1/1.jpg', '氟烷气体
        ('16', 'http://localhost:8000/hospital/Img/nonDrug/16/16.jpg', '芬太尼', 'S-005', 999, 120, 0, 0, 0),
        ('17', 'http://localhost:8000/hospital/Img/nonDrug/17/17.jpg', '吗啡*', 'S-005', 999, 65, 0, 1, 0),
        ('18', 'http://localhost:8000/hospital/Img/nonDrug/18/18.jpg', '地塞米松', 'S-006', 999, 320, 0, 0, 0),
-       ('19', 'http://localhost:8000/hospital/Img/nonDrug/19/19.jpg', '肾上腺素（肾上腺素）', 'S-006', 999, 154, 0, 0, 0),
+       ('19', 'http://localhost:8000/hospital/Img/nonDrug/19/19.jpg', '肾上腺素（肾上腺素）', 'S-006', 999, 154, 1, 0, 0),
        ('2', 'http://localhost:8000/hospital/Img/nonDrug/2/2.jpg', '异氟醚', 'S-001', 999, 90, 0, 0, 0),
        ('20', 'http://localhost:8000/hospital/Img/nonDrug/20/20.jpg', '氢化可的松', 'S-006', 999, 162, 0, 0, 0),
        ('21', 'http://localhost:8000/hospital/Img/nonDrug/21/21.jpg', '氯雷他定*', 'S-006', 999, 232, 0, 0, 0),
@@ -551,6 +556,132 @@ values ('1', 'http://localhost:8000/hospital/Img/nonDrug/1/1.jpg', '氟烷气体
        ('7', 'http://localhost:8000/hospital/Img/nonDrug/7/7.jpg', '利多卡因', 'S-003', 999, 58, 0, 0, 1),
        ('8', 'http://localhost:8000/hospital/Img/nonDrug/8/8.jpg', '利多卡因+肾上腺素', 'S-003', 999, 85, 0, 0, 1),
        ('9', 'http://localhost:8000/hospital/Img/nonDrug/9/9.jpg', '阿托品', 'S-005', 999, 75, 0, 0, 1);
+
+/*Table structure for table `n_orderDrug` */
+
+DROP TABLE IF EXISTS `n_orderDrug`;
+
+CREATE TABLE `n_orderDrug`
+(
+    `o_id`     varchar(100) DEFAULT NULL COMMENT '订单id',
+    `o_drugId` varchar(100) DEFAULT NULL COMMENT '药品表',
+    `o_number` int(11) DEFAULT NULL COMMENT '药品数量',
+    KEY        `drug_order` (`o_drugId`),
+    KEY        `o_id` (`o_id`),
+    CONSTRAINT `drug_order` FOREIGN KEY (`o_drugId`) REFERENCES `n_nonDrug` (`d_id`),
+    CONSTRAINT `n_orderDrug_ibfk_1` FOREIGN KEY (`o_id`) REFERENCES `n_patientMedicine` (`p_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `n_orderDrug` */
+
+insert into `n_orderDrug`(`o_id`, `o_drugId`, `o_number`)
+values ('12ucb293011', '1', 2),
+       ('12ucb293011', '12', 6),
+       ('12ucb293011', '17', 4),
+       ('20220715117', '13', 5),
+       ('20220715117', '16', 2),
+       ('20220716106', '13', 3),
+       ('20220716106', '25', 5),
+       ('20220717107', '15', 4),
+       ('20220717107', '30', 3),
+       ('20220714113', '13', 3),
+       ('20220712101', '13', 5),
+       ('20220712101', '15', 7),
+       ('20220723117', '22', 2),
+       ('20220723117', '25', 3),
+       ('20220701121', '17', 3),
+       ('20220702120', '20', 4),
+       ('20220703115', '24', 6),
+       ('20220704119', '21', 3),
+       ('20220705107', '14', 3),
+       ('20220706114', '14', 5),
+       ('20220707111', '18', 3),
+       ('20220708119', '20', 4),
+       ('20220709112', '25', 2),
+       ('20220710102', '20', 2),
+       ('20220711113', '2', 2),
+       ('20220712114', '28', 4),
+       ('20220713111', '18', 4),
+       ('202207113107', '21', 2),
+       ('20220714116', '21', 4),
+       ('20220715117', '20', 2),
+       ('20220716110', '26', 2),
+       ('20220721118', '14', 2),
+       ('20220717107', '14', 4),
+       ('20220721118', '2', 3),
+       ('20220717107', '29', 1),
+       ('20220723117', '12', 2),
+       ('20220723117', '23', 1),
+       ('20220718113', '2', 2),
+       ('20220718102', '1', 2),
+       ('20220718102', '12', 6),
+       ('20220718102', '17', 4),
+       ('20220720102', '1', 2),
+       ('20220720102', '12', 6),
+       ('20220720102', '17', 4),
+       ('20220720115', '24', 6),
+       ('20220720113', '2', 2);
+
+/*Table structure for table `n_patientMedicine` */
+
+DROP TABLE IF EXISTS `n_patientMedicine`;
+
+CREATE TABLE `n_patientMedicine`
+(
+    `p_id`       varchar(100) NOT NULL COMMENT '订单编号',
+    `p_userId`   varchar(100) DEFAULT NULL COMMENT '患者id',
+    `p_doctorId` varchar(100) DEFAULT NULL COMMENT '医生id',
+    `p_date`     datetime     DEFAULT NULL COMMENT '最后一次修改时间',
+    `p_state`    char(4)      DEFAULT 'G008' COMMENT '当前状态(已发、未发、已退药)',
+    `p_version`  int(11) DEFAULT '0' COMMENT '乐观锁',
+    `p_delete`   int(11) DEFAULT '0' COMMENT '逻辑删除',
+    `p_price`    double       DEFAULT '0' COMMENT '价格',
+    PRIMARY KEY (`p_id`),
+    KEY          `doctor_patient` (`p_doctorId`),
+    KEY          `user_medicine` (`p_userId`),
+    CONSTRAINT `doctor_patient` FOREIGN KEY (`p_doctorId`) REFERENCES `n_doctor` (`d_id`),
+    CONSTRAINT `user_medicine` FOREIGN KEY (`p_userId`) REFERENCES `n_user` (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `n_patientMedicine` */
+
+insert into `n_patientMedicine`(`p_id`, `p_userId`, `p_doctorId`, `p_date`, `p_state`, `p_version`, `p_delete`,
+                                `p_price`)
+values ('12ucb293011', '102', '102', '2022-07-18 06:50:18', 'G008', 0, 0, 630),
+       ('20220701121', '121', '107', '2022-07-18 07:30:21', 'G008', 0, 0, 195),
+       ('20220702120', '120', '106', '2022-07-20 00:34:14', 'G008', 0, 0, 648),
+       ('20220703115', '115', '113', '2022-07-20 05:35:37', 'G010', 0, 0, 870),
+       ('20220704119', '119', '116', '2022-07-20 12:21:27', 'G009', 0, 0, 696),
+       ('20220705107', '107', '106', '2022-07-18 02:36:37', 'G008', 0, 0, 0),
+       ('20220706114', '114', '107', '2022-07-06 09:07:16', 'G009', 0, 0, 0),
+       ('20220707111', '111', '108', '2022-07-07 09:09:59', 'G008', 0, 0, 0),
+       ('20220708119', '119', '110', '2022-07-08 09:11:11', 'G008', 0, 0, 0),
+       ('20220709112', '112', '108', '2022-07-09 09:12:13', 'G008', 0, 0, 0),
+       ('20220710102', '102', '102', '2022-07-10 09:13:25', 'G008', 0, 0, 0),
+       ('20220711113', '113', '112', '2022-07-11 09:18:15', 'G010', 0, 0, 0),
+       ('202207113107', '107', '108', '2022-07-13 09:24:32', 'G010', 0, 0, 0),
+       ('20220712101', '101', '118', '2022-07-12 08:15:43', 'G008', 0, 0, 0),
+       ('20220712114', '114', '102', '2022-07-12 09:19:46', 'G008', 0, 0, 0),
+       ('20220713111', '111', '107', '2022-07-13 09:21:05', 'G009', 0, 0, 1280),
+       ('20220714113', '113', '117', '2022-07-14 08:12:21', 'G008', 0, 0, 0),
+       ('20220714115', '115', '114', '2022-07-14 09:27:58', 'G008', 0, 0, 0),
+       ('20220714116', '116', '113', '2022-07-14 09:25:31', 'G008', 0, 0, 0),
+       ('20220715117', '117', '110', '2022-07-15 07:03:43', 'G009', 0, 0, 834),
+       ('20220716106', '106', '108', '2022-07-04 07:01:48', 'G009', 0, 0, 0),
+       ('20220716110', '110', '115', '2022-07-16 09:32:12', 'G008', 0, 0, 0),
+       ('20220717107', '107', '103', '2022-07-17 07:00:55', 'G010', 0, 0, 0),
+       ('20220718102', '102', '102', '2022-07-18 06:50:21', 'G008', 0, 0, 630),
+       ('20220718107', '107', '106', '2022-07-18 06:33:12', 'G008', 0, 0, 0),
+       ('20220718113', '113', '112', '2022-07-18 06:43:41', 'G008', 0, 0, 0),
+       ('20220720102', '102', '102', '2022-07-20 02:03:53', 'G008', 0, 0, 630),
+       ('20220720113', '113', '112', '2022-07-20 12:38:59', 'G008', 0, 0, 0),
+       ('20220720115', '115', '113', '2022-07-20 05:35:52', 'G008', 0, 0, 870),
+       ('20220721118', '118', '12', '2022-07-21 09:35:40', 'G008', 0, 0, 0),
+       ('20220723117', '117', '11', '2022-07-23 08:21:29', 'G008', 0, 0, 0),
+       ('20220725121', '121', '102', '2022-07-25 09:42:47', 'G008', 0, 0, 0),
+       ('20220734118', '118', '123', '2022-07-23 09:34:42', 'G008', 0, 0, 0),
+       ('20220815108', '108', '116', '2022-07-19 23:41:30', 'G009', 0, 0, 0),
+       ('20220815112', '112', '105', '2022-08-15 11:37:41', 'G008', 0, 0, 0);
 
 /*Table structure for table `n_permission` */
 
@@ -613,7 +744,22 @@ values (1, 1, '/departClassification/getDepartClassList'),
        (1, 1, '/login/getAllAds'),
        (1, 1, '/login/getAdminImgUrl'),
        (1, 1, '/login/adminRequestLogin'),
-       (1, 1, '/login/logout');
+       (1, 1, '/login/logout'),
+       (1, 1, '/patientMedicine/findPatientMedic'),
+       (1, 1, '/generalitem/getMedicationStatus'),
+       (1, 1, '/patientMedicine/ViewListMedicines'),
+       (1, 1, '/pay/dataValidation'),
+       (1, 1, '/pay/paymentStatement'),
+       (1, 1, '/pay/pay'),
+       (1, 1, '/pay/paymentStatus'),
+       (1, 1, '/patientMedicine/withdrawal'),
+       (1, 1, '/patientMedicine/orderDetails'),
+       (1, 1, '/patientMedicine/createSameOrder'),
+       (1, 1, '/user/mainGetNumber'),
+       (1, 1, '/patientMedicine/getDayNumber'),
+       (1, 1, '/patientMedicine/getAllValues'),
+       (1, 1, '/doctor/getRegisDoctor'),
+       (1, 1, '/patientMedicine/getStateStatistics');
 
 /*Table structure for table `n_registered` */
 
@@ -679,7 +825,7 @@ CREATE TABLE `n_user`
 
 insert into `n_user`(`u_id`, `u_username`, `u_age`, `u_birthday`, `u_identityNumber`, `u_avatar`, `u_sex`, `u_delete`)
 values ('1', 'Ronan', 24, '1989-07-20', '211382200506040059', ' http://localhost:8000/hospital/Img/user/default.jpg',
-        'G002', 0),
+        'G002', 1),
        ('100', 'Cullen', 55, '1969-02-22', '211382200506040059', ' http://localhost:8000/hospital/Img/user/default.jpg',
         'G002', 1),
        ('101', 'Rajah', 23, '1999-07-07', '211382200506040059', ' http://localhost:8000/hospital/Img/user/101.jpg',
@@ -843,7 +989,7 @@ values ('1', 'Ronan', 24, '1989-07-20', '211382200506040059', ' http://localhost
        ('173', 'Guy', 24, '1950-11-10', '211382200506040059', ' http://localhost:8000/hospital/Img/user/default.jpg',
         'G002', 0),
        ('174', 'Gray', 99, '1959-06-18', '211382200506040059', ' http://localhost:8000/hospital/Img/user/default.jpg',
-        'G001', 0),
+        'G001', 1),
        ('175', 'Omar', 48, '1990-06-28', '211382200506040059', ' http://localhost:8000/hospital/Img/user/default.jpg',
         'G001', 0),
        ('176', 'Avram', 69, '1954-12-26', '211382200506040059', ' http://localhost:8000/hospital/Img/user/default.jpg',

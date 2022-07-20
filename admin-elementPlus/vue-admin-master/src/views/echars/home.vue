@@ -271,7 +271,7 @@ export default {
               },
               series: [
                 {
-                  name: 'Access From',
+                  name: '诊所订单情况',
                   type: 'pie',
                   radius: '50%',
                   data:res.data,

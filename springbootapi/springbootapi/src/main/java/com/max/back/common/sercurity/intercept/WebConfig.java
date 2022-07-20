@@ -27,7 +27,10 @@ public class WebConfig implements WebMvcConfigurer {
                 "/user/avatar",
                 "/user/uploadToServer",
                 "/pay/pay",
-                "/pay/scanStatus"
+                "/pay/scanStatus",
+                "/swagger-ui.html/**",
+                "/webjars/**",
+                "/swagger-resources/**"
         );
     }
 }

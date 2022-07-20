@@ -11,6 +11,9 @@ import com.max.back.neusoft.pojo.Landingads;
 import com.max.back.neusoft.pojo.Login;
 import com.max.back.neusoft.service.LandingadsService;
 import com.max.back.neusoft.service.LoginService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.DigestUtils;
@@ -48,6 +51,7 @@ public class LoginServlet {
      * 获取登录界面广告
      * @return
      */
+    @ApiOperation(value = "获取登录界面广告")
     @GetMapping("/getAllAds")
     public String getAllAds() {
         QueryWrapper<Landingads> queryWrapper = new QueryWrapper<>();
@@ -60,6 +64,7 @@ public class LoginServlet {
      * @param response
      * @return
      */
+    @ApiOperation(value = "登出")
     @GetMapping("/logout")
     public String logout(HttpServletResponse response) {
         Cookie cookie = new Cookie("_neusoft_admin", "");
@@ -79,6 +84,7 @@ public class LoginServlet {
      * @param adminUserName
      * @return
      */
+    @ApiOperation(value = "根据id获取管理员头像")
     @PostMapping("/getAdminImgUrl")
     public String getAdminImgUrl(@RequestBody @NotBlank String adminUserName) {
         adminUserName = adminUserName.replace("=", "");
@@ -104,6 +110,10 @@ public class LoginServlet {
      * @param response
      * @return
      */
+    @ApiOperation(value = "登录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "登录信息")
+    })
     @PostMapping("/adminRequestLogin")
     public String adminRequestLogin(@RequestBody @Valid AdminLoginFrom adminLoginFrom, HttpServletResponse response) {
         QueryWrapper<Login> queryWrapper = new QueryWrapper<>();
@@ -128,6 +138,7 @@ public class LoginServlet {
      * 修改登录信息上传头像暴露链接
      * @param file
      */
+    @ApiOperation(value = "修改登录信息上传头像暴露链接")
     @PostMapping("/avatar")
     public void avatar(@RequestBody MultipartFile file) {
         multipartFile = file;
@@ -139,6 +150,7 @@ public class LoginServlet {
      * @return
      * @throws IOException
      */
+    @ApiOperation(value = "存储以更新得管理员信息")
     @PostMapping("/modifyLoginInformation")
     public String modifyLoginInformation(@RequestBody @Valid LoginInformationFrom loginInformationFrom) throws IOException {
         if (multipartFile != null) {

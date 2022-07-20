@@ -9,6 +9,7 @@ import com.max.back.neusoft.form.DepartmentFindFrom;
 import com.max.back.neusoft.form.DepartmentSaveForm;
 import com.max.back.neusoft.pojo.Department;
 import com.max.back.neusoft.service.DepartmentService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -34,6 +35,7 @@ public class DepartmentServlet {
      * @param departmentFindFrom 根据此信息查找
      * @return
      */
+    @ApiOperation(value = "根据规则查找科室")
     @PostMapping("/findDepartment")
     public String findDepartment(@RequestBody @Valid DepartmentFindFrom departmentFindFrom) {
         return departmentService.findDepartment(departmentFindFrom);
@@ -43,6 +45,7 @@ public class DepartmentServlet {
      * 科室上传封面接收
      * @param file
      */
+    @ApiOperation(value = "科室上传封面接收")
     @PostMapping("/avatar")
     public void avatar(@RequestBody MultipartFile file) {
         multipartFile=file;
@@ -54,6 +57,7 @@ public class DepartmentServlet {
      * @return
      * @throws IOException
      */
+    @ApiOperation(value = "更新科室")
     @PostMapping("/updateDepartment")
     public String updateDepartment(@RequestBody @Valid DepartmentSaveForm departmentSaveForm) throws IOException {
         //更新，存储界面收到的图片
@@ -84,6 +88,7 @@ public class DepartmentServlet {
      * @return
      * @throws IOException
      */
+    @ApiOperation(value = "添加科室")
     @PostMapping("/addDepartment")
     public String addDepartment(@RequestBody @Valid DepartmentSaveForm departmentSaveForm) throws IOException {
         String path = System.getProperty("user.dir");
@@ -103,6 +108,7 @@ public class DepartmentServlet {
      * 查找科室id和名称
      * @return
      */
+    @ApiOperation(value = "查找科室id和名称")
     @GetMapping("/findDepartment")
     public String findDepartment(){
         QueryWrapper<Department> queryWrapper = new QueryWrapper<>();

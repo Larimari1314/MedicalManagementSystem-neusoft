@@ -19,7 +19,7 @@
         <el-form-item>
           <el-autocomplete
               class="inline-input"
-              v-model="filters.doctorname"
+              v-model="filters.username"
               :fetch-suggestions="querySearch"
               placeholder="患者姓名"
               :trigger-on-focus="false"
@@ -47,13 +47,13 @@
               style="width: 100%;">
       <el-table-column type="index" width="60">
       </el-table-column>
-      <el-table-column prop="id" label="订单id" width="180" sortable>
+      <el-table-column prop="id" label="订单id" width="180">
       </el-table-column>
       <el-table-column prop="username" label="患者姓名" width="120">
       </el-table-column>
       <el-table-column prop="dname" label="医生名称" width="170">
       </el-table-column>
-      <el-table-column prop="price" label="价格" width="120" sortable>
+      <el-table-column prop="price" label="价格" width="120">
       </el-table-column>
       <el-table-column prop="state" label="当前状态" width="100">
         <template scope="scope">
@@ -62,7 +62,7 @@
           <el-tag v-if="department[scope.$index].state=='G010'" type="danger">已退费</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="times" label="最后操作时间" width="180" sortable>
+      <el-table-column prop="times" label="最后操作时间" width="180">
       </el-table-column>
       <el-table-column label="操作" width="300">
         <template scope="scope">
@@ -115,7 +115,7 @@
       </div>
     </el-dialog>
 
-    <!--新增界面-->
+
     <el-dialog title="新增" v-model="orderDetails" :close-on-click-modal="false">
       <div class="modal" id="modal" v-watermark="watermark">
         <div class="content">
@@ -220,7 +220,8 @@ export default {
   methods: {
     checkOrder(index,row){
       this.orderDetails=true
-      if(row.state=='G010'){
+      this.sameOrder=true
+      if(row.state==='G010'){
         this.sameOrder=false
       }
       this.watermark = {

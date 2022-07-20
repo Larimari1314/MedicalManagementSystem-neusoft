@@ -10,6 +10,7 @@ import com.max.back.neusoft.pojo.Doctor;
 import com.max.back.neusoft.pojo.Patientmedicine;
 import com.max.back.neusoft.service.DoctorService;
 import com.max.back.neusoft.service.PatientmedicineService;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,11 +30,14 @@ public class DoctorServlet {
     private DoctorService doctorService;
     @Autowired
     private PatientmedicineService patientmedicineService;
+
     /**
      * 根据规则查找医生
+     *
      * @param doctorRegisteredFrom
      * @return
      */
+    @ApiOperation(value = "根据规则查找医生")
     @PostMapping("/findByRegistered")
     public String findByRegistered(@RequestBody DoctorRegisteredFrom doctorRegisteredFrom) {
         return doctorService.findByRegis(doctorRegisteredFrom);
@@ -41,9 +45,11 @@ public class DoctorServlet {
 
     /**
      * 查找全部医生
+     *
      * @param doctorFindFrom
      * @return
      */
+    @ApiOperation(value = "查找全部医生")
     @PostMapping("/findAllDoctor")
     public String findAllDoctor(@RequestBody @Valid DoctorFindFrom doctorFindFrom) {
         return doctorService.findByRegistered(doctorFindFrom);
@@ -51,21 +57,23 @@ public class DoctorServlet {
 
     /**
      * 删除医生
+     *
      * @param params
      * @return
      */
+    @ApiOperation(value = "删除医生")
     @PostMapping("/deleteByIds")
     public String deleteById(@RequestBody @Valid DeleteFrom params) {
         //在订单表根据用户id查找是否存在相同用户
         AtomicBoolean same = new AtomicBoolean(false);
         params.getIds().stream().forEach(s -> {
             QueryWrapper<Patientmedicine> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("p_doctorId",s);
-            if(patientmedicineService.getMap(queryWrapper)!=null){
+            queryWrapper.eq("p_doctorId", s);
+            if (patientmedicineService.getMap(queryWrapper) != null) {
                 same.set(true);
             }
         });
-        if(same.get()){
+        if (same.get()) {
             return JSON.toJSONString(ResponseResult.getErrorResult("C405"));
         }
         boolean delete = doctorService.removeByIds(params.getIds());
@@ -78,9 +86,11 @@ public class DoctorServlet {
 
     /**
      * 添加医生
+     *
      * @param doctorEditFrom
      * @return
      */
+    @ApiOperation(value = "添加医生")
     @PostMapping("/addDoctor")
     public String addDoctor(@RequestBody @Valid DoctorEditFrom doctorEditFrom) {
         UpdateWrapper<Doctor> updateWrapper = new UpdateWrapper<>();
@@ -99,9 +109,11 @@ public class DoctorServlet {
 
     /**
      * 更新医生信息
+     *
      * @param setUpScheduleFrom
      * @return
      */
+    @ApiOperation(value = "更新医生信息")
     @PostMapping("/setUpSchedule")
     public String setUpSchedule(@RequestBody @Valid SetUpScheduleFrom setUpScheduleFrom) {
         if (setUpScheduleFrom.getEndAge() == null) {
@@ -131,9 +143,11 @@ public class DoctorServlet {
 
     /**
      * 永久删除
+     *
      * @param id
      * @return
      */
+    @ApiOperation(value = "永久删除")
     @PostMapping("/deletePermanently")
     public String deletePermanently(@RequestBody @NotBlank String id) {
         id = id.replace("=", "");
@@ -142,18 +156,20 @@ public class DoctorServlet {
 
     /**
      * 恢复数据
+     *
      * @param id
      * @return
      */
+    @ApiOperation(value = "恢复数据")
     @PostMapping("/dataRecovery")
     public String dataRecovery(@RequestBody @NotBlank String id) {
         id = id.replace("=", "");
         return doctorService.dataRecovery(id);
     }
 
-
+    @ApiOperation(value = "获取挂号级别医生人数")
     @GetMapping("/getRegisDoctor")
-    public String getRegisDoctor(){
+    public String getRegisDoctor() {
         return doctorService.getRegisDoctor();
     }
 }

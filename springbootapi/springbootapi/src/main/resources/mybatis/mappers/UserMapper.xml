@@ -12,7 +12,7 @@
         <result property="identitynumber" column="u_identityNumber" jdbcType="CHAR"/>
         <result property="avatar" column="u_avatar" jdbcType="VARCHAR"/>
         <result property="sex" column="u_sex" jdbcType="CHAR"/>
-        <result property="delete" column="u_delete" jdbcType="INTEGER"/>
+        <result property="deletes" column="u_delete" jdbcType="INTEGER"/>
     </resultMap>
     <select id="findUser" parameterType="com.max.back.neusoft.form.UserFindFrom" resultType="java.util.Map">
         SELECT
@@ -55,7 +55,7 @@
         WHERE n_user.u_delete = 1
     </select>
     <select id="mainGetNumber" resultType="java.util.Map">
-        SELECT (SELECT  COUNT(n_doctor.d_id) FROM n_doctor) doctorNumber,(SELECT  COUNT(n_user.u_id) FROM n_user) patientNumber,
-               COUNT(n_nonDrug.d_id) drugNumber FROM n_nonDrug
+        SELECT (SELECT  COUNT(n_doctor.d_id) FROM n_doctor WHERE d_delete=0) doctorNumber,(SELECT  COUNT(n_user.u_id) FROM n_user WHERE u_delete=0) patientNumber,
+               COUNT(n_nonDrug.d_id) drugNumber FROM n_nonDrug WHERE d_delete=0
     </select>
 </mapper>

@@ -13,6 +13,7 @@ import com.max.back.neusoft.pojo.Patientmedicine;
 import com.max.back.neusoft.pojo.User;
 import com.max.back.neusoft.service.PatientmedicineService;
 import com.max.back.neusoft.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -43,11 +44,12 @@ public class UserServlet {
     @Autowired
     private PatientmedicineService patientmedicineService;
     //获取全部用户信息
+    @ApiOperation(value = "获取全部用户信息")
     @PostMapping("/findUser")
     public String findAllUser(@RequestBody @Valid UserFindFrom userFindFrom) {
         return userService.findUser(userFindFrom);
     }
-
+    @ApiOperation(value = "根据id列表删除")
     @PostMapping("/deleteByIds")
     public String deleteById(@RequestBody @Valid DeleteFrom params) {
         //在订单表根据用户id查找是否存在相同用户

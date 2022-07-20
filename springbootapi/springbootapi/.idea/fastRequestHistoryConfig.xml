@@ -4,6 +4,171 @@
     <option name="historyList">
       <list>
         <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DoctorServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="findAllDoctor" />
+          <option name="methodType" value="POST" />
+          <option name="name" value="查找全部医生" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;page&quot;: 1,&#10;  &quot;name&quot;: &quot;&quot;,&#10;  &quot;department&quot;: &quot;&quot;,&#10;  &quot;registered&quot;: &quot;&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.DoctorServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;page&quot;: &quot;页码&quot;,&#10;  &quot;name&quot;: &quot;姓名&quot;,&#10;  &quot;department&quot;: &quot;科室id&quot;,&#10;  &quot;registered&quot;: &quot;挂号级别&quot;&#10;}" />
+              <option name="method" value="findAllDoctor" />
+              <option name="methodDescription" value="查找全部医生" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/doctor/findAllDoctor" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/doctor/findAllDoctor" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/doctor/findAllDoctor&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 52&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;name&quot;:&quot;&quot;,&quot;registered&quot;:&quot;&quot;,&quot;page&quot;:1,&quot;department&quot;:&quot;&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;endRow&quot;:20,&quot;hasNextPage&quot;:true,&quot;hasPreviousPage&quot;:false,&quot;isFirstPage&quot;:true,&quot;isLastPage&quot;:false,&quot;list&quot;:[{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Mona Woodward&quot;,&quot;id&quot;:&quot;100&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:24},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Molly Clay&quot;,&quot;id&quot;:&quot;101&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:55},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;二胖医生&quot;,&quot;id&quot;:&quot;102&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:52},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Wilma Contreras&quot;,&quot;id&quot;:&quot;103&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:39},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;India Farley&quot;,&quot;id&quot;:&quot;104&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:27},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Eric Goodwin&quot;,&quot;id&quot;:&quot;105&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:54},{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Amos Reynolds&quot;,&quot;id&quot;:&quot;106&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:55},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Ulysses Sandoval&quot;,&quot;id&quot;:&quot;107&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:28},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Wang Flynn&quot;,&quot;id&quot;:&quot;108&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:51},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Kaitlin Hull&quot;,&quot;id&quot;:&quot;11&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:47},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Cairo Pennington&quot;,&quot;id&quot;:&quot;110&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:46},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Amir Browning&quot;,&quot;id&quot;:&quot;112&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:38},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Remedios Jennings&quot;,&quot;id&quot;:&quot;113&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:20},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Hedda Randolph&quot;,&quot;id&quot;:&quot;114&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:49},{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Melvin Mccarthy&quot;,&quot;id&quot;:&quot;115&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:33},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Scarlet Suarez&quot;,&quot;id&quot;:&quot;116&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:31},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Linda Fernandez&quot;,&quot;id&quot;:&quot;117&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:32},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Andrew Cain&quot;,&quot;id&quot;:&quot;118&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:56},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Jack Meadows&quot;,&quot;id&quot;:&quot;120&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:39},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Plato Lott&quot;,&quot;id&quot;:&quot;122&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:50}],&quot;navigateFirstPage&quot;:1,&quot;navigateLastPage&quot;:8,&quot;navigatePages&quot;:8,&quot;navigatepageNums&quot;:[1,2,3,4,5,6,7,8],&quot;nextPage&quot;:2,&quot;pageNum&quot;:1,&quot;pageSize&quot;:20,&quot;pages&quot;:15,&quot;prePage&quot;:0,&quot;size&quot;:20,&quot;startRow&quot;:1,&quot;total&quot;:293},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/doctor/findAllDoctor" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DoctorServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="findAllDoctor" />
+          <option name="methodType" value="POST" />
+          <option name="name" value="查找全部医生" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;page&quot;: 1,&#10;  &quot;name&quot;: &quot;&quot;,&#10;  &quot;department&quot;: &quot;&quot;,&#10;  &quot;registered&quot;: &quot;&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.DoctorServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;page&quot;: &quot;页码&quot;,&#10;  &quot;name&quot;: &quot;姓名&quot;,&#10;  &quot;department&quot;: &quot;科室id&quot;,&#10;  &quot;registered&quot;: &quot;挂号级别&quot;&#10;}" />
+              <option name="method" value="findAllDoctor" />
+              <option name="methodDescription" value="查找全部医生" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/doctor/findAllDoctor" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/doctor/findAllDoctor" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/doctor/findAllDoctor&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 52&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;name&quot;:&quot;&quot;,&quot;registered&quot;:&quot;&quot;,&quot;page&quot;:1,&quot;department&quot;:&quot;&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;endRow&quot;:20,&quot;hasNextPage&quot;:true,&quot;hasPreviousPage&quot;:false,&quot;isFirstPage&quot;:true,&quot;isLastPage&quot;:false,&quot;list&quot;:[{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Mona Woodward&quot;,&quot;id&quot;:&quot;100&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:24},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Molly Clay&quot;,&quot;id&quot;:&quot;101&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:55},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;二胖医生&quot;,&quot;id&quot;:&quot;102&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:52},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Wilma Contreras&quot;,&quot;id&quot;:&quot;103&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:39},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;India Farley&quot;,&quot;id&quot;:&quot;104&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:27},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Eric Goodwin&quot;,&quot;id&quot;:&quot;105&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:54},{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Amos Reynolds&quot;,&quot;id&quot;:&quot;106&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:55},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Ulysses Sandoval&quot;,&quot;id&quot;:&quot;107&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:28},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Wang Flynn&quot;,&quot;id&quot;:&quot;108&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:51},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Kaitlin Hull&quot;,&quot;id&quot;:&quot;11&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:47},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Cairo Pennington&quot;,&quot;id&quot;:&quot;110&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:46},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Amir Browning&quot;,&quot;id&quot;:&quot;112&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:38},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Remedios Jennings&quot;,&quot;id&quot;:&quot;113&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:20},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Hedda Randolph&quot;,&quot;id&quot;:&quot;114&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:49},{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Melvin Mccarthy&quot;,&quot;id&quot;:&quot;115&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:33},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Scarlet Suarez&quot;,&quot;id&quot;:&quot;116&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:31},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Linda Fernandez&quot;,&quot;id&quot;:&quot;117&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:32},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Andrew Cain&quot;,&quot;id&quot;:&quot;118&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:56},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Jack Meadows&quot;,&quot;id&quot;:&quot;120&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:39},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Plato Lott&quot;,&quot;id&quot;:&quot;122&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:50}],&quot;navigateFirstPage&quot;:1,&quot;navigateLastPage&quot;:8,&quot;navigatePages&quot;:8,&quot;navigatepageNums&quot;:[1,2,3,4,5,6,7,8],&quot;nextPage&quot;:2,&quot;pageNum&quot;:1,&quot;pageSize&quot;:20,&quot;pages&quot;:15,&quot;prePage&quot;:0,&quot;size&quot;:20,&quot;startRow&quot;:1,&quot;total&quot;:293},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/doctor/findAllDoctor" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DoctorServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="findAllDoctor" />
+          <option name="methodType" value="POST" />
+          <option name="name" value="查找全部医生" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;page&quot;: 1,&#10;  &quot;name&quot;: &quot;&quot;,&#10;  &quot;department&quot;: &quot;&quot;,&#10;  &quot;registered&quot;: &quot;&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.DoctorServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;page&quot;: &quot;页码&quot;,&#10;  &quot;name&quot;: &quot;姓名&quot;,&#10;  &quot;department&quot;: &quot;科室id&quot;,&#10;  &quot;registered&quot;: &quot;挂号级别&quot;&#10;}" />
+              <option name="method" value="findAllDoctor" />
+              <option name="methodDescription" value="查找全部医生" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/doctor/findAllDoctor" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/doctor/findAllDoctor" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/doctor/findAllDoctor&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 52&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;name&quot;:&quot;&quot;,&quot;registered&quot;:&quot;&quot;,&quot;page&quot;:1,&quot;department&quot;:&quot;&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;endRow&quot;:20,&quot;hasNextPage&quot;:true,&quot;hasPreviousPage&quot;:false,&quot;isFirstPage&quot;:true,&quot;isLastPage&quot;:false,&quot;list&quot;:[{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Mona Woodward&quot;,&quot;id&quot;:&quot;100&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:24},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Molly Clay&quot;,&quot;id&quot;:&quot;101&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:55},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;二胖医生&quot;,&quot;id&quot;:&quot;102&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:52},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Wilma Contreras&quot;,&quot;id&quot;:&quot;103&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:39},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;India Farley&quot;,&quot;id&quot;:&quot;104&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:27},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Eric Goodwin&quot;,&quot;id&quot;:&quot;105&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:54},{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Amos Reynolds&quot;,&quot;id&quot;:&quot;106&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:55},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Ulysses Sandoval&quot;,&quot;id&quot;:&quot;107&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:28},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Wang Flynn&quot;,&quot;id&quot;:&quot;108&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:51},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Kaitlin Hull&quot;,&quot;id&quot;:&quot;11&quot;,&quot;dname&quot;:&quot;妇产科&quot;,&quot;department&quot;:&quot;DE004&quot;,&quot;age&quot;:47},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Cairo Pennington&quot;,&quot;id&quot;:&quot;110&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:46},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Amir Browning&quot;,&quot;id&quot;:&quot;112&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:38},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Remedios Jennings&quot;,&quot;id&quot;:&quot;113&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:20},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Hedda Randolph&quot;,&quot;id&quot;:&quot;114&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:49},{&quot;schedule&quot;:&quot;S002&quot;,&quot;sname&quot;:&quot;午班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Melvin Mccarthy&quot;,&quot;id&quot;:&quot;115&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:33},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Scarlet Suarez&quot;,&quot;id&quot;:&quot;116&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:31},{&quot;schedule&quot;:&quot;S004&quot;,&quot;sname&quot;:&quot;全天班次&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Linda Fernandez&quot;,&quot;id&quot;:&quot;117&quot;,&quot;dname&quot;:&quot;急诊科&quot;,&quot;department&quot;:&quot;DE001&quot;,&quot;age&quot;:32},{&quot;schedule&quot;:&quot;S003&quot;,&quot;sname&quot;:&quot;晚班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Andrew Cain&quot;,&quot;id&quot;:&quot;118&quot;,&quot;dname&quot;:&quot;内科&quot;,&quot;department&quot;:&quot;DE002&quot;,&quot;age&quot;:56},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;name&quot;:&quot;Jack Meadows&quot;,&quot;id&quot;:&quot;120&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:39},{&quot;schedule&quot;:&quot;S001&quot;,&quot;sname&quot;:&quot;早班&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;name&quot;:&quot;Plato Lott&quot;,&quot;id&quot;:&quot;122&quot;,&quot;dname&quot;:&quot;外科&quot;,&quot;department&quot;:&quot;DE003&quot;,&quot;age&quot;:50}],&quot;navigateFirstPage&quot;:1,&quot;navigateLastPage&quot;:8,&quot;navigatePages&quot;:8,&quot;navigatepageNums&quot;:[1,2,3,4,5,6,7,8],&quot;nextPage&quot;:2,&quot;pageNum&quot;:1,&quot;pageSize&quot;:20,&quot;pages&quot;:15,&quot;prePage&quot;:0,&quot;size&quot;:20,&quot;startRow&quot;:1,&quot;total&quot;:293},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/doctor/findAllDoctor" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="adminRequestLogin" />
+          <option name="methodType" value="POST" />
+          <option name="name" value="登录" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;123456&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;username&quot;: &quot;用户名&quot;,&#10;  &quot;password&quot;: &quot;密码&quot;&#10;}" />
+              <option name="method" value="adminRequestLogin" />
+              <option name="methodDescription" value="登录" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/login/adminRequestLogin" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/login/adminRequestLogin" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/login/adminRequestLogin&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 40&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;password&quot;:&quot;123456&quot;,&quot;username&quot;:&quot;admin&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;password&quot;:&quot;e10adc3949ba59abbe56e057f20f883e&quot;,&quot;permission&quot;:1,&quot;id&quot;:&quot;1&quot;,&quot;avatar&quot;:&quot;http://localhost:8000/hospital/Img/admin/1/1.jpg&quot;,&quot;username&quot;:&quot;admin&quot;},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/login/adminRequestLogin" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="adminRequestLogin" />
+          <option name="methodType" value="POST" />
+          <option name="name" value="登录" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;123456&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;username&quot;: &quot;用户名&quot;,&#10;  &quot;password&quot;: &quot;密码&quot;&#10;}" />
+              <option name="method" value="adminRequestLogin" />
+              <option name="methodDescription" value="登录" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/login/adminRequestLogin" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/login/adminRequestLogin" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/login/adminRequestLogin&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 40&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;password&quot;:&quot;123456&quot;,&quot;username&quot;:&quot;admin&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;password&quot;:&quot;e10adc3949ba59abbe56e057f20f883e&quot;,&quot;permission&quot;:1,&quot;id&quot;:&quot;1&quot;,&quot;avatar&quot;:&quot;http://localhost:8000/hospital/Img/admin/1/1.jpg&quot;,&quot;username&quot;:&quot;admin&quot;},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/login/adminRequestLogin" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+          <option name="code" value="509" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="getDepartClassList" />
+          <option name="methodType" value="GET" />
+          <option name="name" value="获取科室类别列表" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.max.back.neusoft.api.DepartclassificationServlet" />
+              <option name="method" value="getDepartClassList" />
+              <option name="methodDescription" value="获取科室类别列表" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/departClassification/getDepartClassList" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/departClassification/getDepartClassList" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/departClassification/getDepartClassList&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;insufficientPermissions&quot;:&quot;false&quot;}" />
+          <option name="url" value="/departClassification/getDepartClassList" />
+        </ResponseHistory>
+        <ResponseHistory>
           <option name="className" value="com.max.back.neusoft.api.GeneralitemServlet" />
           <option name="code" value="500" />
           <option name="enableEnv" value="local8000" />
@@ -362,32 +527,6 @@
           </option>
           <option name="requestInfo" value="Request Url: http://localhost:8000/api/bstudent/delete&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 21&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;ids&quot;:[&quot;ids_gx2d4&quot;]}&#13;&#10;" />
           <option name="response" value="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP Status 404 – Not Found&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 404 – Not Found&lt;/h1&gt;&lt;hr class=&quot;line&quot; /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Status Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Not found&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.&lt;/p&gt;&lt;hr class=&quot;line&quot; /&gt;&lt;h3&gt;Apache Tomcat/9.0.24&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;" />
-          <option name="url" value="/api/bstudent/delete" />
-        </ResponseHistory>
-        <ResponseHistory>
-          <option name="className" value="com.max.back.demo.api.BstudentCtl" />
-          <option name="enableEnv" value="local8080" />
-          <option name="enableProject" value="Object" />
-          <option name="method" value="delete" />
-          <option name="methodType" value="POST" />
-          <option name="paramGroup">
-            <ParamGroupCollection>
-              <option name="bodyKeyValueListJson" value="{&#10;  &quot;ids&quot;: [&#10;    &quot;ids_gx2d4&quot;&#10;  ]&#10;}" />
-              <option name="className" value="com.max.back.demo.api.BstudentCtl" />
-              <option name="jsonDocument" value="{&#10;  &quot;ids&quot;: [&#10;    &quot;No comment,Value =ids_gx2d4&quot;&#10;  ]&#10;}" />
-              <option name="method" value="delete" />
-              <option name="methodDescription" value="New Request" />
-              <option name="methodType" value="POST" />
-              <option name="multipartKeyValueListJson" value="[]" />
-              <option name="originUrl" value="/api/bstudent/delete" />
-              <option name="pathParamsKeyValueListJson" value="[]" />
-              <option name="url" value="/api/bstudent/delete" />
-              <option name="urlEncodedKeyValueListJson" value="[]" />
-              <option name="urlParamsKeyValueListJson" value="[]" />
-            </ParamGroupCollection>
-          </option>
-          <option name="requestInfo" value="Request Url: http://localhost:8080/api/bstudent/delete&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 21&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;ids&quot;:[&quot;ids_gx2d4&quot;]}&#13;&#10;" />
-          <option name="response" value="ConnectException: Connection refused: connect" />
           <option name="url" value="/api/bstudent/delete" />
         </ResponseHistory>
       </list>

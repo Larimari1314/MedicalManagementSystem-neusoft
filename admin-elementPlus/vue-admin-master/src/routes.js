@@ -86,7 +86,7 @@ let routes = [
         path: '/',
         component: Home,
         name: '',
-        iconCls: 'fa fa-database',
+        iconCls: 'fa fa-american-sign-language-interpreting',
         leaf: true,//只有一个节点
         children: [
             { path: '/workstation', component: workstation, name: '患者发药' }

@@ -15,6 +15,7 @@ import com.max.back.neusoft.pojo.Orderdrug;
 import com.max.back.neusoft.service.DrugspecificationService;
 import com.max.back.neusoft.service.NondrugService;
 import com.max.back.neusoft.service.OrderdrugService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -49,12 +50,14 @@ public class DrugServlet {
     private OrderdrugService orderdrugService;
 
     //获取药品规格
+    @ApiOperation(value = "获取药品规格")
     @GetMapping("/findAllSpecification")
     public String findAllSpecification() {
         return JSON.toJSONString(drugspecificationService.list(), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     //根据要求获取药品
+    @ApiOperation(value = "根据要求获取药品")
     @PostMapping("/getAllDrugByRequire")
     public String getAllDrugByRequire(@RequestBody @Valid DrugFindFrom drugFindFrom) {
         return nondrugService.getAllDrugByRequire(drugFindFrom);
@@ -66,6 +69,7 @@ public class DrugServlet {
      * @param modifyEnable
      * @return
      */
+    @ApiOperation(value = "修改药品是否启用")
     @PostMapping("/modifyEnable")
     public String modifyEnable(@RequestBody @Valid DrugModifyEnable modifyEnable) {
         UpdateWrapper<Nondrug> updateWrapper = new UpdateWrapper<>();
@@ -85,6 +89,7 @@ public class DrugServlet {
      * @param params
      * @return
      */
+    @ApiOperation(value = "删除药品")
     @PostMapping("/deleteByIds")
     public String deleteById(@RequestBody @Valid DeleteFrom params) {
         //在订单表根据用户id查找是否存在相同用户
@@ -112,6 +117,7 @@ public class DrugServlet {
      *
      * @param file
      */
+    @ApiOperation(value = "上传药品封面")
     @PostMapping("/avatar")
     public void avatar(@RequestBody MultipartFile file) {
         multipartFile = file;
@@ -124,6 +130,7 @@ public class DrugServlet {
      * @return
      * @throws IOException
      */
+    @ApiOperation(value = "跟新药品信息")
     @PostMapping("/updateDrug")
     public String updateUser(@RequestBody DrugSubmitFrom drugSubmitFrom) throws IOException {
         if (multipartFile != null) {
@@ -160,6 +167,7 @@ public class DrugServlet {
      * @return
      * @throws IOException
      */
+    @ApiOperation(value = "添加药品")
     @PostMapping("/addDrug")
     public String addDrug(@RequestBody @Valid DrugSubmitFrom drugSubmitFrom) throws IOException {
         if (multipartFile == null) {
@@ -192,6 +200,7 @@ public class DrugServlet {
      * @param response
      * @throws IOException
      */
+    @ApiOperation(value = "下载药品模板")
     @PostMapping("/dataTemplateDownload")
     public void userTemplateDownload(HttpServletResponse response) throws IOException {
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
@@ -216,6 +225,7 @@ public class DrugServlet {
      * @param response
      * @throws IOException
      */
+    @ApiOperation(value = "下载药品excel全部数据")
     @PostMapping("/exportData")
     public void exportDataUser(HttpServletResponse response) throws IOException {
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
@@ -239,6 +249,7 @@ public class DrugServlet {
      *
      * @param file
      */
+    @ApiOperation(value = "上传excel文件暴漏链接")
     @PostMapping("/uploadToServer")
     public void uploadToServer(@RequestBody MultipartFile file) {
         multipartFileExcel = file;
@@ -251,6 +262,7 @@ public class DrugServlet {
      * @return
      * @throws IOException
      */
+    @ApiOperation(value = "对上传文件进行解析")
     @GetMapping("/analyseFile")
     @ResponseBody
     public String analyseFile() throws IOException {
@@ -269,6 +281,7 @@ public class DrugServlet {
      *
      * @return
      */
+    @ApiOperation(value = "获取已逻辑删除药品信息")
     @GetMapping("/getDeleteDrug")
     public String getDeletes() {
         return nondrugService.getDeletes();
@@ -280,6 +293,7 @@ public class DrugServlet {
      * @param id
      * @return
      */
+    @ApiOperation(value = "永久删除")
     @PostMapping("/deletePermanently")
     public String deletePermanently(@RequestBody @NotBlank String id) {
         id = id.replace("=", "");
@@ -295,6 +309,7 @@ public class DrugServlet {
      * @param id
      * @return
      */
+    @ApiOperation(value = "恢复数据")
     @PostMapping("/dataRecovery")
     public String dataRecovery(@RequestBody @NotBlank String id) {
         id = id.replace("=", "");

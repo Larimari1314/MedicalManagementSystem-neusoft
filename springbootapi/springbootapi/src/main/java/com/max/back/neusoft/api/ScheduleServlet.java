@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.max.back.neusoft.form.ScheduleFrom;
 import com.max.back.neusoft.pojo.Schedule;
 import com.max.back.neusoft.service.ScheduleService;
+import io.swagger.annotations.ApiOperation;
 import javafx.scene.input.DataFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,6 +28,11 @@ public class ScheduleServlet {
     @Autowired
     private ScheduleService scheduleService;
 
+    /**
+     *
+     * @return
+     */
+    @ApiOperation(value = "查找")
     @GetMapping("/findScheduleList")
     public String findScheduleList() {
         QueryWrapper<Schedule> queryWrapper = new QueryWrapper<>();
