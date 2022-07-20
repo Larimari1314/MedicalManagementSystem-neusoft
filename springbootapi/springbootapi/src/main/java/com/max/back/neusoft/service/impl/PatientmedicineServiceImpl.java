@@ -120,6 +120,11 @@ public class PatientmedicineServiceImpl extends ServiceImpl<PatientmedicineMappe
         return JSON.toJSONString(arrayLists);
 
     }
+
+    @Override
+    public String getStateStatistics() {
+        return JSON.toJSONString(patientmedicineMapper.getStateStatistics());
+    }
 }
 
 

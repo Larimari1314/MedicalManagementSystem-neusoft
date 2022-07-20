@@ -69,6 +69,13 @@ public class DoctorServiceImpl extends ServiceImpl<DoctorMapper, Doctor>
             return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
         }
     }
+
+    @Override
+    public String getRegisDoctor() {
+        List<Map<String, Object>> regisDoctor = doctorMapper.getRegisDoctor();
+        System.out.println(regisDoctor);
+        return JSON.toJSONString(regisDoctor);
+    }
 }
 
 

@@ -21,6 +21,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 支付
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/pay")

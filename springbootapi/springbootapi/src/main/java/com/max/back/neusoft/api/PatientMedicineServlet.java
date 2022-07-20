@@ -121,5 +121,9 @@ public class PatientMedicineServlet {
     public String getAllValues(){
         return patientmedicineService.getAllValues();
     }
+    @GetMapping("/getStateStatistics")
+    public String getStateStatistics(){
+        return patientmedicineService.getStateStatistics();
+    }
 }
 

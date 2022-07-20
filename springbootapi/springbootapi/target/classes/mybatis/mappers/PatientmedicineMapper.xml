@@ -21,7 +21,8 @@
         p_date,p_state,p_version,
         p_delete,p_price
     </sql>
-    <select id="selectByUsernameAndDoctorName" resultType="map" parameterType="com.max.back.neusoft.form.DispensingMedicineFrom">
+    <select id="selectByUsernameAndDoctorName" resultType="map"
+            parameterType="com.max.back.neusoft.form.DispensingMedicineFrom">
         SELECT
         p_id id,n_user.u_username username,n_doctor.d_name dname,
         p_date times,p_state state,p_version version,n_patientMedicine.p_price price
@@ -46,62 +47,73 @@
         ORDER BY n_patientMedicine.p_id
     </select>
     <select id="findOrderDrug" parameterType="java.lang.String" resultType="map">
-        SELECT
-            n_patientMedicine.p_id pid, n_nonDrug.d_name name,n_nonDrug.d_price dprice,
-            n_orderDrug.o_number number
-        FROM
-            n_orderDrug
-                INNER JOIN n_patientMedicine ON n_patientMedicine.p_id=n_orderDrug.o_id
-                INNER JOIN n_nonDrug ON n_orderDrug.o_drugId=n_nonDrug.d_id
-        WHERE n_patientMedicine.p_id=#{id}
+        SELECT n_patientMedicine.p_id pid,
+               n_nonDrug.d_name       name,
+               n_nonDrug.d_price      dprice,
+               n_orderDrug.o_number   number
+        FROM n_orderDrug
+                 INNER JOIN n_patientMedicine ON n_patientMedicine.p_id = n_orderDrug.o_id
+                 INNER JOIN n_nonDrug ON n_orderDrug.o_drugId = n_nonDrug.d_id
+        WHERE n_patientMedicine.p_id = #{id}
         ORDER BY n_patientMedicine.p_id
     </select>
     <select id="getTotalPrice" parameterType="java.lang.String" resultType="map">
-        SELECT
-            n_nonDrug.d_price price,
-            n_orderDrug.o_number number
-        FROM
-            n_orderDrug
-                INNER JOIN n_patientMedicine ON n_patientMedicine.p_id=n_orderDrug.o_id
-                INNER JOIN n_nonDrug ON n_orderDrug.o_drugId=n_nonDrug.d_id
-        WHERE n_patientMedicine.p_id=#{id}
+        SELECT n_nonDrug.d_price    price,
+               n_orderDrug.o_number number
+        FROM n_orderDrug
+                 INNER JOIN n_patientMedicine ON n_patientMedicine.p_id = n_orderDrug.o_id
+                 INNER JOIN n_nonDrug ON n_orderDrug.o_drugId = n_nonDrug.d_id
+        WHERE n_patientMedicine.p_id = #{id}
         ORDER BY n_patientMedicine.p_id
     </select>
     <select id="payList" parameterType="java.lang.String" resultType="map">
-        SELECT
-            n_nonDrug.d_id id,
-            n_nonDrug.d_price price,
-            n_orderDrug.o_number number,
-            n_patientMedicine.p_price pprice,
-            n_nonDrug.d_name name
-        FROM
-            n_orderDrug
-                INNER JOIN n_patientMedicine ON n_patientMedicine.p_id=n_orderDrug.o_id
-                INNER JOIN n_nonDrug ON n_orderDrug.o_drugId=n_nonDrug.d_id
-        WHERE n_patientMedicine.p_id=#{id}
+        SELECT n_nonDrug.d_id            id,
+               n_nonDrug.d_price         price,
+               n_orderDrug.o_number      number,
+               n_patientMedicine.p_price pprice,
+               n_nonDrug.d_name          name
+        FROM n_orderDrug
+                 INNER JOIN n_patientMedicine ON n_patientMedicine.p_id = n_orderDrug.o_id
+                 INNER JOIN n_nonDrug ON n_orderDrug.o_drugId = n_nonDrug.d_id
+        WHERE n_patientMedicine.p_id = #{id}
         ORDER BY n_patientMedicine.p_id
     </select>
 
     <select id="orderDetails" parameterType="java.lang.String" resultType="map">
-        SELECT
-            n_patientMedicine.p_id pid,n_patientMedicine.p_date pdate,n_patientMedicine.p_price price
-             ,n_user.u_username username,n_user.u_identityNumber identityNumber,n_doctor.d_name dname,
-              n_department.d_name dename,n_generalItem.value registered
-        FROM
-            n_patientMedicine
-                INNER JOIN n_user ON n_user.u_id=n_patientMedicine.p_userId
-                INNER JOIN n_doctor ON n_doctor.d_id=n_patientMedicine.p_doctorId
-                INNER JOIN n_department ON n_doctor.d_department=n_department.d_id
-                INNER JOIN n_registered ON n_doctor.d_regis=n_registered.r_id
-                INNER JOIN n_generalItem ON n_generalItem.coding=n_registered.r_name
-        WHERE n_patientMedicine.p_id=#{id}
+        SELECT n_patientMedicine.p_id    pid,
+               n_patientMedicine.p_date  pdate,
+               n_patientMedicine.p_price price
+                ,
+               n_user.u_username         username,
+               n_user.u_identityNumber   identityNumber,
+               n_doctor.d_name           dname,
+               n_department.d_name       dename,
+               n_generalItem.value       registered
+        FROM n_patientMedicine
+                 INNER JOIN n_user ON n_user.u_id = n_patientMedicine.p_userId
+                 INNER JOIN n_doctor ON n_doctor.d_id = n_patientMedicine.p_doctorId
+                 INNER JOIN n_department ON n_doctor.d_department = n_department.d_id
+                 INNER JOIN n_registered ON n_doctor.d_regis = n_registered.r_id
+                 INNER JOIN n_generalItem ON n_generalItem.coding = n_registered.r_name
+        WHERE n_patientMedicine.p_id = #{id}
     </select>
     <select id="getDayMedicine" resultType="java.util.Map">
-        SELECT DATE_FORMAT(p_date,'%m%d') days,COUNT(p_id) COUNT
-        FROM n_patientMedicine GROUP BY days;
+        SELECT DATE_FORMAT(p_date, '%m%d') days, COUNT(p_id) COUNT
+        FROM n_patientMedicine
+        GROUP BY days;
     </select>
     <select id="getAllValues" resultType="java.util.Map">
-        SELECT (SELECT  COUNT(n_doctor.d_id) FROM n_doctor) 医生数量,(SELECT  COUNT(n_user.u_id) FROM n_user) 患者数量,
-               (SELECT  COUNT(n_patientMedicine.p_id) FROM n_patientMedicine) 订单数量,COUNT(n_nonDrug.d_id) 药品数量 FROM n_nonDrug
+        SELECT (SELECT COUNT(n_doctor.d_id) FROM n_doctor)                   医生数量,
+               (SELECT COUNT(n_user.u_id) FROM n_user)                       患者数量,
+               (SELECT COUNT(n_patientMedicine.p_id) FROM n_patientMedicine) 订单数量,
+               COUNT(n_nonDrug.d_id)                                         药品数量
+        FROM n_nonDrug
+    </select>
+    <select id="getStateStatistics" resultType="java.util.Map">
+        SELECT COUNT(p_id) value,n_generalItem.value name
+        FROM n_patientMedicine
+            INNER JOIN n_generalItem
+        ON n_patientMedicine.p_state=n_generalItem.coding
+        GROUP BY p_state
     </select>
 </mapper>

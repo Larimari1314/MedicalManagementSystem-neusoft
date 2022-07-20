@@ -79,11 +79,22 @@
     <delete id="deletePermanently" parameterType="java.lang.String">
         DELETE
         FROM n_doctor
-        WHERE d_id = #{id} AND d_delete=1
+        WHERE d_id = #{id}
+          AND d_delete = 1
     </delete>
     <update id="dataRecovery" parameterType="java.lang.String">
         UPDATE n_doctor
         SET d_delete=0
-        WHERE d_id = #{id} AND d_delete=1
+        WHERE d_id = #{id}
+          AND d_delete = 1
     </update>
+    <!--获取医生挂号级别饼状图-->
+    <select id="getRegisDoctor" resultType="map">
+        SELECT COUNT(d_id) value,n_generalItem.value name
+        FROM n_doctor
+            INNER JOIN n_registered
+        ON n_doctor.d_regis = n_registered.r_id
+            INNER JOIN n_generalItem ON n_registered.r_name=n_generalItem.coding
+        GROUP BY d_regis;
+    </select>
 </mapper>

@@ -129,6 +129,9 @@ export const paymentStatus =params=>{return axios.post(`${parameter}/pay/payment
 export const mainGetNumber =params=>{return axios.post(`${parameter}/user/mainGetNumber`,params);};
 export const getDayNumber =params=>{return axios.get(`${parameter}/patientMedicine/getDayNumber`);};
 export const getAllValues =params=>{return axios.get(`${parameter}/patientMedicine/getAllValues`);};
+
+export const getRegisDoctor =params=>{return axios.get(`${parameter}/doctor/getRegisDoctor`);};
+export const getStateStatistics =params=>{return axios.get(`${parameter}/patientMedicine/getStateStatistics`);};
 //支付
 export const pay =params=>{return axios.post(`http://192.168.1.106:8000/hospital/pay/pay`,params);};
 export const scanStatus =params=>{return axios.post(`http://192.168.1.106:8000/hospital/pay/scanStatus`,params);};

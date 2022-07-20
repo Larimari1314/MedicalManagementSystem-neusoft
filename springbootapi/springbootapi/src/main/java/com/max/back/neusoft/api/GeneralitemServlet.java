@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+/**
+ * 常数项
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/generalitem")

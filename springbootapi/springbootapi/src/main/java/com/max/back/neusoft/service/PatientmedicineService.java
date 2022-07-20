@@ -20,4 +20,5 @@ public interface PatientmedicineService extends IService<Patientmedicine> {
     public String orderDetails(String id);
     public String getDayMedicine();
     public String getAllValues();
+    public String getStateStatistics();
 }

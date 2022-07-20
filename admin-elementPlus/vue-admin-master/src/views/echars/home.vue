@@ -109,12 +109,12 @@
     <el-row :gutter="20">
       <el-col :span="12">
         <el-card shadow="hover">
-
+          <div id="doctorRegis" :style="{width: '600px', height: '500px'}"></div>
         </el-card>
       </el-col>
       <el-col :span="12">
         <el-card shadow="hover">
-
+          <div id="stateStatistics" :style="{width: '600px', height: '500px'}"></div>
         </el-card>
       </el-col>
     </el-row>
@@ -122,7 +122,7 @@
 </template>
 
 <script>
-import {getAllValues, getDayNumber, mainGetNumber} from "../../api/api";
+import {getAllValues, getDayNumber, getRegisDoctor, getStateStatistics, mainGetNumber} from "../../api/api";
 
 export default {
   data() {
@@ -169,6 +169,7 @@ export default {
           series: [{
             name: '数量',
             type: 'line',
+            smooth: true,
             data: this.numberDay
           }]
         });
@@ -209,6 +210,81 @@ export default {
             },
           }]
         });
+      })
+      getRegisDoctor().then((res)=>{
+        this.dayList=res.data[0]
+        this.numberDay=res.data[1]
+        let myChart = this.$echarts.init(document.getElementById('doctorRegis'))
+        myChart.setOption({
+          tooltip: {
+            trigger: '挂号级别医生人数'
+          },
+          legend: {
+            top: '5%',
+            left: 'center'
+          },
+          series: [
+            {
+              name: 'Access From',
+              type: 'pie',
+              radius: ['40%', '70%'],
+              avoidLabelOverlap: false,
+              itemStyle: {
+                borderRadius: 10,
+                borderColor: '#fff',
+                borderWidth: 2
+              },
+              label: {
+                show: false,
+                position: 'center'
+              },
+              emphasis: {
+                label: {
+                  show: true,
+                  fontSize: '40',
+                  fontWeight: 'bold'
+                }
+              },
+              labelLine: {
+                show: false
+              },
+              data: res.data
+            }
+          ]
+        });
+      })
+      getStateStatistics().then((res)=>{
+            this.dayList=res.data[0]
+            this.numberDay=res.data[1]
+            let myChart = this.$echarts.init(document.getElementById('stateStatistics'))
+            myChart.setOption({
+              title: {
+                text: '诊所订单情况',
+                left: 'center'
+              },
+              tooltip: {
+                trigger: 'item'
+              },
+              legend: {
+                orient: 'vertical',
+                left: 'left'
+              },
+              series: [
+                {
+                  name: 'Access From',
+                  type: 'pie',
+                  radius: '50%',
+                  data:res.data,
+                  emphasis: {
+                    itemStyle: {
+                      shadowBlur: 10,
+                      shadowOffsetX: 0,
+                      shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                  }
+                }
+              ]
+            })
       })
     },
     deleteRow(index, rows) {

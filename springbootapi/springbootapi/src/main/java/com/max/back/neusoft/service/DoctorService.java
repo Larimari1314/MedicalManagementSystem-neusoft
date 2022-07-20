@@ -21,5 +21,6 @@ public interface DoctorService extends IService<Doctor> {
     public String  deletePermanently(String id);
     public String dataRecovery(String id);
 
+    public String getRegisDoctor();
 
 }

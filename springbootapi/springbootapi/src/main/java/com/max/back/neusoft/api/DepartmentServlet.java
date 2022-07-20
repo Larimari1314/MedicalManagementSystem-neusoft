@@ -17,6 +17,9 @@ import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * 科室
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/department")

@@ -28,8 +28,9 @@ public interface PatientmedicineMapper extends BaseMapper<Patientmedicine> {
     public List<Map<String,Object>> orderDetails(String id);
 
     public List<Map<String,Object>> getDayMedicine();
-
     public Map<String,Object> getAllValues();
+
+    public List<Map<String,Object>> getStateStatistics();
 }
 
 

@@ -16,7 +16,6 @@ import com.max.back.neusoft.service.DrugspecificationService;
 import com.max.back.neusoft.service.NondrugService;
 import com.max.back.neusoft.service.OrderdrugService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,6 +30,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * 药品
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/nondrug")
@@ -60,6 +62,7 @@ public class DrugServlet {
 
     /**
      * 修改药品是否启用
+     *
      * @param modifyEnable
      * @return
      */
@@ -78,6 +81,7 @@ public class DrugServlet {
 
     /**
      * 删除药品
+     *
      * @param params
      * @return
      */
@@ -87,12 +91,12 @@ public class DrugServlet {
         AtomicBoolean same = new AtomicBoolean(false);
         params.getIds().stream().forEach(s -> {
             QueryWrapper<Orderdrug> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("o_drugId",s);
-            if(orderdrugService.getMap(queryWrapper)!=null){
+            queryWrapper.eq("o_drugId", s);
+            if (orderdrugService.getMap(queryWrapper) != null) {
                 same.set(true);
             }
         });
-        if(same.get()){
+        if (same.get()) {
             return JSON.toJSONString(ResponseResult.getErrorResult("C405"));
         }
         boolean delete = nondrugService.removeByIds(params.getIds());
@@ -105,6 +109,7 @@ public class DrugServlet {
 
     /**
      * 上传药品封面
+     *
      * @param file
      */
     @PostMapping("/avatar")
@@ -114,6 +119,7 @@ public class DrugServlet {
 
     /**
      * 跟新药品信息
+     *
      * @param drugSubmitFrom
      * @return
      * @throws IOException
@@ -149,6 +155,7 @@ public class DrugServlet {
 
     /**
      * 添加药品
+     *
      * @param drugSubmitFrom
      * @return
      * @throws IOException
@@ -181,13 +188,14 @@ public class DrugServlet {
 
     /**
      * 下载药品模板
+     *
      * @param response
      * @throws IOException
      */
     @PostMapping("/dataTemplateDownload")
     public void userTemplateDownload(HttpServletResponse response) throws IOException {
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
-        String fileName = new String((UUID.randomUUID().toString() + ".xlsx").getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1);
+        String fileName = new String((UUID.randomUUID() + ".xlsx").getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1);
         //设置文件名
         response.setCharacterEncoding(StandardCharsets.UTF_8.name());
         response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);
@@ -204,13 +212,14 @@ public class DrugServlet {
 
     /**
      * 下载药品excel全部数据
+     *
      * @param response
      * @throws IOException
      */
     @PostMapping("/exportData")
     public void exportDataUser(HttpServletResponse response) throws IOException {
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
-        String fileName = new String((UUID.randomUUID().toString() + ".xlsx").getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1);
+        String fileName = new String((UUID.randomUUID() + ".xlsx").getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1);
         //设置文件名
         response.setCharacterEncoding(StandardCharsets.UTF_8.name());
         response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);
@@ -227,6 +236,7 @@ public class DrugServlet {
 
     /**
      * 上传excel文件暴漏链接
+     *
      * @param file
      */
     @PostMapping("/uploadToServer")
@@ -237,6 +247,7 @@ public class DrugServlet {
 
     /**
      * 对上传文件进行解析
+     *
      * @return
      * @throws IOException
      */
@@ -255,6 +266,7 @@ public class DrugServlet {
 
     /**
      * 获取已逻辑删除药品信息
+     *
      * @return
      */
     @GetMapping("/getDeleteDrug")
@@ -264,6 +276,7 @@ public class DrugServlet {
 
     /**
      * 永久删除
+     *
      * @param id
      * @return
      */
@@ -278,6 +291,7 @@ public class DrugServlet {
 
     /**
      * 恢复数据
+     *
      * @param id
      * @return
      */

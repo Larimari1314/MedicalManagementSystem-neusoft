@@ -28,6 +28,9 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 登录
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/login")

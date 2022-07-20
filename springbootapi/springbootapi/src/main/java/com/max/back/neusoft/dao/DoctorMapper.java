@@ -20,6 +20,9 @@ public interface DoctorMapper extends BaseMapper<Doctor> {
     public Integer deletePermanently(String id);
 
     public Integer dataRecovery(String id);
+
+    public List<Map<String,Object>> getRegisDoctor();
+
 }
 
 

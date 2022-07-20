@@ -18,6 +18,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * 医生表
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/doctor")
@@ -148,4 +151,9 @@ public class DoctorServlet {
         return doctorService.dataRecovery(id);
     }
 
+
+    @GetMapping("/getRegisDoctor")
+    public String getRegisDoctor(){
+        return doctorService.getRegisDoctor();
+    }
 }
