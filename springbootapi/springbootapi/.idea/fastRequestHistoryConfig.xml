@@ -4,6 +4,82 @@
     <option name="historyList">
       <list>
         <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.PatientMedicineServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="getDayNumber" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.max.back.neusoft.api.PatientMedicineServlet" />
+              <option name="method" value="getDayNumber" />
+              <option name="methodDescription" value="New Request" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/patientMedicine/getDayNumber" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/patientMedicine/getDayNumber" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/patientMedicine/getDayNumber&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="[[&quot;0704&quot;,&quot;0706&quot;,&quot;0707&quot;,&quot;0708&quot;,&quot;0709&quot;,&quot;0710&quot;,&quot;0711&quot;,&quot;0712&quot;,&quot;0713&quot;,&quot;0714&quot;,&quot;0715&quot;,&quot;0716&quot;,&quot;0717&quot;,&quot;0718&quot;,&quot;0719&quot;,&quot;0720&quot;,&quot;0721&quot;,&quot;0723&quot;,&quot;0725&quot;,&quot;0815&quot;],[&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;2&quot;,&quot;2&quot;,&quot;3&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;5&quot;,&quot;1&quot;,&quot;6&quot;,&quot;2&quot;,&quot;2&quot;,&quot;1&quot;,&quot;1&quot;]]" />
+          <option name="url" value="/patientMedicine/getDayNumber" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.PatientMedicineServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="getAllValues" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.max.back.neusoft.api.PatientMedicineServlet" />
+              <option name="method" value="getAllValues" />
+              <option name="methodDescription" value="New Request" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/patientMedicine/getAllValues" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/patientMedicine/getAllValues" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/patientMedicine/getAllValues&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="[[&quot;医生数量&quot;,&quot;患者数量&quot;,&quot;药品数量&quot;,&quot;订单数量&quot;],[293,698,31,35]]" />
+          <option name="url" value="/patientMedicine/getAllValues" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="adminRequestLogin" />
+          <option name="methodType" value="POST" />
+          <option name="name" value="登录" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;123456&quot;&#10;}" />
+              <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
+              <option name="jsonDocument" value="{&#10;  &quot;username&quot;: &quot;用户名&quot;,&#10;  &quot;password&quot;: &quot;密码&quot;&#10;}" />
+              <option name="method" value="adminRequestLogin" />
+              <option name="methodDescription" value="登录" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/login/adminRequestLogin" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/login/adminRequestLogin" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/login/adminRequestLogin&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 40&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;password&quot;:&quot;123456&quot;,&quot;username&quot;:&quot;admin&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;msgId&quot;:&quot;C200&quot;,&quot;result&quot;:{&quot;password&quot;:&quot;e10adc3949ba59abbe56e057f20f883e&quot;,&quot;permission&quot;:1,&quot;id&quot;:&quot;1&quot;,&quot;avatar&quot;:&quot;http://localhost:8000/hospital/Img/admin/1/1.jpg&quot;,&quot;username&quot;:&quot;admin&quot;},&quot;resultType&quot;:0,&quot;statusCode&quot;:0}" />
+          <option name="url" value="/login/adminRequestLogin" />
+        </ResponseHistory>
+        <ResponseHistory>
           <option name="className" value="com.max.back.neusoft.api.DoctorServlet" />
           <option name="code" value="200" />
           <option name="enableEnv" value="local8000" />
@@ -447,87 +523,6 @@
           <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/departClassification/getDepartClassList&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
           <option name="response" value="{&quot;name&quot;:&quot;临床科&quot;,&quot;id&quot;:&quot;D001&quot;}" />
           <option name="url" value="/departClassification/getDepartClassList" />
-        </ResponseHistory>
-        <ResponseHistory>
-          <option name="className" value="com.max.back.demo.api.BstudentCtl" />
-          <option name="code" value="200" />
-          <option name="enableEnv" value="local8000" />
-          <option name="enableProject" value="mystuObject" />
-          <option name="method" value="delete" />
-          <option name="methodType" value="POST" />
-          <option name="paramGroup">
-            <ParamGroupCollection>
-              <option name="bodyKeyValueListJson" value="{&#10;  &quot;ids&quot;: [&#10;    &quot;ids_4vpos&quot;&#10;  ]&#10;}" />
-              <option name="className" value="com.max.back.demo.api.BstudentCtl" />
-              <option name="jsonDocument" value="{&#10;  &quot;ids&quot;: [&#10;    &quot;No comment,Value =ids_4vpos&quot;&#10;  ]&#10;}" />
-              <option name="method" value="delete" />
-              <option name="methodDescription" value="New Request" />
-              <option name="methodType" value="POST" />
-              <option name="multipartKeyValueListJson" value="[]" />
-              <option name="originUrl" value="/api/bstudent/delete" />
-              <option name="pathParamsKeyValueListJson" value="[]" />
-              <option name="url" value="/api/bstudent/delete" />
-              <option name="urlEncodedKeyValueListJson" value="[]" />
-              <option name="urlParamsKeyValueListJson" value="[]" />
-            </ParamGroupCollection>
-          </option>
-          <option name="requestInfo" value="Request Url: http://localhost:8000/mystu/api/bstudent/delete&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 21&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;ids&quot;:[&quot;ids_4vpos&quot;]}&#13;&#10;" />
-          <option name="response" value="{&quot;statusCode&quot;:&quot;C405&quot;,&quot;msgId&quot;:&quot;E001&quot;,&quot;resultType&quot;:&quot;MESSAGE&quot;}" />
-          <option name="url" value="/api/bstudent/delete" />
-        </ResponseHistory>
-        <ResponseHistory>
-          <option name="className" value="com.max.back.demo.api.BstudentCtl" />
-          <option name="code" value="200" />
-          <option name="enableEnv" value="local8000" />
-          <option name="enableProject" value="Object" />
-          <option name="method" value="delete" />
-          <option name="methodType" value="POST" />
-          <option name="paramGroup">
-            <ParamGroupCollection>
-              <option name="bodyKeyValueListJson" value="{&#10;  &quot;ids&quot;: [&#10;    &quot;ids_gx2d4&quot;&#10;  ]&#10;}" />
-              <option name="className" value="com.max.back.demo.api.BstudentCtl" />
-              <option name="jsonDocument" value="{&#10;  &quot;ids&quot;: [&#10;    &quot;No comment,Value =ids_gx2d4&quot;&#10;  ]&#10;}" />
-              <option name="method" value="delete" />
-              <option name="methodDescription" value="New Request" />
-              <option name="methodType" value="POST" />
-              <option name="multipartKeyValueListJson" value="[]" />
-              <option name="originUrl" value="/api/bstudent/delete" />
-              <option name="pathParamsKeyValueListJson" value="[]" />
-              <option name="url" value="/mystu/api/bstudent/delete" />
-              <option name="urlEncodedKeyValueListJson" value="[]" />
-              <option name="urlParamsKeyValueListJson" value="[]" />
-            </ParamGroupCollection>
-          </option>
-          <option name="requestInfo" value="Request Url: http://localhost:8000/mystu/api/bstudent/delete&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 21&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;ids&quot;:[&quot;ids_gx2d4&quot;]}&#13;&#10;" />
-          <option name="response" value="{&quot;statusCode&quot;:&quot;C405&quot;,&quot;msgId&quot;:&quot;E001&quot;,&quot;resultType&quot;:&quot;MESSAGE&quot;}" />
-          <option name="url" value="/mystu/api/bstudent/delete" />
-        </ResponseHistory>
-        <ResponseHistory>
-          <option name="className" value="com.max.back.demo.api.BstudentCtl" />
-          <option name="code" value="404" />
-          <option name="enableEnv" value="local8000" />
-          <option name="enableProject" value="Object" />
-          <option name="method" value="delete" />
-          <option name="methodType" value="POST" />
-          <option name="paramGroup">
-            <ParamGroupCollection>
-              <option name="bodyKeyValueListJson" value="{&#10;  &quot;ids&quot;: [&#10;    &quot;ids_gx2d4&quot;&#10;  ]&#10;}" />
-              <option name="className" value="com.max.back.demo.api.BstudentCtl" />
-              <option name="jsonDocument" value="{&#10;  &quot;ids&quot;: [&#10;    &quot;No comment,Value =ids_gx2d4&quot;&#10;  ]&#10;}" />
-              <option name="method" value="delete" />
-              <option name="methodDescription" value="New Request" />
-              <option name="methodType" value="POST" />
-              <option name="multipartKeyValueListJson" value="[]" />
-              <option name="originUrl" value="/api/bstudent/delete" />
-              <option name="pathParamsKeyValueListJson" value="[]" />
-              <option name="url" value="/api/bstudent/delete" />
-              <option name="urlEncodedKeyValueListJson" value="[]" />
-              <option name="urlParamsKeyValueListJson" value="[]" />
-            </ParamGroupCollection>
-          </option>
-          <option name="requestInfo" value="Request Url: http://localhost:8000/api/bstudent/delete&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 21&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;ids&quot;:[&quot;ids_gx2d4&quot;]}&#13;&#10;" />
-          <option name="response" value="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP Status 404 – Not Found&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 404 – Not Found&lt;/h1&gt;&lt;hr class=&quot;line&quot; /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Status Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Not found&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.&lt;/p&gt;&lt;hr class=&quot;line&quot; /&gt;&lt;h3&gt;Apache Tomcat/9.0.24&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;" />
-          <option name="url" value="/api/bstudent/delete" />
         </ResponseHistory>
       </list>
     </option>

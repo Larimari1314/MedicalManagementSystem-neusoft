@@ -21,6 +21,8 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: pcW0637dM3078VrhOK922w6cVV0I0D
     url: jdbc:mysql://123.57.20.244:3306/neusoft?serverTimezone=UTC
+#    ip数据库
+#    url: jdbc:mysql://123.57.20.244:3306/neusoftTest?serverTimezone=UTC
     hikari:
       maximum-pool-size: 50
       minimum-idle: 10

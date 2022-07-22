@@ -42,7 +42,6 @@ public class PatientmedicineServiceImpl extends ServiceImpl<PatientmedicineMappe
                     return patientMedicineExhibit;
                 }
         ).collect(Collectors.toList());
-        System.out.println(mapList.size());
         PageInfo pageInfo = new PageInfo(mapList);
         return JSON.toJSONString(ResponseResult.getSuccessResult(pageInfo, "C200", null), SerializerFeature.DisableCircularReferenceDetect);
     }
@@ -95,6 +94,7 @@ public class PatientmedicineServiceImpl extends ServiceImpl<PatientmedicineMappe
             arrayDay.add(s.get("days").toString());
             arrayNumber.add( s.get("COUNT").toString());
         });
+        String[] strings = new String[2];
         arrayLists.add(arrayDay);
         arrayLists.add(arrayNumber);
         return JSON.toJSONString(arrayLists);
