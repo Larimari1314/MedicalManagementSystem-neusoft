@@ -77,6 +77,7 @@ public class PatientmedicineServiceImpl extends ServiceImpl<PatientmedicineMappe
     @Override
     public String orderDetails(String id) {
         List<Map<String, Object>> res = patientmedicineMapper.orderDetails(id);
+
         for (Map<String, Object> re : res) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             re.put("pdate", simpleDateFormat.format(re.get("pdate")));

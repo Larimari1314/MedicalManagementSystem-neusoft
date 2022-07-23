@@ -83,7 +83,7 @@ public class DoctorServiceImpl extends ServiceImpl<DoctorMapper, Doctor>
     @Override
     public String getRegisDoctor() {
         List<Map<String, Object>> regisDoctor = doctorMapper.getRegisDoctor();
-        System.out.println(regisDoctor);
+//        System.out.println(regisDoctor);
         return JSON.toJSONString(regisDoctor);
     }
 }

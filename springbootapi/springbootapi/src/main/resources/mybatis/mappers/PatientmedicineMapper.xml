@@ -32,7 +32,7 @@
         INNER JOIN n_doctor ON n_patientMedicine.p_doctorId=n_doctor.d_id
         WHERE 1=1
         <if test='username != null and username != "" '>
-            AND n_user.u_usernam LIKE CONCAT('%',#{username},'%')
+            AND n_user.u_username LIKE CONCAT('%',#{username},'%')
         </if>
         <if test='doctorName != null and doctorName != "" '>
             AND n_doctor.d_name LIKE CONCAT('%',#{doctorName},'%')

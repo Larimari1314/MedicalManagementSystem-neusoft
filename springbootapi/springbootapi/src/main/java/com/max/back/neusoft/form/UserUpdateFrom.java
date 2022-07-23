@@ -22,7 +22,7 @@ public class UserUpdateFrom {
     private String sex;
     @ApiModelProperty("身份证号")
     @NotBlank
-    private String identitynumber;
+    private String identityNumber;
     @ApiModelProperty("出生日期")
     private Date birthday;
     @ApiModelProperty("用户年龄")

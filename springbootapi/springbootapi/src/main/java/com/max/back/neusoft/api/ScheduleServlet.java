@@ -53,7 +53,6 @@ public class ScheduleServlet {
                     return scheduleFrom;
                 }
         ).collect(Collectors.toList());
-        System.out.println(collect);
         return JSON.toJSONString(collect);
     }
 

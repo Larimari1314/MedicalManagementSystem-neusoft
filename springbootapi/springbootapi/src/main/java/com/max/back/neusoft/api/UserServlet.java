@@ -112,6 +112,7 @@ public class UserServlet {
         int age = new Date().getYear() - userUpdateFrom.getBirthday().getYear();
         userUpdateFrom.setAge(age);
         User department = BeanUtil.toBean(userUpdateFrom, User.class);
+        department.setIdentitynumber(userUpdateFrom.getIdentityNumber());
         boolean add = userService.save(department);
         if (add) {
             return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null), SerializerFeature.DisableCircularReferenceDetect);

@@ -83,9 +83,7 @@
               action="http://localhost:8000/hospital/user/avatar"
               list-type="picture-card"
               :on-preview="handlePictureCardPreview"
-              :on-remove="handleRemove"
-              :limit="1"
-          >
+              :on-remove="handleRemove">
             <i class="el-icon-plus"></i>
           </el-upload>
           <el-dialog v-model="dialogVisible" size="tiny">
@@ -115,7 +113,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click.native="editFormVisible = false">取消</el-button>
+        <el-button @click.native="editFormVisible = false;">取消</el-button>
         <el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
       </div>
     </el-dialog>
@@ -201,6 +199,8 @@ import {
 export default {
   data() {
     return {
+      dialogImageUrl: '',
+      dialogVisible: false,
       fileList: [],
       uploadServerVisibleUser: false,
       filters: {

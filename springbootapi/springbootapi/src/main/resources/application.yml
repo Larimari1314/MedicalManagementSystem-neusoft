@@ -20,9 +20,9 @@ spring:
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: pcW0637dM3078VrhOK922w6cVV0I0D
-    url: jdbc:mysql://123.57.20.244:3306/neusoft?serverTimezone=UTC
-#    ip数据库
-#    url: jdbc:mysql://123.57.20.244:3306/neusoftTest?serverTimezone=UTC
+    url: jdbc:mysql://123.57.20.244:3306/neusoft?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    #    ip数据库
+#    url: jdbc:mysql://123.57.20.244:3306/neusoftTest?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     hikari:
       maximum-pool-size: 50
       minimum-idle: 10
@@ -46,7 +46,7 @@ mybatis-plus:
     jdbc-type-for-null: 'null'
     default-statement-timeout: 3000
 #    日志输出
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       update-strategy: ignored
