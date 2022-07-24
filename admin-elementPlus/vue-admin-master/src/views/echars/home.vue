@@ -142,7 +142,7 @@ export default {
       return userInfo
     },
     role() {
-      return this.userInfo.username === 'admin' ? '超级管理员' : '普通用户';
+      return this.userInfo.username.slice(0,5) === 'admin' ? '超级管理员' : '普通用户';
     },
   },
   mounted() {

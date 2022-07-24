@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="fastRequestCurrentParamGroup">
-    <option name="className" value="com.max.back.neusoft.api.PatientMedicineServlet" />
-    <option name="method" value="getDayNumber" />
+    <option name="className" value="com.max.back.neusoft.api.DepartmentServlet" />
+    <option name="method" value="findDepartment" />
+    <option name="methodDescription" value="查找科室id和名称" />
     <option name="module" value="springbootapi" />
-    <option name="originUrl" value="/patientMedicine/getDayNumber" />
-    <option name="url" value="/patientMedicine/getDayNumber" />
+    <option name="originUrl" value="/department/findDepartment" />
+    <option name="url" value="/department/findDepartment" />
   </component>
 </project>

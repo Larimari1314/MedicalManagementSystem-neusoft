@@ -12,6 +12,7 @@ import com.max.back.neusoft.service.OrderdrugService;
 import com.max.back.neusoft.service.PatientmedicineService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
@@ -88,6 +89,7 @@ public class PatientMedicineServlet {
      * @param id
      * @return
      */
+    @Transactional
     @ApiOperation(value = "根据id创建相同订单")
     @PostMapping("/createSameOrder")
     public String createSameOrder(@RequestBody String id){
