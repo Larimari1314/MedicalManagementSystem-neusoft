@@ -2,7 +2,7 @@
 
 #### introduce
 MedicalManagementSystemIt is a cloud medical platform based on the separation of front and back ends of springBoot+vue
-github open source address:https://github.com/Larimari1314/MedicalManagementSyste
+github open source address:https://github.com/Larimari1314/MedicalManagementSystem-neusoft
 
 #### Software Architecture
 Software Architecture Description
