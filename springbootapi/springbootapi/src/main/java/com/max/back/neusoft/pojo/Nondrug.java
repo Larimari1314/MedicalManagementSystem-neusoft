@@ -67,6 +67,4 @@ public class Nondrug implements Serializable {
     @TableField("d_version")
     private Integer version;
 
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }

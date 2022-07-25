@@ -518,6 +518,8 @@ export default {
             message: '可能的原因是：数据库存在相同数据，拒绝添加'
           });
         }else if(res.data.msgId=='C200'){
+          this.getUsers()
+          this.uploadServerVisibleDrug=false
           this.$notify.success({
             title: '成功',
             message: '添加成功'

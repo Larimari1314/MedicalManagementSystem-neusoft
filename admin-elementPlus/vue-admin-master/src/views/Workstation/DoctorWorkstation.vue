@@ -1,5 +1,5 @@
 <template>
-  <section >
+  <section>
     <!--工具条-->
     <el-col :span="24" class="toolbar" style="padding-bottom: 0px;">
       <el-form :inline="true" :model="filters">
@@ -66,9 +66,13 @@
       </el-table-column>
       <el-table-column label="操作" width="300">
         <template scope="scope">
-          <el-button :disabled="department[scope.$index].state!='G008'" size="small" @click="handleEdit(scope.$index, scope.row)" type="info">发药</el-button>
+          <el-button :disabled="department[scope.$index].state!='G008'" size="small"
+                     @click="handleEdit(scope.$index, scope.row)" type="info">发药
+          </el-button>
           <el-button size="small" @click="checkOrder(scope.$index, scope.row)" type="info">查看订单详情</el-button>
-          <el-button :disabled="department[scope.$index].state!='G009'"  size="small" @click="withdrawal(scope.$index, scope.row)" type="danger">退药</el-button>
+          <el-button :disabled="department[scope.$index].state!='G009'" size="small"
+                     @click="withdrawal(scope.$index, scope.row)" type="danger">退药
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -108,7 +112,7 @@
             label="总价/￥">
         </el-table-column>
       </el-table>
-      <h2>总价格:{{totalPrice}}</h2>
+      <h2>总价格:{{ totalPrice }}</h2>
       <div slot="footer" class="dialog-footer">
         <el-button @click.native="DispensingMedicineVisible = false">取消</el-button>
         <el-button type="primary" @click.native="editSubmit" :loading="editLoading">确定发药</el-button>
@@ -121,20 +125,20 @@
         <div class="content">
           <table id="msg" class="msg">
             <tr>
-              <td style="text-align: left">订单ID:&nbsp;&nbsp;{{orderList.pid}}</td>
-              <td style="text-align: left">开药科室:&nbsp;&nbsp;{{orderList.dename}}</td>
+              <td style="text-align: left">订单ID:&nbsp;&nbsp;{{ orderList.pid }}</td>
+              <td style="text-align: left">开药科室:&nbsp;&nbsp;{{ orderList.dename }}</td>
             </tr>
             <tr>
-              <td style="text-align: left">开单时间:&nbsp;&nbsp;{{orderList.pdate}}</td>
-              <td style="text-align: left">开单医生:&nbsp;&nbsp; {{orderList.dname}}</td>
+              <td style="text-align: left">开单时间:&nbsp;&nbsp;{{ orderList.pdate }}</td>
+              <td style="text-align: left">开单医生:&nbsp;&nbsp; {{ orderList.dname }}</td>
             </tr>
             <tr>
-              <td style="text-align: left">患者姓名:&nbsp;&nbsp;{{orderList.username}}</td>
-              <td style="text-align: left">身份证号:&nbsp;&nbsp;{{orderList.identityNumber}}</td>
+              <td style="text-align: left">患者姓名:&nbsp;&nbsp;{{ orderList.username }}</td>
+              <td style="text-align: left">身份证号:&nbsp;&nbsp;{{ orderList.identityNumber }}</td>
             </tr>
             <tr>
-              <td style="text-align: left">总价:&nbsp;&nbsp;{{orderList.price}}</td>
-              <td style="text-align: left">就诊类型:&nbsp;&nbsp;{{orderList.registered}}</td>
+              <td style="text-align: left">总价:&nbsp;&nbsp;{{ orderList.price }}</td>
+              <td style="text-align: left">就诊类型:&nbsp;&nbsp;{{ orderList.registered }}</td>
             </tr>
           </table>
           <el-table
@@ -168,7 +172,8 @@
       </div>
       <div slot="footer" class="dialog-footer">
         <el-button @click.native="orderDetails = false;sameOrder=true">取消</el-button>
-        <el-button type="primary" @click.native="addSubmit" :loading="addLoading" :disabled="sameOrder">创建相同订单</el-button>
+        <el-button type="primary" @click.native="addSubmit" :loading="addLoading" :disabled="sameOrder">创建相同订单
+        </el-button>
       </div>
     </el-dialog>
   </section>
@@ -176,31 +181,34 @@
 
 <script>
 import {
-  addDepartment, createSameOrder, dataValidation,
+  createSameOrder,
+  dataValidation,
   findPatientMedic,
-  getDepartClassList, getMedicationStatus, orderDetails,
-  saveDepartment, ViewListMedicines, withdrawal
+  getDepartClassList,
+  getMedicationStatus,
+  orderDetails,
+  ViewListMedicines,
+  withdrawal
 } from '../../api/api';
-import {formatDate} from "element-ui";
 
 export default {
   data() {
     return {
-      sameOrder:true,
-      tableData:'',
-      orderList:'',
-      watermark:'',
-      pid:'',
-      totalPrice:0,
-      states:[],
+      sameOrder: true,
+      tableData: '',
+      orderList: '',
+      watermark: '',
+      pid: '',
+      totalPrice: 0,
+      states: [],
       dialogImageUrl: '',
       dialogVisible: false,
       options: [],
       filters: {
         id: '',
-        username:'',
-        doctorname:'',
-        state:''
+        username: '',
+        doctorname: '',
+        state: ''
       },
       department: [],
       total: '',
@@ -218,47 +226,47 @@ export default {
     }
   },
   methods: {
-    checkOrder(index,row){
-      this.orderDetails=true
-      this.sameOrder=true
-      if(row.state==='G010'){
-        this.sameOrder=false
+    checkOrder(index, row) {
+      this.orderDetails = true
+      this.sameOrder = true
+      if (row.state === 'G010') {
+        this.sameOrder = false
       }
       this.watermark = {
         text1: row.id,
         text2: row.username,
         textColor: '#f1bbbd'
       }
-      orderDetails(row.id).then((res)=>{
-        if(res.data.msgId=='C200'){
-          this.orderList=res.data.result[0]
+      orderDetails(row.id).then((res) => {
+        if (res.data.msgId == 'C200') {
+          this.orderList = res.data.result[0]
         }
       })
-      this.pid=row.id
+      this.pid = row.id
       ViewListMedicines(row.id).then(
-          (res)=>{
-            if(res.data.msgId=='C200'){
-              this.DispensingMedicine=res.data.result
+          (res) => {
+            if (res.data.msgId == 'C200') {
+              this.DispensingMedicine = res.data.result
             }
           }
       )
     },
-    withdrawal(index,row){
+    withdrawal(index, row) {
       this.$confirm('确认退回药品吗?', '提示', {
         type: 'warning'
       }).then(() => {
-        withdrawal(row.id).then((res)=>{
-          if(res.data.msgId=='C405'){
+        withdrawal(row.id).then((res) => {
+          if (res.data.msgId == 'C405') {
             this.$notify.error({
               title: '错误',
               message: '当前药品未发放，请刷新重试'
             });
-          }else if(res.data.msgId=='C500'){
+          } else if (res.data.msgId == 'C500') {
             this.$notify.error({
               title: '错误',
               message: '内部错误，请联系管理员'
             });
-          }else if(res.data.msgId=='C200'){
+          } else if (res.data.msgId == 'C200') {
             this.$notify.success({
               title: '成功',
               message: '退药成功'
@@ -294,10 +302,10 @@ export default {
     //获取用户列表
     getPatientMedic() {
       let para = {
-        state:this.filters.state,
+        state: this.filters.state,
         page: this.page,
         username: this.filters.username,
-        id:this.filters.id,
+        id: this.filters.id,
         doctorName: this.filters.doctorname
       };
       this.listLoading = true;
@@ -311,14 +319,14 @@ export default {
     },
     //显示编辑界面
     handleEdit: function (index, row) {
-      this.totalPrice=0
-      this.pid=row.id
+      this.totalPrice = 0
+      this.pid = row.id
       ViewListMedicines(row.id).then(
-          (res)=>{
-            if(res.data.msgId=='C200'){
-              this.DispensingMedicine=res.data.result
-              for (let number of this.DispensingMedicine){
-                this.totalPrice+=number.zprice
+          (res) => {
+            if (res.data.msgId == 'C200') {
+              this.DispensingMedicine = res.data.result
+              for (let number of this.DispensingMedicine) {
+                this.totalPrice += number.zprice
               }
             }
 
@@ -332,24 +340,24 @@ export default {
       this.$confirm('确认发放药品吗?', '提示', {
         type: 'warning'
       }).then(() => {
-        let param={
-          id:this.pid,
-          totalPrice:this.totalPrice
+        let param = {
+          id: this.pid,
+          totalPrice: this.totalPrice
         }
-        dataValidation(param).then((res)=>{
-          if(res.data.msgId=='C503'){
+        dataValidation(param).then((res) => {
+          if (res.data.msgId == 'C503') {
             this.$notify.error({
               title: '错误',
               message: '数据校验未通过，请尝试刷新界面后重试'
             });
-          }else if(res.data.msgId=='C200'){
-            sessionStorage.setItem("payId",res.data.result)
+          } else if (res.data.msgId == 'C200') {
+            sessionStorage.setItem("payId", res.data.result)
             this.$notify.success({
               title: '成功',
               message: '数据校验通过，正在跳转链接'
             });
             this.$router.replace({path: '/pay'});
-          } else if(res.data.msgId=='C504'){
+          } else if (res.data.msgId == 'C504') {
             this.$notify.error({
               title: '失败',
               message: '药品已发放，请勿重复下单'
@@ -361,43 +369,43 @@ export default {
     },
     //新增
     addSubmit: function () {
-          this.$confirm('确认提交吗？', '提示', {}).then(() => {
-            let id=this.orderList.pid;
-            this.addLoading = true;
-            createSameOrder(id).then((res)=>{
-              if(res.data.msgId=='C404'){
-                this.addLoading = false;
-                this.orderDetails=false
-                this.$notify.error({
-                  title: '失败',
-                  message: '订单不存在或此订单未退款'
-                });
-              }else if(res.data.msgId=='C405'){
-                this.addLoading = false;
-                this.orderDetails=false
-                this.$notify.error({
-                  title: '失败',
-                  message: '当天无法创建新的订单，请患者改日再来'
-                });
-              }else if(res.data.msgId=='C200'){
-                this.addLoading = false;
-                this.orderDetails=false;
-                this.filters.id=res.data.result
-                this.getPatientMedic()
-                this.$notify.success({
-                  title: '成功',
-                  message: '创建订单成功！订单id为'+res.data.result
-                });
-              }
-            })
-          });
-        }
+      this.$confirm('确认提交吗？', '提示', {}).then(() => {
+        let id = this.orderList.pid;
+        this.addLoading = true;
+        createSameOrder(id).then((res) => {
+          if (res.data.msgId == 'C404') {
+            this.addLoading = false;
+            this.orderDetails = false
+            this.$notify.error({
+              title: '失败',
+              message: '订单不存在或此订单未退款'
+            });
+          } else if (res.data.msgId == 'C405') {
+            this.addLoading = false;
+            this.orderDetails = false
+            this.$notify.error({
+              title: '失败',
+              message: '当天无法创建新的订单，请患者改日再来'
+            });
+          } else if (res.data.msgId == 'C200') {
+            this.addLoading = false;
+            this.orderDetails = false;
+            this.filters.id = res.data.result
+            this.getPatientMedic()
+            this.$notify.success({
+              title: '成功',
+              message: '创建订单成功！订单id为' + res.data.result
+            });
+          }
+        })
+      });
+    }
   },
   mounted() {
     this.getPatientMedic();
     this.getDepartClassList();
-    getMedicationStatus().then((res)=>{
-      this.states=res.data
+    getMedicationStatus().then((res) => {
+      this.states = res.data
     })
   }
 }
@@ -410,6 +418,7 @@ export default {
   overflow-y: auto;
   width: 600px;
 }
+
 .modal {
   width: 600px;
   margin: 0 auto;

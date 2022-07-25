@@ -164,18 +164,27 @@ public class NondrugServiceImpl extends ServiceImpl<NondrugMapper, Nondrug>
             Nondrug nondrug = new Nondrug();
             XSSFRow new_row = sheetAt.getRow(newRow);
             try {
-                String rawValue = new_row.getCell(1).getRawValue();
+                new_row.getCell(1).setCellType(CellType.STRING);
+                String rawValue = new_row.getCell(1).getStringCellValue();
                 if (!StringUtils.isNotBlank(rawValue) || rawValue.equals("")) {
                     break;
                 }
                 nondrug.setId(rawValue);
+                new_row.getCell(2).setCellType(CellType.STRING);
                 nondrug.setCover(new_row.getCell(2).getStringCellValue());
+                new_row.getCell(3).setCellType(CellType.STRING);
                 nondrug.setName(new_row.getCell(3).getStringCellValue());
+                new_row.getCell(4).setCellType(CellType.STRING);
                 nondrug.setSpecification(new_row.getCell(4).getStringCellValue());
+                new_row.getCell(5).setCellType(CellType.STRING);
                 nondrug.setNumber(Integer.parseInt(new_row.getCell(5).getStringCellValue()));
+                new_row.getCell(6).setCellType(CellType.STRING);
                 nondrug.setPrice(Integer.parseInt(new_row.getCell(6).getStringCellValue()));
+                new_row.getCell(7).setCellType(CellType.STRING);
                 nondrug.setDeletes(Integer.parseInt(new_row.getCell(7).getStringCellValue()));
+                new_row.getCell(8).setCellType(CellType.STRING);
                 nondrug.setEnable(Integer.parseInt(new_row.getCell(8).getStringCellValue()));
+                new_row.getCell(9).setCellType(CellType.STRING);
                 nondrug.setVersion(Integer.parseInt(new_row.getCell(9).getStringCellValue()));
                 nondrugs.add(nondrug);
                 newRow++;
@@ -183,6 +192,7 @@ public class NondrugServiceImpl extends ServiceImpl<NondrugMapper, Nondrug>
                 break;
                 //抱空指针异常表明数据读取完，跳出循环即可
             } catch (Exception e) {
+//                e.printStackTrace();
                 return JSON.toJSONString(ResponseResult.getErrorResult("C500"));
             } finally {
                 //删除源文件

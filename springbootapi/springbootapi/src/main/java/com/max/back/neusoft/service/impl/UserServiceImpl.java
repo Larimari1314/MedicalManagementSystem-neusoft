@@ -174,17 +174,22 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             User user = new User();
             XSSFRow new_row = sheetAt.getRow(newRow);
             try {
-                String rawValue = new_row.getCell(1).getRawValue();
+                new_row.getCell(1).setCellType(CellType.STRING);
+                String rawValue = new_row.getCell(1).getStringCellValue();
                 if (!StringUtils.isNotBlank(rawValue) || rawValue.equals("")) {
                     break;
                 }
                 user.setId(rawValue);
+                new_row.getCell(2).setCellType(CellType.STRING);
                 user.setUsername(new_row.getCell(2).getStringCellValue());
+                new_row.getCell(3).setCellType(CellType.STRING);
                 user.setAge(Integer.parseInt(new_row.getCell(3).getStringCellValue()));
                 user.setBirthday(new_row.getCell(4).getDateCellValue());
+                new_row.getCell(5).setCellType(CellType.STRING);
                 user.setIdentitynumber(new_row.getCell(5).getStringCellValue());
                 user.setAvatar(new_row.getCell(6).getStringCellValue());
                 user.setSex(new_row.getCell(7).getStringCellValue());
+                new_row.getCell(8).setCellType(CellType.STRING);
                 user.setDeletes(Integer.parseInt(new_row.getCell(8).getStringCellValue()));
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 userList.add(user);
@@ -206,6 +211,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             //保存数据
             saveBatch(userList);
         } catch (Exception e) {
+            e.printStackTrace();
             //原因分析为数据可能已存在
             return JSON.toJSONString(ResponseResult.getErrorResult("C501"));
         }finally {
