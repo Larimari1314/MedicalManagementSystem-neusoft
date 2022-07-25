@@ -2054,3 +2054,9 @@
 				HikariPool-1 - Starting...
 2022-07-25 14:45:30.000 [http-nio-8000-exec-1] INFO  com.zaxxer.hikari.HikariDataSource -
 				HikariPool-1 - Start completed.
+2022-07-25 20:37:45.033 [Thread-18] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-25 20:37:45.048 [Thread-18] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2022-07-25 20:37:45.064 [Thread-18] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.

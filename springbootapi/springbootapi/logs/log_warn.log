@@ -612,3 +612,9 @@
 				Skipping MapperFactoryBean with name 'userMapper' and 'com.max.back.neusoft.dao.UserMapper' mapperInterface. Bean already defined with the same name!
 2022-07-25 14:45:27.697 [restartedMain] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper -
 				Warn: Could not find @TableId in Class: com.max.back.neusoft.pojo.Generalitem.
+2022-07-25 16:07:38.676 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+				HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m37s756ms317µs).
+2022-07-25 17:59:53.647 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+				HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m14s399ms789µs300ns).
+2022-07-25 20:37:38.216 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+				HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h7m44s39ms587µs700ns).
