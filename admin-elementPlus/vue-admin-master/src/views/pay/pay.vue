@@ -20,7 +20,7 @@
     <div :hidden="hiddens">
     <h1 style="color: red">请扫描下方二维码链接支付</h1>
     <div>
-    <img :src="pauImg" alt="支付图片">
+    <img  :src="'data:image/png;base64,' + pauImg" alt="支付图片">
   </div>
     </div>
     <div :hidden="payingState" style="color: #13ce66;font-size: 30px">
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import {paymentStatement, paymentStatus} from "../../api/api";
+import {getQRCode, paymentStatement, paymentStatus} from "../../api/api";
 
 export default {
   data() {
@@ -50,6 +50,11 @@ export default {
     }
   },
   methods: {
+    GetQRCode(){
+      getQRCode(this.payId).then((res)=>{
+        this.pauImg= res.data
+      })
+    },
     //获取当前支付状态
     paymentStatus(){
       let payIds=sessionStorage.getItem("payId")+'status'
@@ -108,7 +113,7 @@ export default {
   },
   mounted() {
     this.payId = sessionStorage.getItem("payId")
-    this.pauImg='http://localhost:8000/hospital/Img/pay/'+this.payId+'/'+this.payId+'.jpg'
+    this.GetQRCode();
     this.getPayList();
     this.sendMsg();
     setInterval(this.paymentStatus, 2000);

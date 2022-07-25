@@ -1,5 +1,6 @@
 package com.max.back.common.http;
 
+import com.sun.corba.se.impl.encoding.CodeSetConversion;
 import lombok.Data;
 
 import java.util.Map;
@@ -11,10 +12,10 @@ public class ResponseResult<T> {
 	private String msgId;
 	private Map<String,String> msgParams;
 	private ResultType resultType;
-	
 	public ResponseResult() {
 	}
-	
+
+
 	public ResponseResult(T result, String msgId, ResultType rt, StatusCode statusCode, Map<String,String> msgParams) {
 		super();
 		this.result = result;
@@ -23,11 +24,10 @@ public class ResponseResult<T> {
 		this.statusCode = statusCode;
 		this.msgParams = msgParams;
 	}
-	
+
 	public static <T> ResponseResult<T> getSuccessResult(T res) {
 		return new ResponseResult<T>(res, null, ResultType.SUCCESS, StatusCode.C200, null);
 	}
-	
 	public static <T> ResponseResult<T> getSuccessResult(T res, String msgId, Map<String,String> msgParams) {
 		return new ResponseResult<T>(res, msgId, ResultType.SUCCESS, StatusCode.C200, msgParams);
 	}

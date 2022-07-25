@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.google.zxing.WriterException;
 import com.max.back.common.http.ResponseResult;
 import com.max.back.common.sercurity.utils.QRcodeZxingUtil2;
 import com.max.back.neusoft.form.PayFrom;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.io.File;
+import java.io.IOException;
+import java.util.Base64;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -68,7 +71,7 @@ public class PayServlet {
         //存储五分钟
         redisTemplate.boundValueOps(substring).set(payFrom.getId(), 5, TimeUnit.MINUTES);
         //创建二维码
-        QRcodeZxingUtil2.greatePaymentLink("http://192.168.1.106:8080/#/paying/" + s, substring);
+//        QRcodeZxingUtil2.greatePaymentLink("http://192.168.1.106:8080/#/paying/" + s, substring);
         return JSON.toJSONString(ResponseResult.getSuccessResult(substring, "C200", null));
     }
 
@@ -165,5 +168,11 @@ public class PayServlet {
         payId = payId.substring(0, 24) + "status";
         redisTemplate.boundValueOps(payId).set("C201", 5, TimeUnit.MINUTES);
         return JSON.toJSONString(ResponseResult.getSuccessResult(null, "C200", null));
+    }
+    @ApiOperation(value = "返回字节流二维码")
+    @PostMapping("/getQRCode")
+    public String getQRCode(@RequestBody String substring) throws IOException, WriterException {
+        substring = substring.replace("=", "");
+        return  QRcodeZxingUtil2.getQRCodeImage("http://192.168.1.106:8080/#/paying/" + substring);
     }
 }

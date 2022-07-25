@@ -126,6 +126,7 @@ export const dataValidation =params=>{return axios.post(`${parameter}/pay/dataVa
 export const paymentStatement =params=>{return axios.post(`${parameter}/pay/paymentStatement`,params);};
 
 export const paymentStatus =params=>{return axios.post(`${parameter}/pay/paymentStatus`,params);};
+export const getQRCode =params=>{return axios.post(`${parameter}/pay/getQRCode`,params);};
 //首页获取数量
 export const mainGetNumber =params=>{return axios.post(`${parameter}/user/mainGetNumber`,params);};
 export const getDayNumber =params=>{return axios.get(`${parameter}/patientMedicine/getDayNumber`);};
