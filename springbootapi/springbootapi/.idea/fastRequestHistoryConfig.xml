@@ -4,6 +4,30 @@
     <option name="historyList">
       <list>
         <ResponseHistory>
+          <option name="className" value="com.max.back.neusoft.api.GeneralitemServlet" />
+          <option name="enableEnv" value="local8000" />
+          <option name="enableProject" value="mystuObject" />
+          <option name="method" value="findGender" />
+          <option name="methodType" value="GET" />
+          <option name="name" value="查找性别" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.max.back.neusoft.api.GeneralitemServlet" />
+              <option name="method" value="findGender" />
+              <option name="methodDescription" value="查找性别" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/generalitem/findGender" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/generalitem/findGender" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/generalitem/findGender&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="ConnectException: Connection refused: connect" />
+          <option name="url" value="/generalitem/findGender" />
+        </ResponseHistory>
+        <ResponseHistory>
           <option name="className" value="com.max.back.neusoft.api.DepartmentServlet" />
           <option name="code" value="200" />
           <option name="enableEnv" value="local8000" />
@@ -506,33 +530,6 @@
           <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/generalitem/getMedicationStatus&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
           <option name="response" value="{&quot;insufficientPermissions&quot;:&quot;false&quot;}" />
           <option name="url" value="/generalitem/getMedicationStatus" />
-        </ResponseHistory>
-        <ResponseHistory>
-          <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
-          <option name="code" value="200" />
-          <option name="enableEnv" value="local8000" />
-          <option name="enableProject" value="mystuObject" />
-          <option name="method" value="getAdminImgUrl" />
-          <option name="methodType" value="POST" />
-          <option name="paramGroup">
-            <ParamGroupCollection>
-              <option name="bodyKeyValueListJson" value="&quot;admin&quot;" />
-              <option name="className" value="com.max.back.neusoft.api.LoginServlet" />
-              <option name="jsonDocument" value="&quot;No comment,Value =adminUserName_hxk65&quot;" />
-              <option name="method" value="getAdminImgUrl" />
-              <option name="methodDescription" value="New Request" />
-              <option name="methodType" value="POST" />
-              <option name="multipartKeyValueListJson" value="[]" />
-              <option name="originUrl" value="/login/getAdminImgUrl" />
-              <option name="pathParamsKeyValueListJson" value="[]" />
-              <option name="url" value="/login/getAdminImgUrl" />
-              <option name="urlEncodedKeyValueListJson" value="[]" />
-              <option name="urlParamsKeyValueListJson" value="[]" />
-            </ParamGroupCollection>
-          </option>
-          <option name="requestInfo" value="Request Url: http://localhost:8000/hospital/login/getAdminImgUrl&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    &quot;admin&quot;&#13;&#10;" />
-          <option name="response" value="{&quot;msgId&quot;:&quot;C404&quot;,&quot;resultType&quot;:2,&quot;statusCode&quot;:4}" />
-          <option name="url" value="/login/getAdminImgUrl" />
         </ResponseHistory>
       </list>
     </option>

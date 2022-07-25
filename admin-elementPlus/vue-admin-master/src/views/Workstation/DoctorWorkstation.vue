@@ -381,7 +381,9 @@ export default {
                 });
               }else if(res.data.msgId=='C200'){
                 this.addLoading = false;
-                this.orderDetails=false
+                this.orderDetails=false;
+                this.filters.id=res.data.result
+                this.getPatientMedic()
                 this.$notify.success({
                   title: '成功',
                   message: '创建订单成功！订单id为'+res.data.result
