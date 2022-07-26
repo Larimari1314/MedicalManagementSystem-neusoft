@@ -81,6 +81,7 @@
                alt="用户头像">
           <el-upload
               action="http://localhost:8000/hospital/user/avatar"
+              ref="edit"
               list-type="picture-card"
               :on-preview="handlePictureCardPreview"
               :on-remove="handleRemove">
@@ -328,6 +329,7 @@ export default {
       this.$refs.editForm.validate((valid) => {
         if (valid) {
           this.$confirm('确认提交吗？', '提示', {}).then(() => {
+            this.$refs.edit.clearFiles()
             this.editLoading = true;
             //NProgress.start();
             let para = Object.assign({}, this.editForm);
@@ -476,6 +478,7 @@ export default {
     },
     uploadToServer() {
       analyseFileUser().then((res) => {
+        this.$refs.upload.clearFiles()
         this.uploadServerVisibleUser = false;
         if(res.data.msgId=='C500'){
           this.$notify.error({

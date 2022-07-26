@@ -91,6 +91,9 @@ public class DepartmentServlet {
     @ApiOperation(value = "添加科室")
     @PostMapping("/addDepartment")
     public String addDepartment(@RequestBody @Valid DepartmentSaveForm departmentSaveForm) throws IOException {
+        if(departmentService.getById(departmentSaveForm.getId())!=null){
+            return JSON.toJSONString(ResponseResult.getErrorResult("C405"));
+        }
         String path = System.getProperty("user.dir");
         File newFile = new File(path + "\\src\\main\\webapp\\Img\\department\\" + departmentSaveForm.getId() + ".jpg");
         multipartFile.transferTo(newFile);

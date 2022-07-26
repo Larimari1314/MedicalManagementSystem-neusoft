@@ -64,17 +64,16 @@
         <el-form-item label="科室编码" prop="name">
           <el-input v-model="editForm.id" auto-complete="off" disabled></el-input>
         </el-form-item>
-        <el-form-item label="科室封面">
+        <el-form-item label="科室封面" prop="avatar">
           <template scope="scope">
             <img :src="editForm.avatar" style="border-radius:10%; " width="100" height="100"
                  alt="科室封面">
             <el-upload
                 action="http://localhost:8000/hospital/department/avatar"
                 list-type="picture-card"
+                ref="edit"
                 :on-preview="handlePictureCardPreview"
-                :on-remove="handleRemove"
-                :limit="1"
-            >
+                :on-remove="handleRemove">
               <i class="el-icon-plus"></i>
             </el-upload>
             <el-dialog v-model="dialogVisible" size="tiny">
@@ -102,7 +101,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click.native="editFormVisible = false">取消</el-button>
+        <el-button @click.native="editFormVisible = false;">取消</el-button>
         <el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
       </div>
     </el-dialog>
@@ -133,6 +132,7 @@
           <template scope="scope">
             <el-upload
                 action="http://localhost:8000/hospital/department/avatar"
+                ref="upload"
                 list-type="picture-card"
                 :on-preview="handlePictureCardPreview"
                 :on-remove="handleRemove"
@@ -213,7 +213,10 @@ export default {
   },
   methods: {
     handleRemove(file, fileList) {
-      console.log(file, fileList);
+      let index = fileList.findIndex( fileItem => {
+        return fileItem.uid === file.uid
+      })
+      fileList.splice(index, 1)
     },
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url;
@@ -295,6 +298,7 @@ export default {
           this.$confirm('确认提交吗？', '提示', {}).then(() => {
             this.editLoading = true;
             addDepartment(this.editForm).then((res)=>{
+              this.$refs.edit.clearFiles()
               if(res.data.msgId=='C200'){
                 this.editFormVisible = false;
                 this.editLoading = false;
@@ -306,6 +310,7 @@ export default {
                 });
                 this.getUsers()
               }else {
+                this.$refs.edit.clearFiles()
                 this.editFormVisible = false;
                 this.editLoading = false;
                 this.dialogImageUrl='';
@@ -330,6 +335,7 @@ export default {
             // alert(JSON.stringify(this.addForm))
             saveDepartment(this.addForm).then((res)=>{
               if(res.data.msgId=='C200'){
+                this.$refs.upload.clearFiles()
                 this.addFormVisible = false;
                 this.addLoading = false;
                 this.dialogImageUrl='';
@@ -339,7 +345,15 @@ export default {
                   offset: 100
                 });
                 this.getUsers()
-              }else {
+              }else if(res.data.msgId=='C405'){
+                this.addForm.id=''
+                this.$notify.error({
+                  title: '错误',
+                  message: '科室编码重复'
+                });
+              }
+              else {
+                this.$refs.upload.clearFiles()
                 this.addFormVisible = false;
                 this.addLoading = false;
                 this.dialogImageUrl='';

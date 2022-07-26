@@ -120,6 +120,7 @@
           <img :src="editForm.cover" style="border-radius:50%; " width="100" height="100"
                alt="药品封面">
           <el-upload
+              ref="edit"
               action="http://localhost:8000/hospital/nondrug/avatar"
               list-type="picture-card"
               :on-preview="handlePictureCardPreview"
@@ -160,6 +161,7 @@
         </el-form-item>
         <el-form-item label="药品封面" prop="cover">
           <el-upload
+              ref="addAvatar"
               action="http://localhost:8000/hospital/nondrug/avatar"
               list-type="picture-card"
               :on-preview="handlePictureCardPreview"
@@ -356,6 +358,7 @@ export default {
       this.$refs.editForm.validate((valid) => {
         if (valid) {
           this.$confirm('确认提交吗？', '提示', {}).then(() => {
+            this.$refs.edit.clearFiles()
             this.editLoading = true;
             let para = Object.assign({}, this.editForm);
             updateDrug(para).then((res) => {
@@ -384,6 +387,7 @@ export default {
       this.$refs.addForm.validate((valid) => {
         if (valid) {
           this.$confirm('确认提交吗？', '提示', {}).then(() => {
+            this.$refs.addAvatar.clearFiles()
             // alert(JSON.stringify(this.addForm))
             this.addLoading = true;
             //NProgress.start();
@@ -506,6 +510,7 @@ export default {
     },
     uploadToServer() {
       analyseFileDrug().then((res) => {
+        this.$refs.upload.clearFiles()
         this.uploadServerVisibleUser = false;
         if(res.data.msgId=='C500'){
           this.$notify.error({
