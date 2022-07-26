@@ -439,6 +439,7 @@ export default {
     },
     exportData() {
       exportDataUser().then((res) => {
+
         const disposition = res.headers['content-disposition'];
         let fileName = disposition.match(/=(.*)$/)[1];
         let blob = new Blob([res.data])

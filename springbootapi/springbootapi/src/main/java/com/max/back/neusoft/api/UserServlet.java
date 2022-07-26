@@ -43,12 +43,14 @@ public class UserServlet {
     private UserService userService;
     @Autowired
     private PatientmedicineService patientmedicineService;
+
     //获取全部用户信息
     @ApiOperation(value = "获取全部用户信息")
     @PostMapping("/findUser")
     public String findAllUser(@RequestBody @Valid UserFindFrom userFindFrom) {
         return userService.findUser(userFindFrom);
     }
+
     @ApiOperation(value = "根据id列表删除")
     @PostMapping("/deleteByIds")
     public String deleteById(@RequestBody @Valid DeleteFrom params) {
@@ -56,12 +58,12 @@ public class UserServlet {
         AtomicBoolean same = new AtomicBoolean(false);
         params.getIds().stream().forEach(s -> {
             QueryWrapper<Patientmedicine> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("p_userId",s);
-            if(patientmedicineService.getMap(queryWrapper)!=null){
+            queryWrapper.eq("p_userId", s);
+            if (patientmedicineService.getMap(queryWrapper) != null) {
                 same.set(true);
             }
         });
-        if(same.get()){
+        if (same.get()) {
             return JSON.toJSONString(ResponseResult.getErrorResult("C405"));
         }
         boolean delete = userService.removeByIds(params.getIds());
@@ -141,6 +143,7 @@ public class UserServlet {
 
     @PostMapping("/exportData")
     public void exportDataUser(HttpServletResponse response) throws IOException {
+//        response.setHeader("content-type", "application/octet-stream");
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
         String fileName = new String((UUID.randomUUID().toString() + ".xlsx").getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1);
         //设置文件名
@@ -171,20 +174,22 @@ public class UserServlet {
             File newFile = new File(path + "\\src\\main\\webapp\\static\\" + fileName + ".xlsx");
             multipartFile.transferTo(newFile);
             return userService.analyseFile(fileName);
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             return JSON.toJSONString(ResponseResult.getErrorResult("C502"));
         }
 
     }
+
     @GetMapping("/getDeleteUser")
-    public String getDeletes(){
+    public String getDeletes() {
         return userService.getDeletes();
     }
+
     @PostMapping("/deletePermanently")
     public String deletePermanently(@RequestBody @NotBlank String id) {
         id = id.replace("=", "");
         String path = System.getProperty("user.dir");
-        File newFile = new File(path + "\\src\\main\\webapp\\Img\\user\\" +id+".jpg");
+        File newFile = new File(path + "\\src\\main\\webapp\\Img\\user\\" + id + ".jpg");
         newFile.delete();
         return userService.deletePermanently(id);
     }
@@ -194,8 +199,9 @@ public class UserServlet {
         id = id.replace("=", "");
         return userService.dataRecovery(id);
     }
+
     @PostMapping("/mainGetNumber")
-    public String mainGetNumber(){
+    public String mainGetNumber() {
         return userService.mainGetNumber();
     }
 }

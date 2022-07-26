@@ -200,3 +200,217 @@
 				HikariPool-1 - Starting...
 2022-07-26 09:38:30.564 [http-nio-8000-exec-4] INFO  com.zaxxer.hikari.HikariDataSource -
 				HikariPool-1 - Start completed.
+2022-07-26 12:56:49.893 [Thread-18] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-26 12:56:49.898 [Thread-18] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2022-07-26 12:56:49.902 [Thread-18] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.
+2022-07-26 12:57:00.910 [restartedMain] INFO  com.max.back.BackApplication -
+				Starting BackApplication on LAPTOP-IMQHF2DI with PID 17044 (started by 86155 in E:\我的桌面\donruan\neusoft-java\springbootapi\springbootapi)
+2022-07-26 12:57:00.911 [restartedMain] INFO  com.max.back.BackApplication -
+				The following profiles are active: test
+2022-07-26 12:57:00.949 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-26 12:57:00.949 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-26 12:57:01.937 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-26 12:57:01.938 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-26 12:57:01.961 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2022-07-26 12:57:01.972 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-26 12:57:01.973 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-26 12:57:01.989 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2022-07-26 12:57:02.268 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2a563fc7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-26 12:57:02.289 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.max.back.common.config.RedisConfig$$EnhancerBySpringCGLIB$$e7aab770] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-26 12:57:02.626 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8000 (http)
+2022-07-26 12:57:02.638 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8000"]
+2022-07-26 12:57:02.647 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2022-07-26 12:57:02.647 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.24]
+2022-07-26 12:57:03.086 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/hospital] -
+				Initializing Spring embedded WebApplicationContext
+2022-07-26 12:57:03.086 [restartedMain] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 2137 ms
+2022-07-26 12:57:04.321 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-07-26 12:57:04.437 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-26 12:57:04.483 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2022-07-26 12:57:04.783 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2022-07-26 12:57:04.801 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2022-07-26 12:57:04.830 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2022-07-26 12:57:05.014 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: avatarUsingPOST_1
+2022-07-26 12:57:05.016 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: dataRecoveryUsingPOST_1
+2022-07-26 12:57:05.016 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: deleteByIdUsingPOST_1
+2022-07-26 12:57:05.017 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: deletePermanentlyUsingPOST_1
+2022-07-26 12:57:05.033 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: avatarUsingPOST_2
+2022-07-26 12:57:05.057 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: analyseFileUsingGET_1
+2022-07-26 12:57:05.058 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: avatarUsingPOST_3
+2022-07-26 12:57:05.059 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: dataRecoveryUsingPOST_2
+2022-07-26 12:57:05.060 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: deleteByIdUsingPOST_2
+2022-07-26 12:57:05.061 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: deletePermanentlyUsingPOST_2
+2022-07-26 12:57:05.061 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: exportDataUserUsingPOST_1
+2022-07-26 12:57:05.063 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: getDeletesUsingGET_1
+2022-07-26 12:57:05.064 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: updateUserUsingPOST_1
+2022-07-26 12:57:05.065 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: uploadToServerUsingPOST_1
+2022-07-26 12:57:05.066 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: userTemplateDownloadUsingPOST_1
+2022-07-26 12:57:05.081 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8000"]
+2022-07-26 12:57:05.100 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8000 (http) with context path '/hospital'
+2022-07-26 12:57:05.101 [restartedMain] INFO  com.max.back.BackApplication -
+				Started BackApplication in 4.648 seconds (JVM running for 5.916)
+2022-07-26 12:57:10.956 [http-nio-8000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/hospital] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-26 12:57:10.957 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2022-07-26 12:57:10.966 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 9 ms
+2022-07-26 12:57:11.079 [http-nio-8000-exec-1] INFO  io.lettuce.core.EpollProvider -
+				Starting without optional epoll library
+2022-07-26 12:57:11.080 [http-nio-8000-exec-1] INFO  io.lettuce.core.KqueueProvider -
+				Starting without optional kqueue library
+2022-07-26 12:57:11.391 [http-nio-8000-exec-1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2022-07-26 12:57:11.826 [http-nio-8000-exec-1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Start completed.
+2022-07-26 12:57:33.810 [Thread-19] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-26 12:57:33.813 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2022-07-26 12:57:33.821 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.
+2022-07-26 12:57:40.245 [restartedMain] INFO  com.max.back.BackApplication -
+				Starting BackApplication on LAPTOP-IMQHF2DI with PID 20772 (started by 86155 in E:\我的桌面\donruan\neusoft-java\springbootapi\springbootapi)
+2022-07-26 12:57:40.249 [restartedMain] INFO  com.max.back.BackApplication -
+				The following profiles are active: test
+2022-07-26 12:57:40.302 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-26 12:57:40.303 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-26 12:57:41.289 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-26 12:57:41.298 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-26 12:57:41.320 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2022-07-26 12:57:41.325 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-26 12:57:41.329 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-07-26 12:57:41.343 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2022-07-26 12:57:41.622 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fee047f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-26 12:57:41.642 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.max.back.common.config.RedisConfig$$EnhancerBySpringCGLIB$$bc34bf9c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-26 12:57:41.992 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8000 (http)
+2022-07-26 12:57:42.012 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8000"]
+2022-07-26 12:57:42.021 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2022-07-26 12:57:42.021 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.24]
+2022-07-26 12:57:43.102 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/hospital] -
+				Initializing Spring embedded WebApplicationContext
+2022-07-26 12:57:43.104 [restartedMain] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 2801 ms
+2022-07-26 12:57:44.411 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-07-26 12:57:44.527 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-26 12:57:44.571 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2022-07-26 12:57:44.846 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2022-07-26 12:57:44.867 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2022-07-26 12:57:44.897 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2022-07-26 12:57:45.083 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: avatarUsingPOST_1
+2022-07-26 12:57:45.085 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: dataRecoveryUsingPOST_1
+2022-07-26 12:57:45.085 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: deleteByIdUsingPOST_1
+2022-07-26 12:57:45.086 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: deletePermanentlyUsingPOST_1
+2022-07-26 12:57:45.102 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: avatarUsingPOST_2
+2022-07-26 12:57:45.125 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: analyseFileUsingGET_1
+2022-07-26 12:57:45.126 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: avatarUsingPOST_3
+2022-07-26 12:57:45.127 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: dataRecoveryUsingPOST_2
+2022-07-26 12:57:45.128 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: deleteByIdUsingPOST_2
+2022-07-26 12:57:45.129 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: deletePermanentlyUsingPOST_2
+2022-07-26 12:57:45.130 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: exportDataUserUsingPOST_1
+2022-07-26 12:57:45.132 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: getDeletesUsingGET_1
+2022-07-26 12:57:45.133 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: updateUserUsingPOST_1
+2022-07-26 12:57:45.134 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: uploadToServerUsingPOST_1
+2022-07-26 12:57:45.135 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator -
+				Generating unique operation named: userTemplateDownloadUsingPOST_1
+2022-07-26 12:57:45.150 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8000"]
+2022-07-26 12:57:45.168 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8000 (http) with context path '/hospital'
+2022-07-26 12:57:45.171 [restartedMain] INFO  com.max.back.BackApplication -
+				Started BackApplication in 5.468 seconds (JVM running for 6.668)
+2022-07-26 14:31:11.018 [http-nio-8000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/hospital] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-26 14:31:11.019 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2022-07-26 14:31:11.033 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 14 ms
+2022-07-26 14:31:11.244 [http-nio-8000-exec-3] INFO  io.lettuce.core.EpollProvider -
+				Starting without optional epoll library
+2022-07-26 14:31:11.246 [http-nio-8000-exec-3] INFO  io.lettuce.core.KqueueProvider -
+				Starting without optional kqueue library
+2022-07-26 14:31:11.864 [http-nio-8000-exec-2] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2022-07-26 14:31:12.306 [http-nio-8000-exec-2] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Start completed.
+2022-07-26 14:56:18.293 [Thread-19] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-26 14:56:18.311 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2022-07-26 14:56:18.334 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.
